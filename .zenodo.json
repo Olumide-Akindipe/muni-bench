@@ -1,0 +1,30 @@
+{
+  "upload_type": "dataset",
+  "title": "MUNI-BENCH: Entity-Level Linkage of New York Local Government Finance, Community Energy Use, and Public-Facility Efficiency Projects",
+  "version": "0.1.1",
+  "creators": [
+    {
+      "name": "Akindipe, Stephen Olumide",
+      "orcid": "0000-0002-1846-9662",
+      "affiliation": "Independent Researcher, Albany, NY, USA"
+    }
+  ],
+  "description": "<p>MUNI-BENCH is an open entity-year panel for 2016 to 2025 connecting New York local government finances (State Comptroller), community electricity and gas use (NYSERDA Utility Energy Registry), and completed NYPA public-facility efficiency projects, with documented match methods, to give energy planners, municipal stakeholders, researchers and the public easy access to linked information.</p><p>The archive contains the linked panel (data/processed/panel_2016_2025.csv, 32,640 government-years for 3,264 local governments), the link tables, the quality report, the pipeline code that rebuilds every table from the public sources, and the documentation: CODEBOOK, LIMITATIONS, DECISIONS and VERIFICATION_REPORT. Version 0.1.1 adds the data files to the archive; the data are identical to the v0.1.0 build.</p><p>Pipeline code and analysis were developed with AI assistance (Claude, Anthropic). All decisions, hand checks and verification were made by the maintainer.</p>",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "municipal finance",
+    "energy use",
+    "energy efficiency",
+    "New York State",
+    "local government",
+    "Utility Energy Registry",
+    "panel data"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Olumide-Akindipe/muni-bench",
+      "relation": "isSupplementedBy",
+      "resource_type": "software"
+    }
+  ]
+}
