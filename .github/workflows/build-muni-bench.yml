@@ -44,5 +44,6 @@ jobs:
           name: muni-bench-build
           path: |
             data/raw/PROVENANCE.txt
+            data/raw/*.csv
             data/processed/
             paper/
