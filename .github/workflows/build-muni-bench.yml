@@ -38,7 +38,7 @@ jobs:
       - run: python code/01_fetch.py
       - run: python code/02_build.py
       - run: python code/03_qa.py
-      - run: python code/04_figures.py
+      - run: python code/04_figures.py --final
       - uses: actions/upload-artifact@v4
         with:
           name: muni-bench-build
