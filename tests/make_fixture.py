@@ -44,6 +44,15 @@ GOVS = [
     ("280663400400", "Plainview-Old Bethpage Central School District", "School District",
      "Nassau", None, None, None),
 ]
+GOVS += [
+    ("560301000000", "Town of Arcade", "Town", "Wyoming", "Arcade", "Town", "3612102418"),
+    ("560302000000", "Town of Attica", "Town", "Wyoming", "Attica", "Town", "3612103012"),
+    ("550634200100", "Union Free School District Of The Tarrytowns", "School District",
+     "Westchester", None, None, None),
+    ("550434204850", "Village of Tarrytown", "Village", "Westchester", None, None, None),
+]
+# NYSERDA rows where a town's code carries the next town's name (seen in Wyoming County)
+STRAY_NAME = {"3612102418": "Attica"}
 UER_COUNTY = {"McDonough": "Chenang"}      # NYSERDA truncates county names
 LAST_FY = {"040413302710": 2011}          # dissolved before the panel
 
@@ -88,7 +97,8 @@ def uer_community(years):
                                              full_fips=fips + ".00", data_class=dc,
                                              data_field=field, unit=unit, value=10.0,
                                              utility_display_name=u))  # second piece
-                        rows.append({"year": y, "month": m, "com_name": uname,
+                        nm = STRAY_NAME.get(fips, uname) if (m == 1 and u == "National Grid") else uname
+                        rows.append({"year": y, "month": m, "com_name": nm,
                                      "com_type": utype,
                                      "county_name": UER_COUNTY.get(uname, county),
                                      "full_fips": fips + ".00", "data_class": dc,
@@ -128,9 +138,9 @@ def nypa():
              ("SUFFOLK COUNTY COMMUNITY COLLEGE", "Suffolk", None),
              ("PERTH, TOWN OF", "Montgomery", None), ("ALLEGANY CSD", "Cattaraugus", None),
              ("PLAINVIEW-OLD BETHPAGE, TOWN OF", "Nassau", None),
-             ("RYE NECK USFD", "Westchester", None)]
+             ("RYE NECK USFD", "Westchester", None), ("TARRYTOWN USFD", "Westchester", None)]
     rows = []
-    for i in range(68):
+    for i in range(72):
         c, county, ag = custs[i % len(custs)]
         y = 1987 + (i * 13) % 40
         rows.append({"year_completed": y, "date_completed": f"{y}-06-30T00:00:00.000",

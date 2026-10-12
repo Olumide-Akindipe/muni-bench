@@ -12,7 +12,7 @@
 
 5. **Negative monthly values.** A small number of utility rows report negative consumption, likely billing corrections. Those months are excluded and counted in `*_months_invalid`.
 
-6. **Account coverage varies.** Some places carry far fewer utility accounts than their size suggests. For example, the City of Troy's July 2024 record covers 9,119 electric accounts. Use `elec_accounts_avg` to judge whether a total covers a whole community.
+6. **Account coverage and allocation vary.** Utilities assign accounts to communities, and some assignments look wrong. In 2019 the City of Troy carries about 7,778 electric accounts while the neighbouring, much smaller Town of Brunswick carries about 19,112, which suggests some Troy accounts are reported under Brunswick. MUNI-BENCH reports NYSERDA's values as published. Use `elec_accounts_avg` to judge whether a total plausibly covers a whole community.
 
 7. **The ZIP-level energy data are incomplete.** Only Con Edison and National Grid report at ZIP level, Con Edison has no ZIP data for 2020 to 2022, National Grid has none for 2021, and no utility reports ZIP data for 2021. The ZIP table is a companion, not part of the panel.
 
@@ -22,12 +22,14 @@
 
 10. **Shared records.** Where a town and village share one boundary (for example Harrison and Woodbury), NYSERDA reports one record, linked to both governments and flagged `uer_shared_record`. Count it once.
 
-11. **Name-based linkage can be wrong.** OSC, UER and NYPA share no common identifier. Links rely on normalized names, class and county. Exact matches are trusted; fuzzy matches are listed with scores and reviewed by the maintainer. Errors that survive review remain possible.
+11. **NYSERDA names are sometimes wrong; codes are used instead.** In Wyoming County, some rows carry the next town's name under a town's Census code (for example "Attica" on Arcade's code). The pipeline links by the code whose usual spelling matches, and records other candidate codes in `uer_alt_fips`.
 
-12. **NYPA scope.** Projects for state agencies, public authorities, New York City and its agencies (including NYCHA), community colleges, BOCES, cooperatives and private firms are not linked, because the OSC local government file does not cover those bodies. Their counts are in `qa_report.txt` section 4. NYPA savings are engineering estimates at completion, not measured results, and costs are nominal dollars.
+12. **Name-based linkage can be wrong.** OSC, UER and NYPA share no common identifier. Links rely on normalized names, class and county. Exact matches are trusted; fuzzy matches are listed with scores and reviewed by the maintainer. Errors that survive review remain possible.
 
-13. **Counties, school districts and fire districts have no energy values in v0.1.** They carry finance and NYPA columns only.
+13. **NYPA scope.** Projects for state agencies, public authorities, New York City and its agencies (including NYCHA), community colleges, BOCES, cooperatives and private firms are not linked, because the OSC local government file does not cover those bodies. Their counts are in `qa_report.txt` section 4. NYPA savings are engineering estimates at completion, not measured results, and costs are nominal dollars.
 
-14. **Energy-relevant expenditure is an approximation.** The function codes chosen (street lighting, buildings, water, sewer) contain non-energy spending. They indicate where energy costs sit, not energy cost itself [VERIFY V2].
+14. **Counties, school districts and fire districts have no energy values in v0.1.** They carry finance and NYPA columns only.
 
-15. **Sources change.** All four sources are revised. Each release records the exact files used (PROVENANCE.txt) and is reproducible only against those files.
+15. **Energy-relevant expenditure is an approximation.** The function codes chosen (street lighting, buildings, water, sewer) contain non-energy spending. They indicate where energy costs sit, not energy cost itself [VERIFY V2].
+
+16. **Sources change.** All four sources are revised. Each release records the exact files used (PROVENANCE.txt) and is reproducible only against those files.

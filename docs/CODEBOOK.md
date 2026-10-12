@@ -38,9 +38,9 @@
 One row per OSC entity: municipal_code, entity_name, class (as reported), class_n (normalized), county, first_fy, last_fy.
 
 ## link_uer.csv
-One row per OSC city, town or village: municipal_code, uer_fips, uer_com_name, method (exact, fuzzy_auto, fuzzy_review, unmatched, not_in_panel_years for governments whose last OSC filing is before 2016, with "+author_accept" or "+author_reject" after your review), score (0 to 100 name similarity), uer_alt_fips (other NYSERDA codes carrying the same place, not used), accepted (True if used in the panel).
+One row per OSC city, town or village: municipal_code, uer_fips, uer_com_name, method (exact, fuzzy_auto, fuzzy_review, unmatched, not_in_panel_years for governments whose last OSC filing is before 2016, variant_review when only a stray spelling on some NYSERDA rows matches, with "+author_accept" or "+author_reject" after your review), score (0 to 100 name similarity), uer_alt_fips (other NYSERDA codes carrying the same place, not used), accepted (True if used in the panel).
 
-Matching rules: same class of government; county compatible, allowing for NYSERDA's truncated ("Jeffers"), joint ("Broome & Delaware") and blank county names; name equal after normalization or after removing spaces ("Mc Donough" and "McDonough").
+Matching rules: same class of government; county compatible, allowing for NYSERDA's truncated ("Jeffers"), joint ("Broome & Delaware") and blank county names; name equal after normalization or after removing spaces ("Mc Donough" and "McDonough"). When several codes carry the name, the code whose usual spelling is this name wins, then a truncated spelling ("Centre Isl"), then the most data.
 
 ## link_nypa.csv
 One row per NYPA project: project_code, customer, customer_class (inferred from the name), county, municipal_code, entity_name, method, score, accepted.
@@ -57,10 +57,10 @@ Methods, in the order tried:
 - class_mismatch_review: same county, but NYPA's class label disagrees ("Plainview-Old Bethpage, Town of" is a school district). Review only.
 - unmatched.
 
-Review-only matches enter the panel only after you accept them.
+Review-only matches enter the panel only after you accept them. Your decisions add "+author_accept", "+author_reject" or "+author_assign" to the method.
 
 ## review_queue.csv
-Uncertain matches for the maintainer: source (uer or nypa), record_id, method, left (the name being matched, with NYPA's county), right (the proposed match, with its class and county), score, decision (blank). Copy decided rows into `data/review_decisions.csv` with columns source, record_id, decision (accept or reject).
+Uncertain matches for the maintainer: source (uer or nypa), record_id, method, left (the name being matched, with NYPA's county), right (the proposed match, with its class and county), score, decision (blank). Decisions go in `data/review_decisions.csv` with columns source, record_id, decision (accept, reject or assign) and target (for assign: the OSC municipal_code for NYPA rows, the NYSERDA fips for UER rows).
 
 ## community_energy_annual.csv
 One row per UER community per calendar year, all years available (not limited to linked entities): fips, year, elec_mwh, elec_months_reported, elec_months_withheld, gas_therms, gas_months_reported, gas_months_withheld.

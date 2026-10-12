@@ -141,3 +141,34 @@ def test_class_read_before_suffix_removed():
     b = module_from_spec(spec); spec.loader.exec_module(b)
     assert infer_class(b._clean_customer("NORTHPORT - EAST NORTHPORT SCHOOL", False)) == \
         "school district"
+
+
+def test_stray_neighbour_name_does_not_capture_link():
+    l = pd.read_csv(P / "link_uer.csv", dtype=str).set_index("municipal_code")
+    assert l.loc["560302000000", "uer_fips"] == "3612103012"   # Attica keeps its own code
+    assert l.loc["560301000000", "uer_fips"] == "3612102418"
+
+
+def test_school_customer_never_moved_to_village():
+    l = pd.read_csv(P / "link_nypa.csv", dtype=str)
+    t = l[l.customer == "TARRYTOWN USFD"]
+    assert set(t.method) == {"unmatched"}
+
+
+def test_assign_decision():
+    dec = ROOT / "data" / "review_decisions.csv"
+    saved = dec.read_text() if dec.exists() else None
+    l = pd.read_csv(P / "link_nypa.csv", dtype=str)
+    pid = l[l.customer == "TARRYTOWN USFD"].project_code.iloc[0]
+    dec.write_text(f"source,record_id,decision,target\nnypa,{pid},assign,550634200100\n")
+    try:
+        run("code/02_build.py")
+        r = pd.read_csv(P / "link_nypa.csv", dtype=str).set_index("project_code").loc[pid]
+        assert r.municipal_code == "550634200100" and r.accepted == "True"
+        assert r.method.endswith("author_assign") and "Tarrytowns" in r.entity_name
+    finally:
+        if saved is None:
+            dec.unlink()
+        else:
+            dec.write_text(saved)
+        run("code/02_build.py")

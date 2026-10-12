@@ -76,6 +76,14 @@ def main() -> None:
           f"uer_shared_record): {dup.uer_fips.nunique()}")
         for r in dup.itertuples():
             w(f"     {r.uer_fips}  {r.entity_name}")
+        import re as _re
+        base = dup.assign(core=dup.entity_name.str.replace(
+            r"^(Town|Village|City) of ", "", regex=True).str.lower())
+        odd = base.groupby("uer_fips").core.nunique()
+        odd = odd[odd > 1]
+        if len(odd):
+            flags.append(f"{len(odd)} shared NYSERDA records link governments with different "
+                         f"names (possible mislabelled rows): {', '.join(odd.index)}")
     unl = luer[luer.method == "unmatched"].merge(ent, on="municipal_code")
     if len(unl):
         w(f"   unmatched, all {len(unl)} (likely causes: own municipal electric utility, "

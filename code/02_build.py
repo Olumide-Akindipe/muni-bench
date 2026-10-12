@@ -185,6 +185,18 @@ def _county_ok(ek: str, keys: set) -> bool:
     return False
 
 
+def _usual_rank(com_name: str, ekey: str) -> int:
+    """2: the record's usual spelling is this name. 1: it is this name cut short
+    (NYSERDA truncates to 10 characters, e.g. 'Centre Isl'). 0: only a stray spelling
+    on some rows matches."""
+    k = name_key(com_name)
+    if k == ekey or _nospace(k) == _nospace(ekey):
+        return 2
+    if len(com_name.strip()) >= 7 and len(k) >= 6 and ekey.startswith(k):
+        return 1
+    return 0
+
+
 def link_uer(ent: pd.DataFrame, comm: pd.DataFrame) -> pd.DataFrame:
     comm = comm.copy()
     comm["name_keys"] = comm["name_variants"].map(
@@ -201,12 +213,16 @@ def link_uer(ent: pd.DataFrame, comm: pd.DataFrame) -> pd.DataFrame:
         exact = pool[pool.name_keys.map(
             lambda ks: e.name_key in ks or _nospace(e.name_key) in ks)]
         if len(exact):
-            # Several codes can carry one place (e.g. a code change between protocols).
-            # Use the one with the most data; record the others.
-            exact = exact.sort_values(["n_rows", "last_year"], ascending=False)
+            # Several codes can carry one name: a code change between protocols, a
+            # truncated spelling ("Great Neck" for Great Neck Estates), or rows labelled
+            # with a neighbouring town's name (seen in Wyoming County). Prefer the code
+            # whose usual spelling is this government's name; record the others.
+            exact = exact.assign(usual=exact.com_name.map(lambda n: _usual_rank(n, e.name_key)))
+            exact = exact.sort_values(["usual", "n_rows", "last_year"], ascending=False)
             r = exact.iloc[0]
             alt = ";".join(exact.fips.iloc[1:]) or None
-            rows.append((e.municipal_code, r.fips, r.com_name, "exact", 100, alt)); continue
+            method = "exact" if r.usual > 0 else "variant_review"
+            rows.append((e.municipal_code, r.fips, r.com_name, method, 100, alt)); continue
         idx, score = _fuzzy(e.name_key, dict(zip(pool.index, pool.com_name.map(name_key))))
         if idx is not None and score >= C.FUZZY_REVIEW:
             r = pool.loc[idx]
@@ -281,7 +297,10 @@ def link_nypa(nypa: pd.DataFrame, ent: pd.DataFrame) -> pd.DataFrame:
                                                 (ent.nospace == _nospace(key)))]
             if len(other) == 1:
                 hit(other.iloc[0], "other_county_review", 100); continue
-        # Tier 5: same county, class label disagrees (NYPA mislabels). Review only.
+        # Tier 5: same county, class label disagrees (NYPA labels a school district
+        # "Town of"). Never moves a school-district customer onto another class.
+        if cls == "school district":
+            rows.append(base + (None, None, "unmatched", 0)); continue
         anycls = incounty[(incounty.name_key == key) | (incounty.nospace == _nospace(key))]
         if len(anycls) == 1:
             hit(anycls.iloc[0], "class_mismatch_review", 100); continue
@@ -294,20 +313,34 @@ def link_nypa(nypa: pd.DataFrame, ent: pd.DataFrame) -> pd.DataFrame:
                                        "method", "score"])
 
 
-def apply_review(link: pd.DataFrame, source: str, id_col: str) -> pd.DataFrame:
-    """Apply the author's accept/reject decisions from data/review_decisions.csv."""
+def apply_review(link: pd.DataFrame, source: str, id_col: str, target_col: str,
+                 names: dict | None = None) -> pd.DataFrame:
+    """Apply the author's decisions from data/review_decisions.csv.
+
+    decision = accept | reject | assign. For assign, the 'target' column holds the
+    correct OSC municipal_code (NYPA rows) or NYSERDA fips (UER rows)."""
     link = link.copy()
     link["accepted"] = link["method"].isin(["exact", "fuzzy_auto"])
     f = C.ROOT / "data" / "review_decisions.csv"
     if f.exists():
-        d = pd.read_csv(f, dtype=str)
+        d = pd.read_csv(f, dtype=str).fillna("")
+        if "target" not in d:
+            d["target"] = ""
         d = d[d["source"] == source]
-        dec = dict(zip(d["record_id"], d["decision"].str.lower()))
+        dec = {r.record_id: (r.decision.strip().lower(), r.target.strip())
+               for r in d.itertuples()}
         for i, r in link.iterrows():
-            v = dec.get(str(r[id_col]))
+            v, tgt = dec.get(str(r[id_col]), ("", ""))
             if v in ("accept", "reject"):
                 link.at[i, "accepted"] = v == "accept"
                 link.at[i, "method"] = r["method"] + f"+author_{v}"
+            elif v == "assign" and tgt:
+                link.at[i, target_col] = tgt
+                if names is not None:
+                    name_col = "entity_name" if source == "nypa" else "uer_com_name"
+                    link.at[i, name_col] = names.get(tgt, "")
+                link.at[i, "accepted"] = True
+                link.at[i, "method"] = r["method"] + "+author_assign"
     return link
 
 
@@ -320,14 +353,16 @@ def main() -> None:
 
     u = load_uer(C.UER_COMMUNITY)
     comm, energy = community_annual(u)
-    luer = apply_review(link_uer(ent, comm), "uer", "municipal_code")
+    luer = apply_review(link_uer(ent, comm), "uer", "municipal_code", "uer_fips",
+                        dict(zip(comm.fips, comm.com_name)))
 
     nypa = pd.read_csv(C.RAW / "nypa_projects.csv", dtype=str)
     nypa["year_completed"] = pd.to_numeric(nypa["year_completed"], errors="coerce").astype("Int64")
     for c in ("total_project_cost", "electric_energy_reduction_kwh", "gas_savings_therms",
               "reduction_in_greenhouse_gas_emissions_tons"):
         nypa[c] = pd.to_numeric(nypa[c], errors="coerce")
-    lnypa = apply_review(link_nypa(nypa, ent), "nypa", "project_code")
+    lnypa = apply_review(link_nypa(nypa, ent), "nypa", "project_code", "municipal_code",
+                         dict(zip(ent.municipal_code, ent.entity_name)))
 
     # Panel spine: every entity x every panel year
     grid = ent[["municipal_code", "entity_name", "class_n", "county"]].merge(
@@ -365,7 +400,7 @@ def main() -> None:
     # Review queue for the author
     who = ent[["municipal_code", "entity_name", "class_n", "county"]]
     rq = pd.concat([
-        luer[luer.method == "fuzzy_review"].merge(who, on="municipal_code")
+        luer[luer.method.isin(["fuzzy_review", "variant_review"])].merge(who, on="municipal_code")
         .assign(source="uer", record_id=lambda d: d.municipal_code,
                 left=lambda d: d.entity_name + " (" + d.class_n + ", " + d.county + ")",
                 right=lambda d: "NYSERDA record: " + d.uer_com_name),
