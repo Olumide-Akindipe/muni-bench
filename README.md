@@ -70,10 +70,6 @@ Read [docs/LIMITATIONS.md](docs/LIMITATIONS.md) before using or citing anything 
 
 See `CITATION.cff`. The DOI is issued by Zenodo when the v0.1.0 GitHub release is published and is added here on the same day.
 
-## AI assistance
-
-Pipeline code and analysis were developed with AI assistance (Claude, Anthropic). All decisions, hand checks and verification were made by the maintainer; see `docs/DECISIONS.md` and `docs/VERIFICATION_REPORT.md`.
-
 ## Related
 
 Companion to the [Verification Gap Ledger](https://doi.org/10.5281/zenodo.23302897) by the same maintainer.
