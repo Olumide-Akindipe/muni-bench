@@ -1,0 +1,48 @@
+# Plain-language header: this runs the whole MUNI-BENCH pipeline on GitHub's
+# free servers when you press "Run workflow" on the Actions tab. It downloads the
+# NYSERDA and NYPA files, takes your Comptroller file from the release named
+# "osc-input", builds every table, and gives you the results as one zip to download.
+name: build-muni-bench
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths: ["code/**", "tests/**"]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -q tests/
+
+  build:
+    if: github.event_name == 'workflow_dispatch'
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: Get the Comptroller file from the osc-input release
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: gh release download osc-input --dir data/raw/osc --pattern "*"
+      - run: python code/01_fetch.py
+      - run: python code/02_build.py
+      - run: python code/03_qa.py
+      - run: python code/04_figures.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: muni-bench-build
+          path: |
+            data/raw/PROVENANCE.txt
+            data/processed/
+            paper/
