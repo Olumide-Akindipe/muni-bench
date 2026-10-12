@@ -72,10 +72,6 @@ Cite all versions with the concept DOI [10.5281/zenodo.23314416](https://doi.org
 
 Suggested citation: Akindipe, S. O. (2026). *MUNI-BENCH: Entity-Level Linkage of New York Local Government Finance, Community Energy Use, and Public-Facility Efficiency Projects* (Version 0.1.1) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.23314416
 
-## AI assistance
-
-Pipeline code and analysis were developed with AI assistance (Claude, Anthropic). All decisions, hand checks and verification were made by the maintainer; see `docs/DECISIONS.md` and `docs/VERIFICATION_REPORT.md`.
-
 ## Related
 
 Companion to the [Verification Gap Ledger](https://doi.org/10.5281/zenodo.23302897) by the same maintainer.
