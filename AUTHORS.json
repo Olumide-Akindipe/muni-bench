@@ -1,0 +1,16 @@
+{
+  "_comment": "Author block. Every document, citation file, Zenodo record and commit reads from here. Confirm before release.",
+  "authors": [
+    {
+      "name": "Stephen Olumide Akindipe",
+      "family": "Akindipe",
+      "given": "Stephen Olumide",
+      "orcid": "0000-0002-1846-9662",
+      "email": "oluakins1108@gmail.com",
+      "affiliation": "Independent Researcher, Albany, NY, USA",
+      "roles": ["Conceptualization", "Methodology", "Software", "Validation", "Data curation", "Writing - original draft"],
+      "corresponding": true
+    }
+  ],
+  "collaborators": []
+}

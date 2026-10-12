@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use MUNI-BENCH, please cite it as below."
+type: dataset
+title: "MUNI-BENCH: Entity-Level Linkage of New York Local Government Finance, Community Energy Use, and Public-Facility Efficiency Projects"
+version: "0.1.0"
+date-released: "[date of release, YYYY-MM-DD]"
+authors:
+  - family-names: "Akindipe"
+    given-names: "Stephen Olumide"
+    orcid: "https://orcid.org/0000-0002-1846-9662"
+    affiliation: "Independent Researcher, Albany, NY, USA"
+license: CC-BY-4.0
+repository-code: "https://github.com/Olumide-Akindipe/muni-bench"
+doi: "[DOI minted at release]"
+keywords:
+  - municipal finance
+  - energy use
+  - energy efficiency
+  - New York State
+  - local government
+  - Utility Energy Registry
+  - panel data
