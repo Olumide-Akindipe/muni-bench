@@ -60,6 +60,11 @@ def main(final: bool) -> None:
     for col, colr in (("with_finance", BLUE), ("full_year_elec", ORANGE)):
         ax.annotate(f"{int(by[col].iloc[-1]):,}", (by.index[-1], by[col].iloc[-1]),
                     xytext=(6, 0), textcoords="offset points", va="center", fontsize=9, color=INK)
+    if 2021 in by.index:
+        ax.annotate("NYSERDA source gap:\nno Jan to Jun 2021 rows\nfor many places",
+                    (2021, by.full_year_elec.loc[2021]), xytext=(18, 40),
+                    textcoords="offset points", fontsize=8, color=MUTED,
+                    arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.8))
     style(ax, "Figure 1. Governments with data in the MUNI-BENCH panel, by year",
           "Number of local governments")
     ax.set_xticks(by.index)

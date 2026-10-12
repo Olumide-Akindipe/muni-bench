@@ -10,10 +10,16 @@
 | entity_name | Government name as OSC spells it | OSC, latest year reported |
 | class | city, town, village, county, school district, fire district | OSC class label, normalized |
 | county | County as OSC reports it | OSC |
-| year | Fiscal year label in OSC data; calendar year for energy and NYPA columns | See LIMITATIONS 2 |
-| revenues_total | Sum of all revenue lines including other sources, dollars. Matches the Comptroller's full total | OSC, sum of AMOUNT where the section is revenue or other sources |
+| year | Year label. Finance: the Comptroller's fiscal year, labelled by the calendar year in which it ends (towns, cities, counties, fire districts: January to December Y; most villages: June Y-1 to May Y; school districts: July Y-1 to June Y), as in Open Book New York. Energy and NYPA: calendar year Y | See LIMITATIONS 2 |
+| revenues_total | Gross revenues: sum of every line in the Comptroller's revenue section, dollars. Rebuild check: revenues_openbook + transfers_in + fiduciary_rev = revenues_total | OSC, sum of AMOUNT where the section is revenue or other sources |
 | revenues_excl_other_sources | Revenues without other sources (borrowing proceeds, interfund transfers in). Use this to compare governments | as above, excluding account codes 5000 to 5999 (and any section labelled only "Other Sources") |
-| expenditures_total | Sum of all expenditure lines including other uses, dollars | OSC, sum of AMOUNT where the section is expenditure or other uses |
+| expenditures_total | Gross expenditures: sum of every line in the expenditure section, dollars. Rebuild check: expenditures_openbook + transfers_out + fiduciary_exp + refunding_escrow = expenditures_total | OSC, sum of AMOUNT where the section is expenditure or other uses |
+| revenues_openbook | Revenues as Open Book New York reports them ("Revenues and Proceeds of Debt"): gross revenues minus interfund transfers in and fiduciary (TC, TE) revenue. Proceeds of debt stay in | decision V1r; docs/VERIFICATION_REPORT.md section 5.2 |
+| expenditures_openbook | Expenditures as Open Book New York reports them: gross expenditures minus interfund transfers out, fiduciary (TC, TE) expenditure and escrow payments for refunding bonds | decision V1r |
+| proceeds_of_debt | Revenue lines in the proceeds-of-debt category (not fiduciary, not transfers). Included in revenues_openbook; lets users net out borrowing, including refunding years | OSC LEVEL_1/LEVEL_2 category |
+| transfers_in, transfers_out | Interfund transfers: category Other Sources (revenue) or Other Uses (expenditure), subcategory Transfers, outside fiduciary funds | OSC LEVEL_1/LEVEL_2 category |
+| fiduciary_rev, fiduciary_exp | Lines in custodial (fund prefix TC) and private-purpose trust (TE) funds, money held for others | account code prefix |
+| refunding_escrow | Expenditure lines paying an escrow agent for advance refunding bonds (for example V99914), outside fiduciary funds and transfers | account code narrative |
 | expenditures_excl_other_uses | Expenditures without other uses (interfund transfers out) | as above, excluding account codes 9900 to 9999 (and any section labelled only "Other Uses") |
 | exp_street_lighting | Expenditure in function 5182, dollars | OSC account code, first four digits |
 | exp_buildings | Expenditure in function 1620, dollars | as above |
@@ -22,6 +28,7 @@
 | has_finance | True if OSC reported revenue or expenditure for that year | derived |
 | uer_fips | Census code of the linked UER community | UER full_fips, trailing ".00" removed |
 | uer_link_method | exact, fuzzy_auto, or fuzzy_review+author_accept | link_uer.csv |
+| uer_fips (towns) | A NYSERDA town record covers the town outside its incorporated villages, including hamlets (decision V3r). For a whole-town figure, add the town row to its village rows | decision V3r |
 | uer_shared_record | True when one NYSERDA record is linked to two governments (a town and village sharing one boundary, e.g. Harrison, Woodbury). Never add their energy values together | derived |
 | elec_mwh | Community electricity use in the calendar year, MWh, summed over utilities and over complete months | UER, "Total Consumption (T)", unit MWh |
 | elec_months_reported | Months (0 to 12) where every reporting utility gave a value | derived |
@@ -29,7 +36,7 @@
 | elec_months_invalid | Months where a utility reported a negative value (not the -999 privacy code); excluded from elec_mwh | derived |
 | elec_accounts_avg | Average monthly number of electric accounts behind elec_mwh, over reported months, rounded | UER number_of_accounts, summed over utilities |
 | gas_therms, gas_months_reported, gas_months_withheld, gas_months_invalid, gas_accounts_avg | Same for natural gas, therms | UER, unit Therms |
-| nypa_projects | NYPA projects completed that calendar year for this entity | NYPA, linked via link_nypa.csv |
+| nypa_projects | NYPA projects completed that calendar year for this entity. NYPA's register includes renewable energy projects (for example solar PV) as well as efficiency projects | NYPA, linked via link_nypa.csv |
 | nypa_cost | Sum of total_project_cost, dollars (nominal) | NYPA |
 | nypa_kwh_savings | Sum of estimated annual electric savings, kWh | NYPA electric_energy_reduction_kwh |
 | nypa_therm_savings | Sum of estimated annual gas savings, therms | NYPA gas_savings_therms |
@@ -81,3 +88,12 @@ Rows, amounts and number of governments under each label style, by kind, class o
 
 ## osc_sections.csv
 Every Comptroller section label found, how the pipeline classed it (revenue or expenditure), its row count, and how many rows count as other sources or uses. Lets anyone confirm decision V1 against the source file.
+
+## osc_other_by_code.csv
+Other sources and uses, 2016 to 2025, summed by government, year, kind and the first two digits of the account code.
+
+## osc_uncategorized_lines.csv
+Expenditure lines, 2016 to 2025, with no spending category that are not refunding escrow payments. The maintainer's statewide check found none; any listed here are kept in expenditures_openbook and need review.
+
+## data/hand_checks.csv (input)
+The maintainer's Open Book New York figures for 12 government-years, checked 2026-10-12. Each build compares revenues_openbook, expenditures_openbook and proceeds_of_debt with them and reports the gaps in `qa_report.txt` section 2.

@@ -57,6 +57,17 @@ UER_COUNTY = {"McDonough": "Chenang"}      # NYSERDA truncates county names
 LAST_FY = {"040413302710": 2011}          # dissolved before the panel
 
 
+CATS = {  # account code: (LEVEL_1_CATEGORY, LEVEL_2_CATEGORY, narrative), as in the OSC file
+    "A5031": ("Other Sources", "Transfers", "Interfund Transfers"),
+    "A5710": ("Proceeds of Debt", "Proceeds of Debt", "Serial Bonds"),
+    "A9901.9": ("Other Uses", "Transfers", "Transfers to Other Funds"),
+    "TC2770": ("Other Revenues", "Other", "Unclassified"),
+    "TE2705": ("Other Revenues", "Gifts", "Gifts and Donations"),
+    "TC19354": ("General Government", "Other", "Other Custodial Activities"),
+    "V99914": ("", "", "Repayments to Escrow Agent for Advance Refunding Bonds"),
+}
+
+
 def osc():
     rows = []
     for code, name, cls, county, *_ in GOVS:
@@ -68,11 +79,18 @@ def osc():
                                    ("EXPENDITURE", "F8340.4", base * .03),
                                    ("EXPENDITURE", "A1010.1", base * .8),
                                    ("REVENUE", "A5710", base * .5),       # bond proceeds
+                                   ("REVENUE", "A5031", base * .02),      # transfer in
+                                   ("REVENUE", "TC2770", base * .03),     # custodial
+                                   ("REVENUE", "TE2705", base * .01),     # trust
+                                   ("EXPENDITURE", "TC19354", base * .03),
+                                   ("EXPENDITURE", "V99914", base * .04),  # refunding escrow
                                    ("EXPENDITURE", "A9901.9", base * .02)]:  # transfer out
+                l1, l2, narr = CATS.get(acct, ("General Government", "Other", "Other"))
                 rows.append({"CALENDAR_YEAR": y, "MUNICIPAL_CODE": code, "ENTITY_NAME": name,
                              "CLASS_DESCRIPTION": cls, "COUNTY": county,
                              "ACCOUNT_CODE": acct, "ACCOUNT_CODE_SECTION": sec,
-                             "AMOUNT": round(amt, 2)})
+                             "LEVEL_1_CATEGORY": l1, "LEVEL_2_CATEGORY": l2,
+                             "ACCOUNT_CODE_NARRATIVE": narr, "AMOUNT": round(amt, 2)})
     df = pd.DataFrame(rows)
     # Albany 2019: the same revenue lines repeated under a statement label (a copy)
     cp = df[(df.MUNICIPAL_CODE == "010101000000") & (df.CALENDAR_YEAR == 2019) &

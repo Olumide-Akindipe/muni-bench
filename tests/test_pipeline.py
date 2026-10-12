@@ -178,7 +178,7 @@ def test_other_sources_and_uses_reported_both_ways():
     p = _panel()
     r = p[p.has_finance].iloc[0]
     assert r.revenues_excl_other_sources < r.revenues_total
-    assert r.revenues_total / r.revenues_excl_other_sources == pytest.approx(1.7 / 1.2, rel=1e-6)
+    assert r.revenues_total / r.revenues_excl_other_sources == pytest.approx(1.76 / 1.24, rel=1e-6)
     assert r.expenditures_excl_other_uses < r.expenditures_total
 
 
@@ -201,3 +201,23 @@ def test_statement_label_is_not_other_sources():
     t = p[(p.municipal_code == "010102000000") & (p.year == 2019)].iloc[0]
     # statement-label lines with ordinary account codes count as ordinary revenue
     assert t.revenues_excl_other_sources > 0.5 * t.revenues_total
+
+
+def test_openbook_rule_v1r():
+    p = _panel()
+    r = p[(p.municipal_code == "010204000000") & (p.year == 2019)].iloc[0]   # Bethlehem
+    rt, et = r.revenues_total, r.expenditures_total
+    # revenue lines (x base): 1 + .2 + .5 debt + .02 transfer + .03 TC + .01 TE = 1.76
+    assert r.proceeds_of_debt == pytest.approx(rt * .5 / 1.76, rel=1e-6)
+    assert r.transfers_in == pytest.approx(rt * .02 / 1.76, rel=1e-6)
+    assert r.fiduciary_rev == pytest.approx(rt * .04 / 1.76, rel=1e-6)
+    assert r.revenues_openbook == pytest.approx(rt * 1.70 / 1.76, rel=1e-6)
+    # expenditure lines: .05 + .01 + .03 + .8 + .02 transfer + .03 TC + .04 escrow = .98
+    assert r.transfers_out == pytest.approx(et * .02 / .98, rel=1e-6)
+    assert r.fiduciary_exp == pytest.approx(et * .03 / .98, rel=1e-6)
+    assert r.refunding_escrow == pytest.approx(et * .04 / .98, rel=1e-6)
+    assert r.expenditures_openbook == pytest.approx(et * .89 / .98, rel=1e-6)
+    # components plus Open Book total rebuild the gross total
+    assert r.revenues_openbook + r.transfers_in + r.fiduciary_rev == pytest.approx(rt)
+    assert (r.expenditures_openbook + r.transfers_out + r.fiduciary_exp +
+            r.refunding_escrow) == pytest.approx(et)

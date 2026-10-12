@@ -3,7 +3,7 @@ message: "If you use MUNI-BENCH, please cite it as below."
 type: dataset
 title: "MUNI-BENCH: Entity-Level Linkage of New York Local Government Finance, Community Energy Use, and Public-Facility Efficiency Projects"
 version: "0.1.0"
-date-released: "[date of release, YYYY-MM-DD]"
+date-released: "2026-10-12"
 authors:
   - family-names: "Akindipe"
     given-names: "Stephen Olumide"
@@ -11,7 +11,6 @@ authors:
     affiliation: "Independent Researcher, Albany, NY, USA"
 license: CC-BY-4.0
 repository-code: "https://github.com/Olumide-Akindipe/muni-bench"
-doi: "[DOI minted at release]"
 keywords:
   - municipal finance
   - energy use

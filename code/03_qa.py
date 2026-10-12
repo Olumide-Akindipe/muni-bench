@@ -39,7 +39,7 @@ def main() -> None:
     S, out, flags = {}, [], []
     w = out.append
     w("MUNI-BENCH QA REPORT" + ("  [SAMPLE DATA: SYNTHETIC, NOT REAL]" if sample_mode else ""))
-    w("DRAFT: unverified until the author completes docs/VERIFY_CHECKLIST.md\n")
+    w("Verification record: docs/VERIFY_CHECKLIST.md; decisions: docs/DECISIONS.md\n")
 
     w("1. RAW ROW COUNTS")
     for p in sorted(C.RAW.glob("*.csv")):
@@ -84,6 +84,47 @@ def main() -> None:
         S["other_sources_share_pct"] = round(100 * (rt - rx) / rt, 1) if rt else None
         w(f"   share of 2016-2025 revenue lines that are other sources: "
           f"{S['other_sources_share_pct']}%")
+
+    unc = C.PROCESSED / "osc_uncategorized_lines.csv"
+    if unc.exists():
+        u = pd.read_csv(unc)
+        S["uncategorized_non_escrow_lines"] = len(u)
+        w(f"   expenditure lines with no category that are not refunding escrow: {len(u):,}"
+          f" (kept in expenditures_openbook; listed in osc_uncategorized_lines.csv)")
+    if "revenues_openbook" in panel and panel.revenues_openbook.notna().any():
+        gt, rt = panel.revenues_total.sum(), panel.expenditures_total.sum()
+        for c, base in [("fiduciary_rev", gt), ("transfers_in", gt), ("proceeds_of_debt", gt),
+                        ("fiduciary_exp", rt), ("transfers_out", rt), ("refunding_escrow", rt)]:
+            S[f"share_{c}_pct"] = round(100 * panel[c].sum() / base, 2)
+        w("   Open Book components, share of 2016-2025 gross totals: " + ", ".join(
+            f"{c} {S[f'share_{c}_pct']}%" for c in ["fiduciary_rev", "transfers_in",
+                                                    "proceeds_of_debt", "fiduciary_exp",
+                                                    "transfers_out", "refunding_escrow"]))
+    else:
+        flags.append("Open Book columns not computed: Comptroller file has no LEVEL_1_CATEGORY")
+    hc = C.ROOT / "data" / "hand_checks.csv"
+    if hc.exists() and "revenues_openbook" in panel:
+        h = pd.read_csv(hc, dtype={"municipal_code": str})
+        m = h.merge(panel, on=["municipal_code", "year"], how="inner")
+        m = m[m.revenues_openbook.notna()]
+        w("   reconciliation with Open Book New York (author hand checks, data/hand_checks.csv):")
+        w("     government                            year  revenue gap  expend. gap  debt gap")
+        recs = []
+        for r in m.itertuples():
+            gr = round(r.revenues_openbook - r.ob_revenues)
+            ge = round(r.expenditures_openbook - r.ob_expenditures)
+            gd = round(r.proceeds_of_debt - r.ob_proceeds_of_debt)
+            recs.append({"government": r.government, "year": int(r.year), "revenue_gap": gr,
+                         "expenditure_gap": ge, "debt_gap": gd})
+            w(f"     {r.government:37s} {int(r.year)} {gr:>12,} {ge:>12,} {gd:>9,}")
+        totals_exact = sum((x["revenue_gap"] == 0) + (abs(x["expenditure_gap"]) <= 1) for x in recs)
+        S["open_book_totals_checked"] = 2 * len(recs)
+        S["open_book_totals_exact"] = int(totals_exact)
+        S["open_book_reconciliation"] = recs
+        w(f"     Open Book totals reproduced: {totals_exact} of {2 * len(recs)} "
+          f"(within 1 dollar of source rounding)")
+        if recs and totals_exact < 2 * len(recs):
+            flags.append(f"Open Book reconciliation: {2 * len(recs) - totals_exact} totals differ")
 
     w("\n3. OSC -> UER COMMUNITY LINK (cities, towns, villages)")
     acc = luer[luer.accepted.astype(str) == "True"]

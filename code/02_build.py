@@ -34,6 +34,12 @@ OSC_ALIASES = {  # canonical name: accepted source spellings
     "section": ["ACCOUNT_CODE_SECTION", "FINANCIAL_STATEMENT", "SECTION"],
     "amount": ["AMOUNT", "AMT"],
 }
+# Optional columns used by the Open Book rule (decision V1r). Read when present.
+OSC_OPTIONAL = {
+    "level_1": ["LEVEL_1_CATEGORY", "LEVEL1_CATEGORY"],
+    "level_2": ["LEVEL_2_CATEGORY", "LEVEL2_CATEGORY"],
+    "narrative": ["ACCOUNT_CODE_NARRATIVE", "NARRATIVE"],
+}
 
 
 def _read_osc_frames():
@@ -59,7 +65,15 @@ def load_osc() -> pd.DataFrame:
                 raise SystemExit(f"OSC file {label}: no column for '{canon}'. "
                                  f"Columns found: {list(df.columns)}. Update OSC_ALIASES.")
             ren[hit] = canon
-        df = df.rename(columns=ren)[list(OSC_ALIASES)]
+        for canon, opts in OSC_OPTIONAL.items():
+            hit = next((cols[o] for o in opts if o in cols), None)
+            if hit is not None:
+                ren[hit] = canon
+        df = df.rename(columns=ren)
+        for canon in OSC_OPTIONAL:
+            if canon not in df:
+                df[canon] = pd.NA
+        df = df[list(OSC_ALIASES) + list(OSC_OPTIONAL)]
         frames.append(df)
     if not frames:
         raise SystemExit("No Comptroller files in data/raw/osc/.")
@@ -85,6 +99,38 @@ def load_osc() -> pd.DataFrame:
     osc.loc[exp & ~rev, "kind"] = "expenditure"
     osc["other"] = ((osc.kind == "revenue") & (only_src | osc.function.str.startswith("5"))) | \
                    ((osc.kind == "expenditure") & (only_use | osc.function.str.startswith("99")))
+    # Decision V1r (author, 2026-10-12; docs/VERIFICATION_REPORT.md section 5.2).
+    # Open Book totals = section totals minus, in this order so nothing is removed twice:
+    #   fiduciary lines (fund prefix TC custodial, TE private-purpose trust);
+    #   interfund transfers (category Other Sources / Other Uses, subcategory Transfers);
+    #   escrow payments for refunding bonds (expenditure; narrative names the escrow
+    #   agent, or the line has no category when the file has no narrative).
+    # Proceeds of debt stay in Open Book revenue and are also reported on their own.
+    # Computed on panel years only, to keep memory low on the 16-million-row file.
+    win = osc["year"].between(C.PANEL_START, C.PANEL_END).fillna(False) & osc.kind.notna()
+    for c in ("c_fiduciary", "c_transfer", "c_escrow", "c_uncategorized_other", "c_debt"):
+        osc[c] = False
+    w = osc.loc[win]
+    l1 = w["level_1"].fillna("").astype(str).str.strip().str.upper()
+    l2 = w["level_2"].fillna("").astype(str).str.strip().str.upper()
+    narr = w["narrative"].fillna("").astype(str).str.upper()
+    prefix = w["account_code"].fillna("").str.extract(r"^\s*([A-Za-z]+)", expand=False) \
+        .fillna("").str.upper()
+    has_levels = w["level_1"].notna().any()
+    has_narr = w["narrative"].notna().any()
+    fid = prefix.isin(["TC", "TE"])
+    trn = ~fid & l1.isin(["OTHER SOURCES", "OTHER USES"]) & l2.str.contains("TRANSFER")
+    no_cat = (l1 == "") & has_levels
+    esc_txt = narr.str.contains("ESCROW") & narr.str.contains("REFUND")
+    is_exp = w.kind == "expenditure"
+    esc = is_exp & ~fid & ~trn & (esc_txt | (no_cat & (not has_narr)))
+    osc.loc[win, "c_fiduciary"] = fid
+    osc.loc[win, "c_transfer"] = trn
+    osc.loc[win, "c_escrow"] = esc
+    osc.loc[win, "c_uncategorized_other"] = is_exp & no_cat & ~fid & ~trn & ~esc
+    osc.loc[win, "c_debt"] = (w.kind == "revenue") & ~fid & ~trn & \
+        (l1.str.contains("DEBT") | l2.str.contains("DEBT"))
+    del w, l1, l2, narr, prefix
     # Label family: the file uses short labels ("REVENUE") and statement labels
     # ("STATEMENT OF REVENUES AND OTHER SOURCES"). Kept so double counting can be checked.
     osc["family"] = sec.str.startswith("STATEMENT").map({True: "statement", False: "short"})
@@ -149,7 +195,29 @@ def build_finance(osc: pd.DataFrame) -> pd.DataFrame:
         "expenditures_total": ex.groupby(k)["amount"].sum(),
         "expenditures_excl_other_uses": ex[~ex.other].groupby(k)["amount"].sum(),
     })
+    def comp(frame, col):
+        return frame[frame[col]].groupby(k)["amount"].sum()
+    for name, frame, col in [("proceeds_of_debt", rv, "c_debt"),
+                             ("transfers_in", rv, "c_transfer"),
+                             ("transfers_out", ex, "c_transfer"),
+                             ("fiduciary_rev", rv, "c_fiduciary"),
+                             ("fiduciary_exp", ex, "c_fiduciary"),
+                             ("refunding_escrow", ex, "c_escrow")]:
+        fin[name] = comp(frame, col)
     fin = fin.reindex(g.size().index)
+    if d["level_1"].notna().any():
+        comps = ["proceeds_of_debt", "transfers_in", "transfers_out", "fiduciary_rev",
+                 "fiduciary_exp", "refunding_escrow"]
+        has = fin["revenues_total"].notna() | fin["expenditures_total"].notna()
+        fin.loc[has, comps] = fin.loc[has, comps].fillna(0)
+        fin["revenues_openbook"] = fin.revenues_total - fin.transfers_in - fin.fiduciary_rev
+        fin["expenditures_openbook"] = (fin.expenditures_total - fin.transfers_out
+                                        - fin.fiduciary_exp - fin.refunding_escrow)
+    else:   # file without category columns: Open Book rule cannot be applied
+        for c in ["proceeds_of_debt", "transfers_in", "transfers_out", "fiduciary_rev",
+                  "fiduciary_exp", "refunding_escrow", "revenues_openbook",
+                  "expenditures_openbook"]:
+            fin[c] = pd.NA
     exp = d[d.kind == "expenditure"]
     for label, codes in C.ENERGY_FUNCTIONS.items():
         s = exp[exp["function"].isin(codes)].groupby(["municipal_code", "year"])["amount"].sum()
@@ -409,6 +477,13 @@ def main() -> None:
         .groupby(["section", "kind"], dropna=False)
         .agg(rows=("amount", "size"), other_rows=("other_i", "sum"))
         .reset_index().to_csv(C.PROCESSED / "osc_sections.csv", index=False))
+    (osc[osc.year.between(C.PANEL_START, C.PANEL_END) & osc.c_uncategorized_other]
+        [["municipal_code", "year", "account_code", "narrative", "amount"]]
+        .to_csv(C.PROCESSED / "osc_uncategorized_lines.csv", index=False))
+    (osc[osc.year.between(C.PANEL_START, C.PANEL_END) & osc.other]
+        .assign(code2=lambda d: d.function.str[:2])
+        .groupby(["municipal_code", "year", "kind", "code2"])["amount"].sum()
+        .reset_index().to_csv(C.PROCESSED / "osc_other_by_code.csv", index=False))
     (osc[osc.year.between(C.PANEL_START, C.PANEL_END) & osc.kind.notna()]
         .groupby(["family", "kind", "class_n", "year"], dropna=False)
         .agg(rows=("amount", "size"), amount=("amount", "sum"),

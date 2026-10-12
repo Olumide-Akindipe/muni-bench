@@ -64,4 +64,4 @@ The Comptroller site uses a form, so this file cannot be fetched automatically.
 5. **Your review and verification.** You rule on uncertain matches and check rows by hand.
 6. **Publish.** GitHub release and Zenodo DOI.
 
-*You are here: step 1 complete. Step 2 needs your Comptroller download.*
+*You are here: steps 1 to 5 complete (2026-10-12). Step 6, publish, is in docs/PUBLISH_GUIDE.md Parts C and D.*

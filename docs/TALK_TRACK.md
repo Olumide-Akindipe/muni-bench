@@ -1,22 +1,22 @@
 # Talking about MUNI-BENCH
 
-*DRAFT. Numbers in brackets are filled from paper/stats.json after the real build and your verification. Claim nothing beyond what is here.*
+*Every number here comes from paper/stats.json (build of 2026-10-12), verified by the maintainer. Claim nothing beyond what is here.*
 
 ## 60-second version
 
 The problem: a town deciding on an energy investment needs to know what it can afford, what energy its community uses, and what similar places have already done. New York publishes all three, but in three systems that use different names and no common ID, so nobody compares them.
 
-What I built: MUNI-BENCH, an open dataset that links the State Comptroller's local government finances, NYSERDA's community energy registry, and NYPA's record of 2,942 completed public-facility efficiency projects into one table, one row per government per year from 2016 to 2025. Every link records how it was made, and uncertain links were reviewed by hand.
+What I built: MUNI-BENCH, an open dataset that links the State Comptroller's local government finances, NYSERDA's community energy registry, and NYPA's record of 2,942 completed public-facility efficiency projects into one table, one row per government per year from 2016 to 2025. Every link records how it was made; 19 uncertain project links were reviewed by hand, and the build checks itself for errors in the source files.
 
-What it makes possible: side-by-side comparison of [n] local governments on spending, community energy use and efficiency project history, without each analyst rebuilding the matches.
+What it makes possible: side-by-side comparison of 3,264 local governments on spending, and of 1,504 cities, towns and villages on community energy use, alongside NYPA efficiency project history for 391 governments, without each analyst rebuilding the matches.
 
 Who can use it: municipal energy managers, regional planning boards, NYSERDA and NYPA program staff, and researchers.
 
-Where it is: GitHub (Olumide-Akindipe/muni-bench), DOI [DOI].
+Where it is: GitHub (Olumide-Akindipe/muni-bench) and Zenodo, with a permanent DOI.
 
 ## Two-sentence version
 
-MUNI-BENCH is an open dataset linking New York local government finances, community energy use and NYPA efficiency projects for [n] governments, 2016 to 2025. It gives municipal energy planning a documented, reusable baseline.
+MUNI-BENCH is an open dataset linking New York local government finances, community energy use and NYPA efficiency projects for 3,264 governments, 2016 to 2025. It gives municipal energy planning a documented, reusable baseline.
 
 ## Questions you may be asked
 

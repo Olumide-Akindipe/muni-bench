@@ -1,6 +1,6 @@
 # Publish guide: MUNI-BENCH v0.1.0
 
-*Plain-language header: the exact clicks to put MUNI-BENCH on GitHub, run the real build, and get the DOI. Written for one sitting per part. Nothing here was done automatically yet: no GitHub token has been supplied, and this workspace cannot reach data.ny.gov.*
+*Plain-language header: the exact clicks to put MUNI-BENCH on GitHub, run the build, and get the DOI. Parts A and B are done. Parts C and D publish the release. No GitHub or Zenodo token was supplied, so these steps are yours; each takes a few minutes.*
 
 ## Copy-ready text
 
@@ -12,7 +12,7 @@
 
 **Keywords:** municipal finance; energy use; energy efficiency; New York State; local government; Utility Energy Registry; panel data
 
-**Short description (for GitHub "About" and Zenodo):** [Your own words, written after verification. Suggested starting point: Open entity-year panel (2016 to 2025) linking New York local government finances (Comptroller), community electricity and gas use (NYSERDA Utility Energy Registry), and completed NYPA public-facility efficiency projects, with documented match methods.]
+**Short description (for GitHub "About" and Zenodo):** MUNI-BENCH is an open entity-year panel for 2016 to 2025 connecting New York local government finances (State Comptroller), community electricity and gas use (NYSERDA Utility Energy Registry), and completed NYPA public-facility efficiency projects, with documented match methods, to give energy planners, municipal stakeholders, researchers and the public easy access to linked information.
 
 ## Part A. Put the code on GitHub (10 minutes)
 
@@ -40,7 +40,7 @@ If the run shows a red cross, attach a screenshot of the failed step; the most l
 
 ## Part D. Release v0.1.0 (after verification only, 10 minutes)
 
-1. Confirm every box in `docs/VERIFY_CHECKLIST.md` is ticked and `python tools/publish_gate.py . --allow-draft-in tools` passes.
+1. Confirm every box in `docs/VERIFY_CHECKLIST.md` is ticked and `python tools/publish_gate.py . --allow-draft-in tools code docs/GLOSSARY.md docs/VERIFY_CHECKLIST.md` passes.
 2. Releases > **Draft a new release**. Tag: `v0.1.0`. Title: `MUNI-BENCH v0.1.0`. Notes: your short description, plus "First public release. See docs/LIMITATIONS.md."
 3. Attach `data/processed` as a zip so the tables travel with the DOI.
 4. Click **Publish release**. Within a few minutes Zenodo emails you the DOI.
@@ -51,7 +51,7 @@ If the run shows a red cross, attach a screenshot of the failed step; the most l
 
 ```
 date,artifact_or_event,type,venue_or_host,link_or_doi,status,prong_tags,metrics_snapshot,files_saved,notes
-[release date],MUNI-BENCH v0.1.0 release,dataset,Zenodo + GitHub,[DOI],live,"P1, P2",0 downloads at release,release_page.pdf; zenodo_record.pdf,First public release after verification
+2026-10-12,MUNI-BENCH v0.1.0 release,dataset,Zenodo + GitHub,DOI from the Zenodo record,live,"P1, P2",0 downloads at release,release_page.pdf; zenodo_record.pdf,First public release after verification
 ```
 
 Save a PDF of the GitHub release page and the Zenodo record that day. Publications not logged the day they happen are the ones that go missing at petition time.

@@ -1,22 +1,22 @@
 # Your verification checklist
 
-*Plain-language version: before MUNI-BENCH goes public under your name, you check it. Rows and numbers below come from build 2 (2026-10-12); the linkage fixes made after build 2 do not change any value listed here. Total time: about 2 hours, plus the review queue.*
+*Plain-language version: before MUNI-BENCH goes public under your name, you check it. Rows and numbers below were confirmed unchanged in build 4 (2026-10-12). Total time: about 1.5 hours.*
 
 ## Part 0: Rule on uncertain matches (done 2026-10-12)
 
 - [x] Open `docs/REVIEW_SUGGESTIONS.md`. It lists every uncertain match with Claude's suggestion and reason. For each, decide accept, reject, or assign (point it at the right government).
 - [x] Reply in chat with your decisions (for example "accept all suggestions except Putnam CSD: reject"). Claude writes `data/review_decisions.csv`. Or edit that file yourself: one row per decision, columns `source,record_id,decision,target`.
-- [ ] After the next build, `qa_report.txt` section 5 shows 0.
+- [x] After the next build, `qa_report.txt` section 5 shows 0. (Builds 3 and 4: 0.)
 
 ## Part 1: Make sure the results can be rebuilt (15 to 30 min)
 
 Pick one:
-- [ ] **Option A, GitHub.** Run the workflow again (PUBLISH_GUIDE Part B, steps 3 to 5). Section 6 of the new `qa_report.txt` should match the previous run exactly.
-- [ ] **Option B, ask Claude.** In a new chat, attach the project and the Comptroller zip and say: "Re-run this pipeline from scratch and give me the headline numbers." Compare with section 6 of `qa_report.txt`.
+- [x] **Option A, GitHub.** (Done: builds 3 and 4 on 2026-10-12 produced identical panels, every column of all 32,640 rows.) Run the workflow again (PUBLISH_GUIDE Part B, steps 3 to 5). Section 6 of the new `qa_report.txt` should match the previous run exactly.
+- [ ] (Not needed; Option A done.) **Option B, ask Claude.** In a new chat, attach the project and the Comptroller zip and say: "Re-run this pipeline from scratch and give me the headline numbers." Compare with section 6 of `qa_report.txt`.
 
 Then:
-- [ ] `qa_report.txt` section 1 shows 2,942 NYPA rows, or the difference is explained (NYPA may have added projects).
-- [ ] Every number in the README matches `paper/stats.json`.
+- [x] `qa_report.txt` section 1 shows 2,942 NYPA rows (build 4).
+- [x] Every number in the README matches `paper/stats.json` (build 4, checked by Claude 2026-10-12).
 
 ## Part 2: Check the sources (15 min)
 
@@ -24,38 +24,33 @@ Then:
 - [ ] Each dataset's "last updated" date matches or is newer than the README; note any newer edition.
 - [ ] data.ny.gov terms of use (link at the bottom of https://data.ny.gov) allow reuse with attribution. Note the wording in LICENSE if it asks for a specific credit line.
 
-## Part 3: Check rows by hand (45 to 60 min)
+## Part 3: Check rows by hand (done 2026-10-12)
 
-File: `data/processed/panel_2016_2025.csv`. Find each row by `municipal_code` and `year`.
+Full record: `MUNI-BENCH_hand_checks_log` in the Project. Finance figures are also in `data/hand_checks.csv`, which every build reconciles automatically.
 
-How to check finance: open https://www.openbooknewyork.com/, choose Local Government, search the name, open Financial Data, pick the year. Open Book may show revenues with or without "other sources" (such as borrowing); note which total matches.
+How to check finance: Open Book New York (https://www.osc.ny.gov/open-book-new-york), Local Government, the government's Revenues and Expenditures trend report. Use the Trend report (Revenues and Expenditures). Compare Open Book with `revenues_openbook` and `expenditures_openbook`, not with the gross totals.
 
-How to check energy: open the NYSERDA dataset, click **View Data**, filter `com_name`, `year`, and `data_field_display_name` = "Total Consumption (T)" with `data_class` = electricity, then add the monthly `value` column. 2016 to 2020: https://data.ny.gov/d/m3xm-q3dw. 2021 on: https://data.ny.gov/d/4txm-py4p.
+How to check energy: open the NYSERDA dataset, click **View Data**, filter `com_name` and `com_type` (for example Albany and City), `year`, `data_class` = electricity, and `data_field_display_name` = exactly "Total Consumption (T)", then add the monthly `value` column. An unfiltered export mixes neighbouring places and 14 measures. 2016 to 2020: https://data.ny.gov/d/m3xm-q3dw. 2021 on: https://data.ny.gov/d/4txm-py4p.
 
 How to check NYPA: open https://data.ny.gov/d/erjw-j2zx, click **View Data**, filter `customer`.
 
-**Places you know:**
-- [ ] City of Albany (010201000000), 2019: revenues_total = 210,651,694; expenditures_total = 203,716,579. Open Book. ___
-- [ ] City of Albany, 2019: elec_mwh = 1,189,663.7 over 12 months, about 41,418 accounts. NYSERDA 2016 to 2020. ___
-- [ ] Town of Colonie (010318700000), 2019: elec_mwh = 669,921.1, 12 months, about 29,539 accounts. ___
-- [ ] Town of Bethlehem (010307100000), 2019: revenues_total = 67,384,459; elec_mwh = 591,294.7. ___
-- [ ] Town of Red Hook (130370300000), 2025: revenues_total = 9,437,553; nypa_projects_cumulative = 1. NYPA, filter customer containing "Red Hook". ___
-- [ ] Village of Red Hook (130470304160), 2019: revenues_total = 5,175,993; expenditures_total = 2,845,500. Build 3 shows other sources of only about 65,000, so the 2019 jump is ordinary revenue. If you know why (for example a grant), note it here. ___
+**Energy (5 of 5 exact):**
+- [x] City of Albany 2019: 1,189,663.7 MWh, about 41,418 accounts. Exact.
+- [x] Town of Colonie 2019: 669,921.1 MWh, about 29,539 accounts. Exact.
+- [x] Town of Bethlehem 2019: 591,294.7 MWh, 14,540 accounts. Exact.
+- [x] City of Buffalo 2018, panel maximum: 2,786,511.7 MWh, about 120,218 accounts. Exact.
+- [x] Village of Alexandria Bay 2025 (2021-onward file): 12,787.5 MWh. Exact.
 
-**Extremes:**
-- [ ] City of Buffalo (140207000000), 2018: elec_mwh = 2,786,511.7, the largest in the panel, about 120,218 accounts. NYSERDA 2016 to 2020. ___
-- [ ] County of Nassau (280100000000), 2021: revenues_total = 6,339,278,000; expenditures_total = 5,859,773,000, the largest. Open Book. ___
-- [ ] City of Syracuse (310255000000), 2021: nypa_cost = 29,843,184, the largest single-year NYPA cost. NYPA, filter customer containing "Syracuse", year 2021. ___
+**NYPA (2 of 2 exact):**
+- [x] City of Syracuse 2021, panel maximum cost: nypa_cost = 29,843,184 (one project, ES-ESN-0725, LED street lighting). Exact.
+- [x] Town of Red Hook: nypa_projects_cumulative (since 1987) = 1 in 2025 (ES-ESN-0686, LED street lighting, 2021). Exact. Red Hook CSD's 2024 solar project (ES-ESN-0871) links to Red Hook Central School District, confirmed in `link_nypa.csv`.
 
-**Random rows (seed 20261211):**
-- [ ] Village of Alexandria Bay (220400900080), 2025: revenues_total = 5,733,492; elec_mwh = 12,787.5. ___
-- [ ] Marathon Central School District (110750800100), 2020: revenues_total = 18,783,353. ___
-- [ ] County of Wyoming (560100000000), 2022: revenues_total = 182,928,913. ___
-- [ ] Williamson Central School District (540791000200), 2023: revenues_total = 33,670,030. ___
-- [ ] Meadowmere Fire District (281138606000), 2018: revenues_total = 737,008. ___
+**Finance (12 government-years against Open Book):**
+- [x] Gross panel totals equal the Comptroller bulk file for all 12 government-years (24 of 24). Against Open Book, a four-part rule (transfers, TC, TE, refunding escrow) reconciles all 24 totals to the dollar; implemented as `revenues_openbook` and `expenditures_openbook` (decision V1r). Confirm the next build's `qa_report.txt` section 2 reports 24 of 24. Full record: docs/VERIFICATION_REPORT.md.
+- [x] Village of Red Hook 2019 surplus explained: a state grant of about 2.68 million to the water and sewer enterprise funds (account-level Open Book report). Not borrowing, not a pipeline error.
 
-**Linkage fixes to confirm (5 min):**
-- [ ] In `link_uer.csv`, Town of Attica links to code 3612103012 and Town of Arcade to 3612102418. In NYSERDA's file, code 3612102418 carries the name "Attica" on some rows; this is the neighbouring-name error the pipeline now handles. ___
+**Linkage fixes:**
+- [x] Town of Attica links to code 3612103012 and Town of Arcade to 3612102418 (`link_uer.csv`, build 4).
 
 ## Part 4: Your decisions (15 min)
 
@@ -69,10 +64,10 @@ How to check NYPA: open https://data.ny.gov/d/erjw-j2zx, click **View Data**, fi
 
 ## Part 5: Before it goes public (15 to 30 min)
 
-- [ ] The README "In plain terms" paragraph and the release description are in your own words. (Claude can do this with you line by line.)
+- [x] The README "In plain terms" paragraph and the release description are in your own words (2026-10-12, with corrections you approved; DECISIONS T1). (Claude can do this with you line by line.)
 - [ ] Name, ORCID, affiliation and email are correct in `AUTHORS.json` and `CITATION.cff`.
 - [ ] You have read `docs/LIMITATIONS.md` and agree with it.
-- [ ] Figures regenerated with `python code/04_figures.py --final`; README status line changed from DRAFT; `python tools/publish_gate.py . --allow-draft-in tools` passes.
+- [ ] Figures regenerated with `python code/04_figures.py --final`; README status line changed from DRAFT; `python tools/publish_gate.py . --allow-draft-in tools code docs/GLOSSARY.md docs/VERIFY_CHECKLIST.md` passes.
 - [ ] Evidence log row written on release day.
 
 **When every box is ticked, tell Claude in your own words that you have checked the package and approve publishing.**

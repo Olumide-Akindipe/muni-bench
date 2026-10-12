@@ -5,10 +5,13 @@
 ```
 PROJECT:        MUNI-BENCH. Archetype: open dataset (1), with a data descriptor
                 paper planned for a later release.
-QUESTION:       For each New York city, town, village, county and school district,
-                what did it spend and raise each year, how much electricity and gas
-                was used in its community, and which public-facility efficiency
-                projects did NYPA complete for it?
+QUESTION:       For every New York local government reporting to the State
+                Comptroller (counties, cities, towns, villages, school districts
+                and fire districts), what did it spend and raise each year; for
+                cities, towns and villages, how much electricity and gas was used
+                in its community; and which public-facility efficiency and
+                renewable projects did NYPA complete for it?
+                (Scope widened 2026-10-12, decision S1.)
 SOURCES:        1. NYS Office of the State Comptroller (OSC), Financial Data for Local
                    Governments, revenue/expenditure CSV, all classes, all years
                    (FY1995 to FY2025). Bulk export form:
@@ -22,14 +25,21 @@ SOURCES:        1. NYS Office of the State Comptroller (OSC), Financial Data for
                    Covers Con Edison and National Grid only, with year gaps.
                 4. NYPA Energy Efficiency Completed Projects: Beginning 1987,
                    data.ny.gov erjw-j2zx, 2,942 rows, completed 1987 to 2026,
-                   last updated 2026-07-27.
+                   last updated 2026-07-27. Includes renewables (e.g. solar PV).
 UNIT:           Entity-year. Entity = one OSC local government (municipal code).
-                Linked panel years: 2016 to 2025.
-MEASURES:       Finance: total revenues; total expenditures; expenditures in
-                  energy-relevant functions (street lighting, buildings, water, sewer).
+                Linked panel years: 2016 to 2025. Year = fiscal year in which the
+                government's fiscal period ends (Jan-Dec for cities, towns,
+                counties, fire districts; Jun-May villages; Jul-Jun school
+                districts). Energy years are calendar years.
+MEASURES:       Finance: gross total revenues and expenditures; totals excluding
+                  other sources and uses; Open Book totals (decision V1r);
+                  components: proceeds of debt, transfers in and out, fiduciary
+                  (TC, TE) revenue and expenditure, refunding escrow; expenditures
+                  in energy-relevant functions (street lighting, buildings, water,
+                  sewer).
                 Energy: annual community electricity use (MWh) and natural gas use
-                  (therms), summed across utilities; months reported; months withheld
-                  for privacy.
+                  (therms), summed across utilities; account counts; months
+                  reported, withheld and invalid; shared-record flag.
                 NYPA: projects completed in the year; total project cost; estimated
                   annual kWh, therm and CO2 savings; cumulative projects since 1987.
                 Link quality: how each entity was matched to UER and NYPA records
@@ -41,24 +51,22 @@ OUTPUTS:        data/processed/entities.csv          one row per OSC entity
                 data/processed/panel_2016_2025.csv   the linked entity-year panel
                 data/processed/zip_energy_annual.csv companion ZIP table
                 data/processed/qa_report.txt, paper/stats.json, paper/figures/*.png
+                docs/VERIFICATION_REPORT.md          author hand checks
 VENUES:         GitHub (Olumide-Akindipe/muni-bench), Zenodo DOI (v0.1.0, Dec 2026).
                 Later: data descriptor (e.g. Data in Brief or Scientific Data).
-VERIFY POINTS:  V1 OSC file column names and the revenue/expenditure section field.
-                V2 Which OSC account codes count as "energy-relevant".
-                V3 Whether a UER town total includes the villages inside the town.
-                V4 Every fuzzy match in review_queue.csv.
-                V5 Fiscal-year versus calendar-year alignment (see LIMITATIONS).
+VERIFY POINTS:  V1 to V8, see docs/VERIFY_CHECKLIST.md and the decision log.
 LICENSE:        Code MIT. Derived data and documents CC BY 4.0, attributing OSC,
                 NYSERDA, NYPA and data.ny.gov.
 DECISIONS:      Community-level UER replaces ZIP-level UER as the panel's energy
-                layer (author confirmed 2026-10-11). Counties get finance and NYPA only
-                in v0.1; county energy is a v0.5 item.
+                layer (author confirmed 2026-10-11). Counties, school districts
+                and fire districts get finance and NYPA only in v0.1; county
+                energy is a v0.5 item. All OSC classes kept (S1, 2026-10-12).
 ```
 
 ## What each line means for you
 
-- **Unit: entity-year.** Every row of the final table is one local government in one year, for example "Town of Colonie, 2019".
+- **Unit: entity-year.** Every row of the final table is one local government in one year, for example "Town of Colonie, 2019". A village's "2019" runs June 2018 to May 2019; a school district's runs July 2018 to June 2019.
 - **Sources.** Four free public sources. Three download automatically. The Comptroller file is one zip you download by hand from a form.
-- **Measures.** Three groups of columns: money, energy, and NYPA projects. A fourth group says how confident each link is.
-- **Outputs.** Six tables, a quality report, a stats file every number in the text comes from, and two figures.
-- **Verify points.** Five decisions only you should make. They are written as plain questions in `VERIFY_CHECKLIST.md`.
+- **Measures.** Three groups of columns: money, energy, and NYPA projects. A fourth group says how confident each link is. The "Open Book" money columns match the Comptroller's website exactly.
+- **Outputs.** Six tables, a quality report, a stats file every number in the text comes from, two figures, and the verification report from your hand checks.
+- **Verify points.** Decisions only you should make, recorded in the decision log.

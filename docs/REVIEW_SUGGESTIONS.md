@@ -1,6 +1,8 @@
-# Review suggestions, build 2
+# Review suggestions, build 2 (decided 2026-10-12)
 
-*Plain-language header: the NYPA projects the computer could not match with certainty. Each row shows NYPA's customer name, the proposed match, Claude's suggestion and the reason. You decide. Reply in chat, for example "accept all suggestions" or "accept all except row 9: reject". The decisions go into `data/review_decisions.csv` and are applied on the next build.*
+*15 rows covering 19 NYPA project codes; rows 1, 2, 7 and 11 each cover two projects. All suggestions accepted by the maintainer.*
+
+*Plain-language header: the NYPA projects the computer could not match with certainty. Each row shows NYPA's customer name, the proposed match, an AI-assisted suggestion and the reason. The maintainer decided each row; the decisions are in `data/review_decisions.csv`.*
 
 Decisions: **accept** (proposed match is right), **reject** (leave unlinked), **assign** (link to the government named in the Target column).
 
