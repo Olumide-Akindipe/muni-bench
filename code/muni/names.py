@@ -14,7 +14,7 @@ _ABBREV = [
     (r"\bpt\.?\b", "point"), (r"\bhts\b", "heights"), (r"\be\.?\b", "east"),
     (r"\bw\.?\b", "west"), (r"\bn\.?\b", "north"), (r"\bs\.?\b", "south"),
 ]
-_SCHOOL = [r"\bcentral school district\b", r"\bunion free school district\b",
+_SCHOOL = [r"\bcentral high school district\b", r"\bcentral school district\b", r"\bunion free school district\b",
            r"\bcity school district\b", r"\bschool district\b", r"\bc\.?s\.?d\.?\b",
            r"\bu\.?f\.?s\.?d\.?\b", r"\bsd\b", r"\bcsd\b", r"\bufsd\b",
            r"\bpublic schools?\b", r"\bschools?\b", r"\bboard of education\b"]

@@ -47,6 +47,8 @@ For each: open the file, find the row, read the value, then confirm at the sourc
 - [ ] **V1. Comptroller columns.** The pipeline reads revenue and expenditure from the section field [name found in the real file]. Totals for Albany 2019 should be close to Open Book's figure. Agree? ___
 - [ ] **V2. Energy-relevant spending.** Counted: street lighting 5182, buildings 1620, water 8310 to 8350, sewer 8110 to 8130. Option A: keep as is (recommended). Option B: drop water and sewer, which carry much non-energy cost. Your choice: ___
 - [ ] **V3. Towns and villages.** Does a UER town total include its villages? [Evidence from the real build: town versus village totals for Red Hook and two others.] Option A: treat towns as including villages and say so. Option B: report both as-is and warn users not to add them. Recommended: decide from the evidence. Your choice: ___
+- [ ] **V6. Community colleges.** NYPA projects for county-sponsored community colleges (for example Suffolk, Nassau, Westchester) are currently out of scope. Option A: keep out (recommended; colleges file separately). Option B: credit them to the sponsoring county. Your choice: ___
+- [ ] **V7. Governments with no NYSERDA record.** [list from qa_report.txt section 3]. Option A: leave without energy values and name the likely cause in LIMITATIONS (recommended). Option B: research each before release. Your choice: ___
 - [ ] **V5. Year alignment.** Keep fiscal-year finance beside calendar-year energy, documented in LIMITATIONS 2 (recommended for v0.1), or delay release to build fiscal-period energy. Your choice: ___
 
 ## Part 5: Before it goes public (15 to 30 min)

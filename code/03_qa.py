@@ -56,22 +56,33 @@ def main() -> None:
         flags.append("Duplicate municipal codes in entities.csv")
 
     w("\n3. OSC -> UER COMMUNITY LINK (cities, towns, villages)")
-    acc = luer[luer.method.str.contains("exact|fuzzy_auto|author_accept")]
-    S["uer_link_candidates"] = len(luer)
+    acc = luer[luer.accepted.astype(str) == "True"]
+    active = luer[luer.method != "not_in_panel_years"]
+    S["uer_link_candidates"] = len(active)
+    S["uer_dissolved_before_panel"] = int((luer.method == "not_in_panel_years").sum())
     S["uer_link_accepted"] = len(acc)
-    S["uer_link_rate_pct"] = round(100 * len(acc) / max(len(luer), 1), 1)
+    S["uer_link_rate_pct"] = round(100 * len(acc) / max(len(active), 1), 1)
     for k, v in luer.method.value_counts().items():
         w(f"   {k:28s} {v:>6,}")
-    w(f"   accepted: {len(acc):,} of {len(luer):,} ({S['uer_link_rate_pct']}%)")
-    dup = acc[acc.uer_fips.duplicated(keep=False)]
-    S["uer_fips_linked_twice"] = int(dup.uer_fips.nunique())
+    w(f"   accepted: {len(acc):,} of {len(active):,} active in 2016-2025 "
+      f"({S['uer_link_rate_pct']}%); {S['uer_dissolved_before_panel']} dissolved before 2016")
+    if "uer_alt_fips" in luer:
+        S["uer_links_with_alternate_codes"] = int(luer.uer_alt_fips.notna().sum())
+        w(f"   links where NYSERDA used more than one code: {S['uer_links_with_alternate_codes']}")
+    dup = acc[acc.uer_fips.duplicated(keep=False)].merge(ent, on="municipal_code")
+    S["uer_shared_records"] = int(dup.uer_fips.nunique())
     if len(dup):
-        flags.append(f"{dup.uer_fips.nunique()} UER communities linked to more than one entity")
-    unl = luer[luer.method == "unmatched"].merge(ent, on="municipal_code").head(15)
+        w(f"   shared records (one NYSERDA record, two governments; flagged "
+          f"uer_shared_record): {dup.uer_fips.nunique()}")
+        for r in dup.itertuples():
+            w(f"     {r.uer_fips}  {r.entity_name}")
+    unl = luer[luer.method == "unmatched"].merge(ent, on="municipal_code")
     if len(unl):
-        w("   first unmatched (up to 15):")
+        w(f"   unmatched, all {len(unl)} (likely causes: own municipal electric utility, "
+          f"or a town and village reported once):")
         for r in unl.itertuples():
-            w(f"     {r.municipal_code}  {r.entity_name} ({r.class_n}, {r.county})")
+            w(f"     {r.municipal_code}  {r.entity_name} ({r.class_n}, {r.county}, "
+              f"last FY {r.last_fy})")
 
     w("\n4. NYPA PROJECT -> OSC ENTITY LINK")
     S["nypa_projects_total"] = len(nypa)
@@ -80,7 +91,7 @@ def main() -> None:
     S["nypa_projects_panel_years"] = int(yc.between(C.PANEL_START, C.PANEL_END).sum())
     for k, v in lnypa.method.value_counts().items():
         S[f"nypa_method_{k}"] = int(v); w(f"   {k:28s} {v:>6,}")
-    nacc = lnypa[lnypa.method.str.contains("exact|fuzzy_auto|author_accept")]
+    nacc = lnypa[lnypa.accepted.astype(str) == "True"]
     inscope = lnypa[~lnypa.method.str.startswith("not_in_scope")]
     S["nypa_linked"] = len(nacc)
     S["nypa_in_scope"] = len(inscope)
@@ -100,14 +111,17 @@ def main() -> None:
         flags.append("Duplicate entity-year rows in panel")
     w(f"   rows: {len(panel):,}  entities: {S['panel_entities']:,}  years: "
       f"{C.PANEL_START}-{C.PANEL_END}")
-    w("   year  with_finance  with_full_year_electricity  nypa_projects")
+    w("   year  with_finance  with_full_year_electricity  mean_elec_months  nypa_projects")
     S["by_year"] = {}
     for y, g in panel.groupby("year"):
         fin = int(g.has_finance.sum())
         el = int((g.get("elec_months_reported", pd.Series(dtype=float)) == 12).sum())
         nyp = int(g.nypa_projects.sum())
-        S["by_year"][int(y)] = {"with_finance": fin, "full_year_elec": el, "nypa_projects": nyp}
-        w(f"   {y}  {fin:>12,}  {el:>26,}  {nyp:>13,}")
+        mm = g.get("elec_months_reported", pd.Series(dtype=float)).dropna()
+        mm = round(float(mm.mean()), 1) if len(mm) else None
+        S["by_year"][int(y)] = {"with_finance": fin, "full_year_elec": el,
+                                "mean_elec_months": mm, "nypa_projects": nyp}
+        w(f"   {y}  {fin:>12,}  {el:>26,}  {str(mm):>16}  {nyp:>13,}")
 
     w("\n7. RANGE CHECKS")
     for c in ["revenues_total", "expenditures_total", "elec_mwh", "gas_therms", "nypa_cost"]:
@@ -121,6 +135,12 @@ def main() -> None:
     withheld = int(panel.get("elec_months_withheld", pd.Series(dtype=float)).fillna(0).sum())
     S["elec_entity_months_withheld"] = withheld
     w(f"   electricity entity-months withheld for privacy: {withheld:,}")
+    for k in ("elec", "gas"):
+        c = f"{k}_months_invalid"
+        if c in panel:
+            n = int(panel[c].fillna(0).sum())
+            S[f"{k}_entity_months_invalid"] = n
+            w(f"   {k} entity-months with a negative value (excluded): {n:,}")
 
     w("\n8. SPOT CHECKS (check each against the source website)")
     p = panel.merge(ent[["municipal_code", "entity_name"]], on="municipal_code",

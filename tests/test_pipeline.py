@@ -76,3 +76,68 @@ def test_review_decision_applied(tmp_path):
         else:
             dec.write_text(saved)
         run("code/02_build.py")
+
+
+# ---- Edge cases found in the first real build (2026-10-12) ----
+def _panel():
+    return pd.read_csv(P / "panel_2016_2025.csv", dtype={"municipal_code": str, "uer_fips": str})
+
+
+def test_truncated_county_and_spacing():
+    l = pd.read_csv(P / "link_uer.csv", dtype=str)
+    assert l.set_index("municipal_code").loc["080352100000", "method"] == "exact"
+
+
+def test_dissolved_entity_not_counted_as_unmatched():
+    l = pd.read_csv(P / "link_uer.csv", dtype=str)
+    assert l.set_index("municipal_code").loc["040413302710", "method"] == "not_in_panel_years"
+
+
+def test_shared_record_flagged():
+    p = _panel()
+    h = p[p.entity_name.str.contains("Harrison")]
+    assert h.uer_shared_record.all() and h.uer_fips.nunique() == 1
+
+
+def test_negative_month_invalid():
+    p = _panel()
+    b = p[(p.entity_name == "BETHLEHEM") & (p.year == 2017)].iloc[0]
+    assert b.elec_months_invalid == 1 and b.elec_months_reported == 11 and b.elec_mwh > 0
+
+
+def test_two_pieces_same_utility_summed():
+    raw = pd.read_csv(ROOT / "data/raw/uer_community_2016_2020.csv")
+    r = raw[(raw.com_name == "Red Hook") & (raw.com_type == "Village") & (raw.year == 2019)
+            & (raw.data_class == "electricity")]
+    assert (r.month == 5).sum() == 2
+    p = _panel()
+    got = p[(p.municipal_code == "140302000000") & (p.year == 2019)].elec_mwh.iloc[0]
+    assert got == pytest.approx(r.value.sum())
+
+
+def test_accounts_carried():
+    p = _panel()
+    assert p.elec_accounts_avg.notna().sum() > 0
+
+
+def test_nypa_new_tiers():
+    l = pd.read_csv(P / "link_nypa.csv", dtype=str).drop_duplicates("customer").set_index("customer")
+    assert l.loc["NYCHA - NY City Housing Authority", "method"] == "not_in_scope_nyc"
+    assert l.loc["SUFFOLK COUNTY COMMUNITY COLLEGE", "method"] == "not_in_scope_other"
+    assert l.loc["PERTH, TOWN OF", "method"] == "other_county_review"
+    assert l.loc["ALLEGANY CSD", "method"] == "partial_review"
+    assert l.loc["PLAINVIEW-OLD BETHPAGE, TOWN OF", "method"] == "class_mismatch_review"
+    assert l.loc["RYE NECK USFD", "method"] == "exact"
+    rq = pd.read_csv(P / "review_queue.csv")
+    assert {"other_county_review", "partial_review", "class_mismatch_review"} <= set(rq.method)
+    # review-tier matches never enter the panel until the author accepts them
+    acc = pd.read_csv(P / "link_nypa.csv")
+    assert not acc[acc.method.str.endswith("_review")].accepted.any()
+
+
+def test_class_read_before_suffix_removed():
+    from importlib.util import spec_from_file_location, module_from_spec
+    spec = spec_from_file_location("b", ROOT / "code" / "02_build.py")
+    b = module_from_spec(spec); spec.loader.exec_module(b)
+    assert infer_class(b._clean_customer("NORTHPORT - EAST NORTHPORT SCHOOL", False)) == \
+        "school district"

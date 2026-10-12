@@ -30,13 +30,28 @@ GOVS = [
     ("010600000000", "BETHLEHEM CENTRAL SCHOOL DISTRICT", "School District", "Albany",
      None, None, None),
     ("990101000000", "NOWHERE", "Town", "Hamilton", None, None, None),
+    # Edge cases found in the first real build:
+    ("080352100000", "Town of Mc Donough", "Town", "Chenango", "McDonough", "Town", "3601744000"),
+    ("550337700000", "Town of Harrison", "Town", "Westchester", "Harrison", "Town", "3632402"),
+    ("550437702165", "Village of Harrison", "Village", "Westchester", "Harrison", "Village",
+     "3632402"),
+    ("040413302710", "Village of Limestone", "Village", "Cattaraugus", None, None, None),
+    ("550673400100", "Rye Neck Union Free School District", "School District", "Westchester",
+     None, None, None),
+    ("170365400000", "Town of Perth", "Town", "Fulton", None, None, None),
+    ("040701100100", "Allegany-Limestone Central School District", "School District",
+     "Cattaraugus", None, None, None),
+    ("280663400400", "Plainview-Old Bethpage Central School District", "School District",
+     "Nassau", None, None, None),
 ]
+UER_COUNTY = {"McDonough": "Chenang"}      # NYSERDA truncates county names
+LAST_FY = {"040413302710": 2011}          # dissolved before the panel
 
 
 def osc():
     rows = []
     for code, name, cls, county, *_ in GOVS:
-        for y in range(2014, 2026):
+        for y in range(2010, LAST_FY.get(code, 2025) + 1):
             base = rng.uniform(5e6, 9e7)
             for sec, acct, amt in [("REVENUE", "A1001", base), ("REVENUE", "A3005", base * .2),
                                    ("EXPENDITURE", "A1620.4", base * .05),
@@ -64,8 +79,18 @@ def uer_community(years):
                         val = round(rng.uniform(500, 50000), 2)
                         if uname == "St. Johnsville" and dc == "natural_gas" and m in (1, 2):
                             val = -999
+                        if uname == "Bethlehem" and dc == "electricity" and y == 2017 and m == 3:
+                            val = -500.0          # negative correction row
+                        if uname == "Red Hook" and utype == "Village" and dc == "electricity" \
+                                and y == 2019 and m == 5:
+                            rows.append(dict(rows[-1], year=y, month=m, com_name=uname,
+                                             com_type=utype, county_name=county,
+                                             full_fips=fips + ".00", data_class=dc,
+                                             data_field=field, unit=unit, value=10.0,
+                                             utility_display_name=u))  # second piece
                         rows.append({"year": y, "month": m, "com_name": uname,
-                                     "com_type": utype, "county_name": county,
+                                     "com_type": utype,
+                                     "county_name": UER_COUNTY.get(uname, county),
                                      "full_fips": fips + ".00", "data_class": dc,
                                      "data_field": field,
                                      "data_field_display_name": "Total Consumption (T)",
@@ -98,9 +123,14 @@ def nypa():
              ("City of New York", "New York", "DCAS"),
              ("NYS Office of General Services", "Albany", "OGS"),
              ("Town of Red Hook", "Dutchess", None), ("Village of Red Hook", "Dutchess", None),
-             ("Town of Guilderlnd", "Albany", None), ("Town of Nowhereville", "Albany", None)]
+             ("Town of Guilderlnd", "Albany", None), ("Town of Nowhereville", "Albany", None),
+             ("NYCHA - NY City Housing Authority", "New York", None),
+             ("SUFFOLK COUNTY COMMUNITY COLLEGE", "Suffolk", None),
+             ("PERTH, TOWN OF", "Montgomery", None), ("ALLEGANY CSD", "Cattaraugus", None),
+             ("PLAINVIEW-OLD BETHPAGE, TOWN OF", "Nassau", None),
+             ("RYE NECK USFD", "Westchester", None)]
     rows = []
-    for i in range(60):
+    for i in range(68):
         c, county, ag = custs[i % len(custs)]
         y = 1987 + (i * 13) % 40
         rows.append({"year_completed": y, "date_completed": f"{y}-06-30T00:00:00.000",
