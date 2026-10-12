@@ -18,6 +18,9 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.23314418"
     description: "Version 0.1.0 (code archive)"
+  - type: doi
+    value: "10.5281/zenodo.23314738"
+    description: "Version 0.1.1 (data and code archive)"
 repository-code: "https://github.com/Olumide-Akindipe/muni-bench"
 keywords:
   - municipal finance
