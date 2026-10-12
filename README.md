@@ -1,6 +1,6 @@
 # MUNI-BENCH
 
-**Status:** v0.1.1, released 2026-10-12, verified by the maintainer | **DOI:** [10.5281/zenodo.23314416](https://doi.org/10.5281/zenodo.23314416) | **Maintainer:** Stephen Olumide Akindipe, [ORCID 0000-0002-1846-9662](https://orcid.org/0000-0002-1846-9662) | **License:** code MIT, data CC BY 4.0
+**Status:** v0.1.1, released 2026-10-12, verified by the maintainer | **DOI:** [10.5281/zenodo.23314416](https://doi.org/10.5281/zenodo.23314416) | **Maintainer:** Stephen Olumide Akindipe, [ORCID 0000-0002-1846-9662](https://orcid.org/0000-0002-1846-9662) | **License:** code [MIT](LICENSE), data and documents [CC BY 4.0](LICENSE-DATA.md)
 
 **In plain terms:** The State of New York publishes the finances of each local government, how much energy is consumed in each community, and which public buildings and assets received NYPA energy efficiency projects. This information is stored in separate databases that use different names, labels and codes, so it is rarely brought together. This disconnect limits the ability to compare energy investments and policy across local governments. MUNI-BENCH joins this information into a unified table, one row per government per year from 2016 to 2025, and records exactly how each link was made. This allows planners, municipal officers, decision-makers and researchers to compare governments without rebuilding the links themselves.
 
@@ -71,6 +71,10 @@ Read [docs/LIMITATIONS.md](docs/LIMITATIONS.md) before using or citing anything 
 Cite all versions with the concept DOI [10.5281/zenodo.23314416](https://doi.org/10.5281/zenodo.23314416); it always resolves to the latest version. Version DOIs: v0.1.0 [10.5281/zenodo.23314418](https://doi.org/10.5281/zenodo.23314418) (code archive only); v0.1.1 [10.5281/zenodo.23314738](https://doi.org/10.5281/zenodo.23314738) (data and code; values identical to the v0.1.0 build).
 
 Suggested citation: Akindipe, S. O. (2026). *MUNI-BENCH: Entity-Level Linkage of New York Local Government Finance, Community Energy Use, and Public-Facility Efficiency Projects* (Version 0.1.1) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.23314416
+
+## AI assistance
+
+Pipeline code and analysis were developed with AI assistance (Claude, Anthropic). All decisions, hand checks and verification were made by the maintainer; see `docs/DECISIONS.md` and `docs/VERIFICATION_REPORT.md`.
 
 ## Related
 

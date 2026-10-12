@@ -19,11 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-Data and documents: the derived tables in data/processed/ and the documents in
-docs/ and paper/ are licensed under Creative Commons Attribution 4.0
-International (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/.
-They are derived from public data published by the NYS Office of the State
-Comptroller, NYSERDA, and the New York Power Authority via data.ny.gov; credit
-those sources when reusing them.
