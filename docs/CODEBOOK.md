@@ -1,6 +1,6 @@
 # Codebook
 
-*Plain-language header: every column in every output table, what it means, where it came from, and how it was computed. Open it when you want to know what a column is. DRAFT until the first real build confirms the source fields.*
+*Plain-language header: every column in every output table, what it means, where it came from, and how it was computed. Open it when you want to know what a column is.*
 
 ## panel_2016_2025.csv (one row per OSC entity per year, 2016 to 2025)
 
@@ -11,9 +11,11 @@
 | class | city, town, village, county, school district, fire district | OSC class label, normalized |
 | county | County as OSC reports it | OSC |
 | year | Fiscal year label in OSC data; calendar year for energy and NYPA columns | See LIMITATIONS 2 |
-| revenues_total | Sum of all revenue lines, dollars | OSC, sum of AMOUNT where section is revenue [VERIFY V1] |
-| expenditures_total | Sum of all expenditure lines, dollars | OSC, sum of AMOUNT where section is expenditure |
-| exp_street_lighting | Expenditure in function 5182, dollars | OSC account code, first four digits [VERIFY V2] |
+| revenues_total | Sum of all revenue lines including other sources, dollars. Matches the Comptroller's full total | OSC, sum of AMOUNT where the section is revenue or other sources |
+| revenues_excl_other_sources | Revenues without other sources (borrowing proceeds, interfund transfers in). Use this to compare governments | as above, excluding the "other sources" section label or account codes 5000 to 5999 |
+| expenditures_total | Sum of all expenditure lines including other uses, dollars | OSC, sum of AMOUNT where the section is expenditure or other uses |
+| expenditures_excl_other_uses | Expenditures without other uses (interfund transfers out) | as above, excluding the "other uses" section label or account codes 9900 to 9999 |
+| exp_street_lighting | Expenditure in function 5182, dollars | OSC account code, first four digits |
 | exp_buildings | Expenditure in function 1620, dollars | as above |
 | exp_water | Expenditure in functions 8310 to 8350, dollars | as above |
 | exp_sewer | Expenditure in functions 8110 to 8130, dollars | as above |
@@ -70,3 +72,6 @@ One row per ZIP code, energy type and calendar year: zip_code, data_class, year,
 
 ## uer_communities.csv
 One row per NYSERDA community code and class: fips, com_type_n, com_name (most common spelling), name_variants (every spelling seen), counties (as NYSERDA wrote them), first_year, last_year, n_rows.
+
+## osc_sections.csv
+Every Comptroller section label found, how the pipeline classed it (revenue or expenditure), its row count, and how many rows count as other sources or uses. Lets anyone confirm decision V1 against the source file.

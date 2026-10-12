@@ -172,3 +172,11 @@ def test_assign_decision():
         else:
             dec.write_text(saved)
         run("code/02_build.py")
+
+
+def test_other_sources_and_uses_reported_both_ways():
+    p = _panel()
+    r = p[p.has_finance].iloc[0]
+    assert r.revenues_excl_other_sources < r.revenues_total
+    assert r.revenues_total / r.revenues_excl_other_sources == pytest.approx(1.7 / 1.2, rel=1e-6)
+    assert r.expenditures_excl_other_uses < r.expenditures_total

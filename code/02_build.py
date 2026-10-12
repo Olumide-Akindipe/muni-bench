@@ -24,7 +24,7 @@ from muni.names import county_key, infer_class, name_key, normalize_class  # noq
 YEARS = list(range(C.PANEL_START, C.PANEL_END + 1))
 
 # ---------------------------------------------------------------- OSC finance
-OSC_ALIASES = {  # [VERIFY V1] canonical name: accepted source spellings
+OSC_ALIASES = {  # canonical name: accepted source spellings
     "municipal_code": ["MUNICIPAL_CODE", "MUNI_CODE", "MUNICIPALCODE"],
     "entity_name": ["ENTITY_NAME", "MUNICIPALITY_NAME", "NAME"],
     "class": ["CLASS_DESCRIPTION", "CLASS", "MUNICIPAL_CLASS", "CLASS_OF_GOVERNMENT"],
@@ -68,10 +68,21 @@ def load_osc() -> pd.DataFrame:
     osc["year"] = pd.to_numeric(osc["year"], errors="coerce").astype("Int64")
     osc["class_n"] = osc["class"].map(normalize_class)
     sec = osc["section"].str.upper().fillna("")
-    osc["kind"] = (sec.str.contains("REV").map({True: "revenue"})
-                   .fillna(sec.str.contains("EXP").map({True: "expenditure"})))
     osc["function"] = osc["account_code"].fillna("").map(
         lambda s: (re.sub(r"\D", "", s) + "0000")[:4])
+    # Decision V1 (author, 2026-10-12): report totals two ways. "Other sources"
+    # (borrowing proceeds, interfund transfers in) and "other uses" (transfers out) are
+    # identified by the section label when the file has one, or by the NYS Uniform
+    # System of Accounts code ranges: revenue codes 5000-5999, expenditure codes 9900-9999.
+    is_src = sec.str.contains("SOURCE")
+    is_use = sec.str.contains(r"\bUSES?\b")
+    rev = sec.str.contains("REV") | is_src
+    exp = sec.str.contains("EXP") | is_use
+    osc["kind"] = pd.Series(pd.NA, index=osc.index, dtype="object")
+    osc.loc[rev, "kind"] = "revenue"
+    osc.loc[exp & ~rev, "kind"] = "expenditure"
+    osc["other"] = ((osc.kind == "revenue") & (is_src | osc.function.str.startswith("5"))) | \
+                   ((osc.kind == "expenditure") & (is_use | osc.function.str.startswith("99")))
     return osc
 
 
@@ -89,10 +100,13 @@ def build_entities(osc: pd.DataFrame) -> pd.DataFrame:
 def build_finance(osc: pd.DataFrame) -> pd.DataFrame:
     d = osc[osc["year"].between(C.PANEL_START, C.PANEL_END)]
     g = d.groupby(["municipal_code", "year"])
+    k = ["municipal_code", "year"]
+    rv, ex = d[d.kind == "revenue"], d[d.kind == "expenditure"]
     fin = pd.DataFrame({
-        "revenues_total": d[d.kind == "revenue"].groupby(["municipal_code", "year"])["amount"].sum(),
-        "expenditures_total": d[d.kind == "expenditure"].groupby(
-            ["municipal_code", "year"])["amount"].sum(),
+        "revenues_total": rv.groupby(k)["amount"].sum(),
+        "revenues_excl_other_sources": rv[~rv.other].groupby(k)["amount"].sum(),
+        "expenditures_total": ex.groupby(k)["amount"].sum(),
+        "expenditures_excl_other_uses": ex[~ex.other].groupby(k)["amount"].sum(),
     })
     fin = fin.reindex(g.size().index)
     exp = d[d.kind == "expenditure"]
@@ -350,6 +364,10 @@ def main() -> None:
     osc = load_osc()
     ent = build_entities(osc)
     fin = build_finance(osc)
+    (osc.assign(other_i=osc.other.astype(int))
+        .groupby(["section", "kind"], dropna=False)
+        .agg(rows=("amount", "size"), other_rows=("other_i", "sum"))
+        .reset_index().to_csv(C.PROCESSED / "osc_sections.csv", index=False))
 
     u = load_uer(C.UER_COMMUNITY)
     comm, energy = community_annual(u)

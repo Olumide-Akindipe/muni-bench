@@ -66,7 +66,9 @@ def osc():
                                    ("EXPENDITURE", "A1620.4", base * .05),
                                    ("EXPENDITURE", "A5182.4", base * .01),
                                    ("EXPENDITURE", "F8340.4", base * .03),
-                                   ("EXPENDITURE", "A1010.1", base * .8)]:
+                                   ("EXPENDITURE", "A1010.1", base * .8),
+                                   ("REVENUE", "A5710", base * .5),       # bond proceeds
+                                   ("EXPENDITURE", "A9901.9", base * .02)]:  # transfer out
                 rows.append({"CALENDAR_YEAR": y, "MUNICIPAL_CODE": code, "ENTITY_NAME": name,
                              "CLASS_DESCRIPTION": cls, "COUNTY": county,
                              "ACCOUNT_CODE": acct, "ACCOUNT_CODE_SECTION": sec,

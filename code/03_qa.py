@@ -55,6 +55,17 @@ def main() -> None:
     if ent.municipal_code.duplicated().any():
         flags.append("Duplicate municipal codes in entities.csv")
 
+    sec_file = C.PROCESSED / "osc_sections.csv"
+    if sec_file.exists():
+        w("   Comptroller section labels found (decision V1):")
+        for r in pd.read_csv(sec_file).itertuples():
+            w(f"     {str(r.section):40s} {r.kind!s:12s} rows={r.rows:>10,}  other={r.other_rows:>9,}")
+    if "revenues_excl_other_sources" in panel:
+        rt, rx = panel.revenues_total.sum(), panel.revenues_excl_other_sources.sum()
+        S["other_sources_share_pct"] = round(100 * (rt - rx) / rt, 1) if rt else None
+        w(f"   share of 2016-2025 revenue lines that are other sources: "
+          f"{S['other_sources_share_pct']}%")
+
     w("\n3. OSC -> UER COMMUNITY LINK (cities, towns, villages)")
     acc = luer[luer.accepted.astype(str) == "True"]
     active = luer[luer.method != "not_in_panel_years"]

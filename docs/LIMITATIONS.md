@@ -18,7 +18,7 @@
 
 8. **Utility coverage differs by protocol.** The 2016 to 2020 community file has no PSEG Long Island rows; Long Island communities have energy values from 2021 only. Villages served by their own municipal electric utility (for example Lake Placid, Tupper Lake, Greenport, Bath) appear to have no NYSERDA record, so they carry no energy values. Community choice aggregation may affect some values.
 
-9. **Towns and villages may overlap.** Villages lie inside towns. Whether a UER town value includes the villages within it is not yet confirmed [VERIFY V3]. Do not add town and village values together until this is settled.
+9. **Towns and villages may overlap.** Villages lie inside towns. Whether a NYSERDA town value includes the villages within it is not confirmed. Account counts suggest some town values cover only the area outside villages (for example, 2019: Town of Red Hook about 2,457 electric accounts, Village of Red Hook about 1,027, Village of Tivoli about 735), but this has not been tested statewide. Do not add town and village values together.
 
 10. **Shared records.** Where a town and village share one boundary (for example Harrison and Woodbury), NYSERDA reports one record, linked to both governments and flagged `uer_shared_record`. Count it once.
 
@@ -30,6 +30,8 @@
 
 14. **Counties, school districts and fire districts have no energy values in v0.1.** They carry finance and NYPA columns only.
 
-15. **Energy-relevant expenditure is an approximation.** The function codes chosen (street lighting, buildings, water, sewer) contain non-energy spending. They indicate where energy costs sit, not energy cost itself [VERIFY V2].
+15. **Energy-relevant expenditure is an approximation.** The function codes chosen (street lighting, buildings, water, sewer) contain non-energy spending. They indicate where energy costs sit, not energy cost itself.
 
-16. **Sources change.** All four sources are revised. Each release records the exact files used (PROVENANCE.txt) and is reproducible only against those files.
+16. **Revenue and spending totals include internal flows.** `revenues_total` and `expenditures_total` include borrowing proceeds and transfers between a government's own funds. Use `revenues_excl_other_sources` and `expenditures_excl_other_uses` to compare governments.
+
+17. **Sources change.** All four sources are revised. Each release records the exact files used (PROVENANCE.txt) and is reproducible only against those files.

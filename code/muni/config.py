@@ -38,8 +38,8 @@ OSC_FORM_URL = ("https://wwe1.osc.state.ny.us/localgov/findata/"
                 "financial-data-for-local-governments.cfm")
 OSC_DROP = RAW / "osc"   # the author saves the Comptroller zip or CSVs here
 
-# [VERIFY V2] OSC function codes treated as energy-relevant. Codes follow the
-# NYS Uniform System of Accounts. Confirm against the OSC chart of accounts.
+# OSC function codes treated as energy-relevant (decision V2, author, 2026-10-12).
+# Codes follow the NYS Uniform System of Accounts.
 ENERGY_FUNCTIONS = {
     "street_lighting": ["5182"],
     "buildings": ["1620"],
