@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use MUNI-BENCH, please cite it as below."
 type: dataset
 title: "MUNI-BENCH: Entity-Level Linkage of New York Local Government Finance, Community Energy Use, and Public-Facility Efficiency Projects"
-version: "0.1.0"
+version: "0.1.1"
 date-released: "2026-10-12"
 authors:
   - family-names: "Akindipe"
@@ -10,6 +10,14 @@ authors:
     orcid: "https://orcid.org/0000-0002-1846-9662"
     affiliation: "Independent Researcher, Albany, NY, USA"
 license: CC-BY-4.0
+doi: "10.5281/zenodo.23314416"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23314416"
+    description: "Concept DOI, all versions"
+  - type: doi
+    value: "10.5281/zenodo.23314418"
+    description: "Version 0.1.0 (code archive)"
 repository-code: "https://github.com/Olumide-Akindipe/muni-bench"
 keywords:
   - municipal finance

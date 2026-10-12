@@ -1,0 +1,1509 @@
+fips,com_type_n,com_name,name_variants,counties,first_year,last_year,n_rows
+3600101000,city,Albany,Albany,Albany,2016,2026,186
+3600106211,town,Berne,Berne,Albany,2016,2026,102
+3600106354,town,Bethlehem,Bethlehem,Albany,2016,2026,186
+3600116694,town,Coeymans,COEYMANS;Coeymans,Albany,2016,2026,384
+3600116749,city,Cohoes,Cohoes,Albany,2016,2026,186
+3600117343,town,Colonie,Colonie,Albany,2016,2026,186
+3600131104,town,Guilderland,Guilderlan;Guilderland,Albany,2016,2026,186
+3600140002,town,Knox,Knox,Albany,2016,2026,186
+3600150672,town,New Scotland,New Scotla;New Scotland,Albany,2016,2026,186
+3600161181,town,Rensselaerville,RENSSELAERVILLE;Rensselaer;Rensselaerville,Albany,2016,2026,174
+3600178674,city,Watervliet,Watervliet,Albany,2016,2026,186
+3600179851,town,Westerlo,WESTERLO;Westerlo,Albany,2016,2026,174
+3600199,village,Adams,Adams,Jeffers;Jefferson,2016,2026,198
+3600276,village,Addison,Addison,Steuben,2016,2026,90
+3600301209,town,Alfred,ALFRED;Alfred,Allegany,2016,2026,168
+3600301319,town,Allen,Allen,Allegan;Allegany,2016,2026,147
+3600301429,town,Alma,ALMA;Alma,Allegan;Allegany,2016,2026,186
+3600301451,town,Almond,ALMOND;Almond,Allegany,2016,2026,168
+3600302011,town,Amity,AMITY;Amity,Allegan;Allegany,2016,2026,198
+3600302154,town,Andover,ANDOVER;Andover,Allegan;Allegany,2016,2026,186
+3600302187,town,Angelica,ANGELICA;Angelica,Allegan;Allegany,2016,2026,198
+3600305573,town,Belfast,BELFAST;Belfast,Allegan;Allegany,2016,2026,198
+3600306717,town,Birdsall,Birdsall,Allegany,2016,2026,84
+3600307201,town,Bolivar,BOLIVAR;Bolivar,Allegan;Allegany,2016,2026,198
+3600311253,town,Burns,Burns,Allegany,2016,2026,84
+3600312243,town,Caneadea,CANEADEA;Caneadea,Allegan;Allegany,2016,2026,200
+3600313475,town,Centerville,CENTERVILLE;Centervill;Centerville,Allegan;Allegany,2016,2026,186
+3600315990,town,Clarksville,CLARKSVILLE;Clarksvill;Clarksville,Allegan;Allegany,2016,2026,198
+3600319367,town,Cuba,CUBA;Cuba,Allegan;Allegany,2016,2026,186
+3600327705,town,Friendship,FRIENDSHIP;Friendship,Allegan;Allegany,2016,2026,198
+3600328563,town,Genesee,GENESEE;Genesee,Allegan;Allegany,2016,2026,282
+3600329905,town,Granger,Granger,Allegan;Allegany,2016,2026,114
+3600330994,town,Grove,Grove,Allegany,2016,2026,84
+3600336112,town,Hume,Hume,Allegan;Allegany,2016,2026,138
+3600337297,town,Independence,INDEPENDENCE;Independen;Independence,Allegan;Allegany,2016,2026,186
+3600342,village,Afton,Afton,Chenango,2016,2026,90
+3600350375,town,New Hudson,New Hudson,Allegan;Allegany,2016,2026,102
+3600364166,town,Rushford,Rushford,Allegan;Allegany,2016,2026,114
+3600365772,town,Scio,SCIO;Scio,Allegan;Allegany,2016,2026,186
+3600378201,town,Ward,Ward,Allegany,2016,2026,84
+3600379103,town,Wellsville,WELLSVILLE;Wellsville,Allegan;Allegany,2016,2026,186
+3600379202,town,West Almond,West Almond,Allegany,2016,2026,84
+3600382095,town,Willing,WILLING;Willing,Allegan;Allegany,2016,2026,186
+3600382623,town,Wirt,WIRT;Wirt,Allegan;Allegany,2016,2026,198
+3600408,village,Airmont,Airmont,Rocklan;Rockland,2016,2026,198
+3600441,village,Akron,AKRON;Akron,Erie,2016,2026,84
+3600704429,town,Barker,Barker,Broome,2016,2026,84
+3600706607,city,Binghamton,Binghamton,Broome,2016,2026,168
+3600706618,town,Binghamton,Binghamton,Broome,2016,2026,168
+3600715110,town,Chenango,Chenango,Broome,2016,2026,168
+3600717046,town,Colesville,Colesville,Broome,2016,2026,84
+3600717772,town,Conklin,Conklin,Broome,2016,2026,168
+3600720588,town,Dickinson,Dickinson,Broome,2016,2026,168
+3600725604,town,Fenton,Fenton,Broome,2016,2026,168
+3600739837,town,Kirkwood,Kirkwood,Broome,2016,2026,168
+3600742653,town,Lisle,Lisle,Broome,2016,2026,84
+3600744611,town,Maine,Maine,Broome,2016,2026,168
+3600749396,town,Nanticoke,Nanticoke,Broome,2016,2026,84
+3600765112,town,Sanford,Sanford,Broome,2016,2026,168
+3600775319,town,Triangle,Triangle,Broome,2016,2026,84
+3600776056,town,Union,Union,Broome,2016,2026,168
+3600777255,town,Vestal,Vestal,Broome,2016,2026,168
+3600782535,town,Windsor,Windsor,Broome,2016,2026,147
+3600901297,town,Allegany,Allegany,Cattara;Cattaraugus,2016,2026,186
+3600902759,town,Ashford,ASHFORD;Ashford,Cattara;Cattaraugus,2016,2026,186
+3600912661,town,Carrollton,Carrollton,Cattara;Cattaraugus,2016,2026,202
+3600916903,town,Coldspring,COLDSPRING;Coldspring,Cattara;Cattaraugus,2016,2026,186
+3600917684,town,Conewango,CONEWANGO;Conewango,Cattaraugus,2016,2026,168
+3600919840,town,Dayton,Dayton,Cattaraugus,2016,2026,84
+3600922678,town,East Otto,EAST OTTO;East Otto,Cattara;Cattaraugus,2016,2026,186
+3600924031,town,Ellicottville,ELLICOTTVILLE;Ellicottvi;Ellicottville,Cattara;Cattaraugus,2016,2026,186
+3600925340,town,Farmersville,FARMERSVILLE;Farmersvil;Farmersville,Cattara;Cattaraugus,2016,2026,186
+3600927342,town,Franklinville,FRANKLINVILLE;Franklinvi;Franklinville,Cattara;Cattaraugus,2016,2026,186
+3600927441,town,Freedom,FREEDOM;Freedom,Cattara;Cattaraugus,2016,2026,186
+3600930257,town,Great Valley,GREAT VALLEY;Great Vall;Great Valley,Cattara;Cattaraugus,2016,2026,186
+3600934946,town,Hinsdale,HINSDALE;Hinsdale,Cattara;Cattaraugus,2016,2026,162
+3600936123,town,Humphrey,Humphrey,Cattara;Cattaraugus,2016,2026,102
+3600937825,town,Ischua,Ischua,Cattara;Cattaraugus,2016,2026,102
+3600941982,town,Leon,Leon,Cattaraugus,2016,2026,84
+3600942840,town,Little Valley,LITTLE VALLEY;Little Val;Little Valley,Cattara;Cattaraugus,2016,2026,186
+3600943896,town,Lyndon,Lyndon,Cattara;Cattaraugus,2016,2026,102
+3600944237,town,Machias,MACHIAS;Machias,Cattara;Cattaraugus,2016,2026,186
+3600945161,town,Mansfield,MANSFIELD;Mansfield,Cattara;Cattaraugus,2016,2026,186
+3600949462,town,Napoli,NAPOLI;Napoli,Cattaraugus,2016,2026,168
+3600949880,town,New Albion,NEW ALBION;New Albion,Cattara;Cattaraugus,2016,2026,270
+3600954716,city,Olean,OLEAN;Olean,Cattara;Cattaraugus,2016,2026,270
+3600954727,town,Olean,OLEAN;Olean,Cattara;Cattaraugus,2016,2026,270
+3600955783,town,Otto,OTTO;Otto,Cattara;Cattaraugus,2016,2026,186
+3600957298,town,Perrysburg,PERRYSBURG;Perrysburg,Cattara;Cattaraugus,2016,2026,270
+3600957331,town,Persia,PERSIA;Persia,Cattaraugus,2016,2026,168
+3600959509,town,Portville,PORTVILLE;Portville,Cattara;Cattaraugus,2016,2026,186
+3600960587,town,Randolph,RANDOLPH;Randolph,Cattara;Cattaraugus,2016,2026,270
+3600960950,town,Red House,RED HOUSE;Red House,Cattara;Cattaraugus,2016,2026,186
+3600964749,city,Salamanca,SALAMANCA;Salamanca,Cattaraugus,2016,2026,84
+3600964760,town,Salamanca,SALAMANCA;Salamanca,Cattara;Cattaraugus,2016,2026,186
+3600969870,town,South Valley,South Vall;South Valley,Cattara;Cattaraugus,2016,2026,102
+3600984055,town,Yorkshire,YORKSHIRE;Yorkshire,Cattara;Cattaraugus,2016,2026,186
+3601033,village,Albion,Albion,Orleans,2016,2026,222
+3601088,village,Alden,ALDEN;Alden,Erie,2016,2026,174
+3601103078,city,Auburn,Auburn,Cayuga,2016,2026,168
+3601103166,town,Aurelius,Aurelius,Cayuga,2016,2026,168
+3601110297,town,Brutus,Brutus,Cayuga,2016,2026,168
+3601112969,town,Cato,Cato,Cayuga,2016,2026,114
+3601117849,town,Conquest,Conquest,Cayuga,2016,2026,114
+3601126231,town,Fleming,Fleming,Cayuga,2016,2026,168
+3601128673,town,Genoa,Genoa,Cayuga,2016,2026,84
+3601137660,town,Ira,Ira,Cayuga,2016,2026,114
+3601141740,town,Ledyard,Ledyard,Cayuga,2016,2026,107
+3601143071,town,Locke,Locke,Cayuga,2016,2026,168
+3601146602,town,Mentz,Mentz,Cayuga,2016,2026,168
+3601148131,town,Montezuma,Montezuma,Cayuga,2016,2026,168
+3601148307,town,Moravia,Moravia,Cayuga,2016,2026,168
+3601151198,town,Niles,Niles,Cayuga,2016,2026,186
+3601154,village,Alexander,ALEXANDER;Alexander,Genesee,2016,2026,198
+3601155871,town,Owasco,Owasco,Cayuga,2016,2026,168
+3601165816,town,Scipio,Scipio,Cayuga,2016,2026,126
+3601166278,town,Sempronius,Sempronius,Cayuga,2016,2026,84
+3601166443,town,Sennett,Sennett,Cayuga,2016,2026,354
+3601170376,town,Springport,Springport,Cayuga,2016,2026,168
+3601171146,town,Sterling,Sterling,Cayuga,2016,2026,114
+3601172037,town,Summerhill,Summerhill,Cayuga,2016,2026,84
+3601173770,town,Throop,Throop,Cayuga,2016,2026,168
+3601177024,town,Venice,Venice,Cayuga,2016,2026,84
+3601177420,town,Victory,Victory,Cayuga,2016,2026,114
+3601187,village,Alexandria Bay,Alexandria;Alexandria Bay,Jeffers;Jefferson,2016,2026,114
+3601198,village,Alfred,ALFRED;Alfred,Allegany,2016,2026,174
+3601286,village,Allegany,Allegany,Cattara;Cattaraugus,2016,2026,198
+3601302605,town,Arkwright,ARKWRIGHT;Arkwright,Chautau;Chautauqua,2016,2026,186
+3601311451,town,Busti,BUSTI;Busti,Chautau;Chautauqua,2016,2026,186
+3601312639,town,Carroll,CARROLL;Carroll,Chautau;Chautauqua,2016,2026,186
+3601313860,town,Charlotte,CHARLOTTE;Charlotte,Chautau;Chautauqua,2016,2026,186
+3601314069,town,Chautauqua,CHAUTAUQUA;Chautauqua,Chautau;Chautauqua,2016,2026,186
+3601315198,town,Cherry Creek,Cherry Creek,Chautauqua,2016,2026,84
+3601316595,town,Clymer,CLYMER;Clymer,Chautau;Chautauqua,2016,2026,186
+3601321105,city,Dunkirk,DUNKIRK;Dunkirk,Chautau;Chautauqua,2016,2026,186
+3601321116,town,Dunkirk,DUNKIRK;Dunkirk,Chautau;Chautauqua,2016,2026,186
+3601323976,town,Ellery,ELLERY;Ellery,Chautau;Chautauqua,2016,2026,186
+3601323998,town,Ellicott,ELLICOTT;Ellicott,Chautau;Chautauqua,2016,2026,186
+3601324053,town,Ellington,Ellington,Chautauqua,2016,2026,84
+3601327606,town,French Creek,French Cre;French Creek,Chautau;Chautauqua,2016,2026,102
+3601328838,town,Gerry,GERRY;Gerry,Chautau;Chautauqua,2016,2026,186
+3601332050,town,Hanover,HANOVER;Hanover,Chautau;Chautauqua,2016,2026,270
+3601332248,town,Harmony,HARMONY;Harmony,Chautau;Chautauqua,2016,2026,186
+3601338264,city,Jamestown,JAMESTOWN;Jamestown,Chautauqua,2016,2026,84
+3601339507,town,Kiantone,KIANTONE;Kiantone,Chautau;Chautauqua,2016,2026,186
+3601347592,town,Mina,Mina,Chautau;Chautauqua,2016,2026,102
+3601352155,town,North Harmony,NORTH HARMONY;North Harm;North Harmony,Chautau;Chautauqua,2016,2026,186
+3601358926,town,Poland,POLAND;Poland,Chautau;Chautauqua,2016,2026,186
+3601358981,town,Pomfret,POMFRET;Pomfret,Chautau;Chautauqua,2016,2026,186
+3601359421,town,Portland,PORTLAND;Portland,Chautau;Chautauqua,2016,2026,186
+3601361885,town,Ripley,RIPLEY;Ripley,Chautau;Chautauqua,2016,2026,186
+3601366916,town,Sheridan,SHERIDAN;Sheridan,Chautau;Chautauqua,2016,2026,186
+3601366960,town,Sherman,SHERMAN;Sherman,Chautau;Chautauqua,2016,2026,186
+3601371476,town,Stockton,STOCKTON;Stockton,Chautau;Chautauqua,2016,2026,186
+3601377530,town,Villenova,VILLENOVA;Villenova,Chautauqua,2016,2026,168
+3601379950,town,Westfield,WESTFIELD;Westfield,Chautau;Chautauqua,2016,2026,186
+3601440,village,Almond,ALMOND;Almond,Allegany,2016,2026,198
+3601502781,town,Ashland,Ashland,Chemung,2016,2026,168
+3601504132,town,Baldwin,Baldwin,Chemung,2016,2026,151
+3601506475,town,Big Flats,Big Flats,Chemung,2016,2026,168
+3601512947,town,Catlin,Catlin,Chemung,2016,2026,168
+3601515077,town,Chemung,Chemung,Chemung,2016,2026,168
+3601517,village,Altamont,Altamont,Albany,2016,2026,198
+3601524229,city,Elmira,Elmira,Chemung,2016,2026,168
+3601524240,town,Elmira,Elmira,Chemung,2016,2026,168
+3601524636,town,Erin,Erin,Chemung,2016,2026,168
+3601535705,town,Horseheads,Horseheads,Chemung,2016,2026,168
+3601569617,town,Southport,Southport,Chemung,2016,2026,168
+3601576892,town,Van Etten,Van Etten,Chemung,2016,2026,84
+3601577310,town,Veteran,Veteran,Chemung,2016,2026,168
+3601700353,town,Afton,Afton,Chenango,2016,2026,84
+3601704044,town,Bainbridge,Bainbridge,Chenango,2016,2026,84
+3601717486,town,Columbus,Columbus,Chenango,2016,2026,84
+3601718619,town,Coventry,Coventry,Chenango,2016,2026,84
+3601728739,town,German,German,Chenango,2016,2026,114
+3601730422,town,Greene,Greene,Chenango,2016,2026,84
+3601731148,town,Guilford,Guilford,Chenango,2016,2026,84
+3601737,village,Ames,Ames,Montgom;Montgomery,2016,2026,114
+3601742411,town,Lincklaen,Lincklaen,Chenang;Chenango,2016,2026,102
+3601744127,town,McDonough,McDonough;Mcdonough,Chenango,2016,2026,84
+3601749957,town,New Berlin,New Berlin,Chenango,2016,2026,168
+3601753297,town,North Norwich,North Norwich,Chenango,2016,2026,168
+3601753979,city,Norwich,Norwich,Chenango,2016,2026,168
+3601753990,town,Norwich,Norwich,Chenango,2016,2026,168
+3601755717,town,Otselic,Otselic,Chenango,2016,2026,168
+3601755959,town,Oxford,Oxford,Chenango,2016,2026,168
+3601757507,town,Pharsalia,Pharsalia,Chenango,2016,2026,84
+3601758288,town,Pitcher,Pitcher,Chenango,2016,2026,84
+3601758772,town,Plymouth,Plymouth,Chenango,2016,2026,168
+3601759817,town,Preston,Preston,Chenango,2016,2026,150
+3601766894,town,Sherburne,Sherburne,Chenango,2016,2026,84
+3601768055,town,Smithville,Smithville,Chenango,2016,2026,84
+3601768110,town,Smyrna,Smyrna,Chenango,2016,2026,168
+3601901583,town,Altona,Altona,Clinton,2016,2026,84
+3601903221,town,Au Sable,Au Sable,Clinton,2016,2026,84
+3601905485,town,Beekmantown,Beekmantown,Clinton,2016,2026,84
+3601906761,town,Black Brook,Black Broo;Black Brook,Clinton,2016,2026,186
+3601913750,town,Champlain,Champlain,Clinton,2016,2026,168
+3601914113,town,Chazy,Chazy,Clinton,2016,2026,167
+3601916397,town,Clinton,Clinton,Clinton,2016,2026,84
+3601919653,town,Dannemora,Dannemora,Clinton,2016,2026,84
+3601923921,town,Ellenburg,Ellenburg,Clinton,2016,2026,84
+3601948252,town,Mooers,Mooers,Clinton,2016,2026,84
+3601957375,town,Peru,Peru,Clinton,2016,2026,168
+3601958574,city,Plattsburgh,Plattsburgh,Clinton,2016,2026,168
+3601958585,town,Plattsburgh,Plattsburgh,Clinton,2016,2026,168
+3601965211,town,Saranac,Saranac,Clinton,2016,2026,270
+3601965717,town,Schuyler Falls,Schuyler Falls,Clinton,2016,2026,120
+3602044,village,Amityville,Amityville,Suffolk,2016,2026,132
+3602102099,town,Ancram,ANCRAM;Ancram,Columbi;Columbia,2016,2026,174
+3602103287,town,Austerlitz,Austerlitz,Columbia,2016,2025,78
+3602112056,town,Canaan,Canaan,Columbia,2016,2026,156
+3602114014,town,Chatham,Chatham,Columbi;Columbia,2016,2026,180
+3602116045,town,Claverack,Claverack,Columbi;Columbia,2016,2026,264
+3602116177,town,Clermont,Clermont,Columbi;Columbia,2016,2026,102
+3602118102,town,Copake,Copake,Columbia,2016,2025,78
+3602128068,town,Gallatin,GALLATIN;Gallatin,Columbi;Columbia,2016,2026,276
+3602128772,town,Germantown,Germantown,Columbi;Columbia,2016,2026,102
+3602128871,town,Ghent,Ghent,Columbi;Columbia,2016,2026,264
+3602130565,town,Greenport,Greenport,Columbi;Columbia,2016,2026,186
+3602134748,town,Hillsdale,Hillsdale,Columbia,2016,2025,78
+3602135969,city,Hudson,Hudson,Columbi;Columbia,2016,2026,186
+3602139573,town,Kinderhook,Kinderhook,Columbi;Columbia,2016,2026,102
+3602142917,town,Livingston,Livingston,Columbi;Columbia,2016,2026,102
+3602143,village,Andover,ANDOVER;Andover,Allegany,2016,2026,84
+3602150452,town,New Lebanon,New Lebanon,Columbia,2016,2025,78
+3602171443,town,Stockport,Stockport,Columbi;Columbia,2016,2026,186
+3602171850,town,Stuyvesant,Stuyvesant,Columbi;Columbia,2016,2026,102
+3602173077,town,Taghkanic,Taghkanic,Columbi;Columbia,2016,2026,180
+3602176,village,Angelica,ANGELICA;Angelica,Allegany,2016,2026,84
+3602198,village,Angola,ANGOLA;Angola,Erie,2016,2026,198
+3602286,village,Antwerp,Antwerp,Jeffers;Jefferson,2016,2026,114
+3602315748,town,Cincinnatus,Cincinnatus,Cortland,2016,2026,84
+3602318388,city,Cortland,Cortland,Cortlan;Cortland,2016,2026,186
+3602318421,town,Cortlandville,Cortlandvi;Cortlandville,Cortlan;Cortland,2016,2026,186
+3602319499,town,Cuyler,Cuyler,Cortlan;Cortland,2016,2026,102
+3602327496,town,Freetown,Freetown,Cortland,2016,2026,84
+3602332160,town,Harford,Harford,Cortland,2016,2026,84
+3602335287,town,Homer,Homer,Cortlan;Cortland,2016,2026,186
+3602341300,town,Lapeer,Lapeer,Cortland,2016,2026,84
+3602345403,town,Marathon,Marathon,Cortland,2016,2026,84
+3602359773,town,Preble,Preble,Cortlan;Cortland,2016,2026,265
+3602365915,town,Scott,Scott,Cortlan;Cortland,2016,2026,102
+3602368264,town,Solon,Solon,Cortlan;Cortland,2016,2026,102
+3602373220,town,Taylor,Taylor,Cortland,2016,2026,84
+3602375550,town,Truxton,Truxton,Cortlan;Cortland,2016,2026,102
+3602377596,town,Virgil,Virgil,Cortlan;Cortland,2016,2026,186
+3602381963,town,Willet,Willet,Cortland,2016,2026,84
+3602407,village,Arcade,ARCADE;Arcade,Wyoming,2016,2026,84
+3602502132,town,Andes,Andes,Delaware,2016,2026,84
+3602506,village,Ardsley,Ardsley,Westche;Westchester,2016,2026,198
+3602507597,town,Bovina,Bovina,Delaware,2016,2026,84
+3602516793,town,Colchester,Colchester,Delaware,2016,2026,84
+3602519763,town,Davenport,Davenport,Delaware,2016,2026,168
+3602520137,town,Delhi,Delhi,Delaware,2016,2026,84
+3602520357,town,Deposit,Deposit,Delaware,2016,2026,168
+3602527232,town,Franklin,Franklin,Delaware,2016,2026,172
+3602531698,town,Hamden,Hamden,Delaware,2016,2026,84
+3602531951,town,Hancock,Hancock,Delaware,2016,2026,168
+3602532281,town,Harpersfield,Harpersfield,Delaware,2016,2026,84
+3602540068,town,Kortright,Kortright,Delaware,2016,2026,84
+3602545964,town,Masonville,Masonville,Delaware,2016,2026,84
+3602546624,town,Meredith,Meredith,Delaware,2016,2026,84
+3602547031,town,Middletown,Middletown,Delaware,2016,2026,84
+3602550,village,Argyle,Argyle,Washing;Washington,2016,2026,114
+3602564001,town,Roxbury,Roxbury,Delaware,2016,2026,84
+3602567345,town,Sidney,Sidney,Delaware,2016,2026,84
+3602570629,town,Stamford,Stamford,Delaware,2016,2026,84
+3602574111,town,Tompkins,Tompkins,Delaware,2016,2026,153
+3602578047,town,Walton,Walton,Delaware,2016,2026,168
+3602583,village,Arkport,ARKPORT;Arkport,Steuben,2016,2026,174
+3602701693,town,Amenia,Amenia,Dutchess,2016,2025,78
+3602705100,city,Beacon,BEACON;Beacon,Dutches;Dutchess,2016,2026,198
+3602705452,town,Beekman,Beekman,Dutchess,2016,2025,78
+3602716408,town,Clinton,CLINTON;Clinton,Dutches;Dutchess,2016,2026,174
+3602720819,town,Dover,Dover,Dutchess,2016,2025,78
+3602721996,town,East Fishkill,EAST FISHKILL;East Fishk;East Fishkill,Dutches;Dutchess,2016,2026,198
+3602725978,town,Fishkill,FISHKILL;Fishkill,Dutches;Dutchess,2016,2026,198
+3602737,village,Asharoken,Asharoken,Suffolk,2016,2026,132
+3602737209,town,Hyde Park,HYDE PARK;Hyde Park,Dutches;Dutchess,2016,2026,198
+3602740299,town,La Grange,LAGRANGE;La Grange;Lagrange,Dutches;Dutchess,2016,2026,198
+3602747207,town,Milan,MILAN;Milan,Dutches;Dutchess,2016,2026,174
+3602751891,town,North East,NORTHEAST;North East;Northeast,Dutches;Dutchess,2016,2026,174
+3602756825,town,Pawling,Pawling,Dutchess,2016,2025,100
+3602758156,town,Pine Plains,PINE PLAINS;Pine Plain;Pine Plains,Dutches;Dutchess,2016,2026,174
+3602758695,town,Pleasant Valley,PLEASANT VALLEY;Pleasant V;Pleasant Valley,Dutches;Dutchess,2016,2026,198
+3602759641,city,Poughkeepsie,POUGHKEEPSIE;Poughkeeps;Poughkeepsie,Dutches;Dutchess,2016,2026,198
+3602759652,town,Poughkeepsie,POUGHKEEPSIE;Poughkeeps;Poughkeepsie,Dutches;Dutchess,2016,2026,198
+3602760905,town,Red Hook,RED HOOK;Red Hook,Dutches;Dutchess,2016,2026,174
+3602761357,town,Rhinebeck,RHINEBECK;Rhinebeck,Dutches;Dutchess,2016,2026,174
+3602770662,town,Stanford,STANFORD;Stanford,Dutches;Dutchess,2016,2026,174
+3602776166,town,Union Vale,UNIONVALE;Union Vale;Unionvale,Dutches;Dutchess,2016,2026,174
+3602778157,town,Wappinger,WAPPINGERS;Wappinger;Wappingers,Dutches;Dutchess,2016,2026,198
+3602778388,town,Washington,WASHINGTON;Washington,Dutches;Dutchess,2016,2026,174
+3602901099,town,Alden,ALDEN;Alden,Erie,2016,2026,168
+3602902,village,Athens,ATHENS;Athens,Greene,2016,2026,198
+3602902000,town,Amherst,AMHERST;Amherst,Erie,2016,2026,270
+3602903199,town,Aurora,AURORA;Aurora,Erie,2016,2026,168
+3602907454,town,Boston,BOSTON;Boston,Erie,2016,2026,168
+3602907894,town,Brant,BRANT;Brant,Erie,2016,2026,186
+3602911000,city,Buffalo,BUFFALO;Buffalo,Erie,2016,2026,186
+3602915011,town,Cheektowaga,CHEEKTOWAGA;Cheektowag;Cheektowaga,Erie,2016,2026,273
+3602915825,town,Clarence,CLARENCE;Clarence,Erie,2016,2026,168
+3602916870,town,Colden,COLDEN;Colden,Erie,2016,2026,168
+3602917200,town,Collins,COLLINS;Collins,Erie,2016,2026,270
+3602917585,town,Concord,CONCORD;Concord,Erie,2016,2026,168
+3602923415,town,Eden,EDEN;Eden,Erie,2016,2026,186
+3602924130,town,Elma,ELMA;Elma,Erie,2016,2026,168
+3602924801,town,Evans,EVANS;Evans,Erie,2016,2026,186
+3602929828,town,Grand Island,GRAND ISLAND;Grand Isla;Grand Island,Erie,2016,2026,186
+3602931654,town,Hamburg,HAMBURG;Hamburg,Erie,2016,2026,270
+3602935122,town,Holland,HOLLAND;Holland,Erie,2016,2026,168
+3602940189,city,Lackawanna,LACKAWANNA;Lackawanna,Erie,2016,2026,186
+3602941146,town,Lancaster,LANCASTER;Lancaster,Erie,2016,2026,168
+3602945601,town,Marilla,MARILLA;Marilla,Erie,2016,2026,168
+3602950716,town,Newstead,NEWSTEAD;Newstead,Erie,2016,2026,186
+3602951803,town,North Collins,NORTH COLLINS;North Coll;North Collins,Erie,2016,2026,186
+3602955277,town,Orchard Park,ORCHARD PARK;Orchard Park,Erie,2016,2026,168
+3602965277,town,Sardinia,SARDINIA;Sardinia,Erie,2016,2026,168
+3602968,village,Atlantic Beach,Atlantic B;Atlantic Beach,Nassau,2016,2026,132
+3602974166,city,Tonawanda,TONAWANDA;Tonawanda,Erie,2016,2026,186
+3602975000,town,Tonawanda,TONAWANDA;Tonawanda,Erie,2016,2026,186
+3602977871,town,Wales,WALES;Wales,Erie,2016,2026,168
+3602980918,town,West Seneca,WEST SENECA;West Senec;West Seneca,Erie,2016,2026,270
+3603001,village,Attica,ATTICA;Attica,Genesee & Wyoming;Wyoming,2016,2026,198
+3603115330,town,Chesterfield,Chesterfield,Essex,2016,2026,84
+3603119246,town,Crown Point,Crown Poin;Crown Point,Essex,2016,2026,102
+3603123833,town,Elizabethtown,Elizabethtown,Essex,2016,2026,84
+3603124768,town,Essex,Essex,Essex,2016,2026,84
+3603138396,town,Jay,Jay,Essex,2016,2026,84
+3603139067,town,Keene,Keene,Essex,2016,2026,84
+3603142114,town,Lewis,Lewis,Essex,2016,2026,84
+3603147669,town,Minerva,Minerva,Essex,2016,2026,102
+3603148428,town,Moriah,Moriah,Essex,2016,2026,102
+3603150144,town,Newcomb,Newcomb,Essex,2016,2026,84
+3603151935,town,North Elba,North Elba,Essex,2016,2026,102
+3603153077,town,North Hudson,North Huds;North Hudson,Essex,2016,2026,102
+3603164529,town,St. Armand,St. Armand,Essex,2016,2026,102
+3603165629,town,Schroon,Schroon,Essex,2016,2026,102
+3603173891,town,Ticonderoga,Ticonderog;Ticonderoga,Essex,2016,2026,102
+3603180775,town,Westport,Westport,Essex,2016,2026,102
+3603182271,town,Willsboro,Willsboro,Essex,2016,2026,84
+3603182315,town,Wilmington,Wilmington,Essex,2016,2026,84
+3603188,village,Aurora,Aurora,Cayuga,2016,2026,90
+3603304319,town,Bangor,Bangor,Frankli;Franklin,2016,2026,102
+3603305716,town,Bellmont,Bellmont,Frankli;Franklin,2016,2026,186
+3603307278,town,Bombay,Bombay,Frankli;Franklin,2016,2026,102
+3603307839,town,Brandon,Brandon,Frankli;Franklin,2016,2026,102
+3603308213,town,Brighton,Brighton,Frankli;Franklin,2016,2026,102
+3603311165,town,Burke,Burke,Franklin,2016,2026,84
+3603313992,town,Chateaugay,Chateaugay,Franklin,2016,2026,84
+3603317871,town,Constable,Constable,Frankli;Franklin,2016,2026,186
+3603320610,town,Dickinson,Dickinson,Frankli;Franklin,2016,2026,102
+3603320973,town,Duane,Duane,Frankli;Franklin,2016,2026,102
+3603326737,town,Fort Covington,Fort Covin;Fort Covington,Frankli;Franklin,2016,2026,102
+3603327243,town,Franklin,Franklin,Frankli;Franklin,2018,2026,72
+3603331,village,Avoca,Avoca,Steuben,2016,2026,168
+3603332314,town,Harrietstown,Harrietsto;Harrietstown,Frankli;Franklin,2016,2026,102
+3603344721,town,Malone,Malone,Frankli;Franklin,2016,2026,186
+3603347933,town,Moira,Moira,Frankli;Franklin,2016,2026,102
+3603353,village,Avon,Avon,Livings;Livingston,2016,2026,204
+3603365178,town,Santa Clara,Santa Clar;Santa Clara,Frankli;Franklin,2016,2026,102
+3603375676,town,Tupper Lake,Tupper Lak;Tupper Lake,Frankli;Franklin,2016,2026,102
+3603378795,town,Waverly,Waverly,Frankli;Franklin,2016,2026,102
+3603381215,town,Westville,Westville,Frankli;Franklin,2016,2026,102
+3603408,village,Babylon,Babylon,Suffolk,2016,2026,132
+3603506882,town,Bleecker,Bleecker,Fulton,2016,2026,186
+3603508433,town,Broadalbin,Broadalbin,Fulton,2016,2026,186
+3603512573,town,Caroga,Caroga,Fulton,2016,2026,186
+3603524603,town,Ephratah,Ephratah,Fulton,2016,2026,102
+3603529443,city,Gloversville,Gloversvil;Gloversville,Fulton,2016,2026,186
+3603538781,city,Johnstown,Johnstown,Fulton,2016,2026,186
+3603538792,town,Johnstown,Johnstown,Fulton,2016,2026,186
+3603546217,town,Mayfield,Mayfield,Fulton,2016,2026,186
+3603551407,town,Northampton,Northampto;Northampton,Fulton,2016,2026,102
+3603555101,town,Oppenheim,Oppenheim,Fulton,2016,2026,102
+3603557353,town,Perth,Perth,Fulton,2016,2026,186
+3603571784,town,Stratford,Stratford,Fulton,2016,2026,102
+3603700474,town,Alabama,ALABAMA;Alabama,Genesee,2016,2026,186
+3603701165,town,Alexander,ALEXANDER;Alexander,Genesee,2016,2026,186
+3603704715,city,Batavia,BATAVIA;Batavia,Genesee,2016,2026,186
+3603704726,town,Batavia,BATAVIA;Batavia,Genesee,2016,2026,186
+3603706057,town,Bergen,Bergen,Genesee,2016,2026,192
+3603706266,town,Bethany,BETHANY;Bethany,Genesee,2016,2026,186
+3603711572,town,Byron,Byron,Genesee,2016,2026,192
+3603719719,town,Darien,DARIEN;Darien,Genesee,2016,2026,186
+3603723756,town,Elba,ELBA;Elba,Genesee,2016,2026,186
+3603742037,town,Le Roy,Le Roy,Genesee,2016,2026,192
+3603754166,town,Oakfield,OAKFIELD;Oakfield,Genesee,2016,2026,186
+3603756792,town,Pavilion,PAVILION;Pavilion,Genesee,2016,2026,276
+3603757078,town,Pembroke,PEMBROKE;Pembroke,Genesee,2016,2026,186
+3603770607,town,Stafford,STAFFORD;Stafford,Genesee,2016,2026,276
+3603902803,town,Ashland,Ashland,Greene,2016,2026,84
+3603902913,town,Athens,ATHENS;Athens,Greene,2016,2026,198
+3603911649,town,Cairo,CAIRO;Cairo,Greene,2016,2026,174
+3603913013,town,Catskill,CATSKILL;Catskill,Greene,2016,2026,198
+3603918729,town,Coxsackie,COXSACKIE;Coxsackie,Greene,2016,2026,198
+3603921204,town,Durham,DURHAM;Durham,Greene,2016,2026,174
+3603930620,town,Greenville,GREENVILLE;Greenville,Greene,2016,2026,234
+3603931379,town,Halcott,Halcott,Greene,2016,2026,84
+3603936178,town,Hunter,HUNTER;Hunter,Greene,2016,2026,174
+3603938638,town,Jewett,JEWETT;Jewett,Greene,2016,2026,258
+3603942202,town,Lexington,LEXINGTON;Lexington,Greene,2016,2026,174
+3603949935,town,New Baltimore,NEW BALTIMORE;New Baltim;New Baltimore,Greene,2016,2026,168
+3603959751,town,Prattsville,Prattsville,Greene,2016,2026,84
+3603982480,town,Windham,Windham,Greene,2016,2026,84
+3604033,village,Bainbridge,Bainbridge,Chenango,2016,2026,90
+3604102572,town,Arietta,Arietta,Hamilto;Hamilton,2016,2026,102
+3604105958,town,Benson,Benson,Hamilto;Hamilton,2016,2026,102
+3604135496,town,Hope,Hope,Hamilto;Hamilton,2016,2026,102
+3604137374,town,Indian Lake,Indian Lak;Indian Lake,Hamilto;Hamilton,2016,2026,186
+3604137495,town,Inlet,Inlet,Hamilto;Hamilton,2016,2026,102
+3604140794,town,Lake Pleasant,Lake Pleas;Lake Pleasant,Hamilto;Hamilton,2016,2026,102
+3604143412,town,Long Lake,Long Lake,Hamilto;Hamilton,2016,2026,186
+3604148340,town,Morehouse,Morehouse,Hamilto;Hamilton,2016,2026,102
+3604179059,town,Wells,Wells,Hamilto;Hamilton,2016,2026,102
+3604198,village,Baldwinsville,Baldwinsvi;Baldwinsville,Onondag;Onondaga,2016,2026,198
+3604253,village,Ballston Spa,Ballston S;Ballston Spa,Saratog;Saratoga,2016,2026,198
+3604317431,town,Columbia,Columbia,Herkime;Herkimer,2016,2026,270
+3604319686,town,Danube,Danube,Herkime;Herkimer,2016,2026,102
+3604324933,town,Fairfield,Fairfield,Herkime;Herkimer,2016,2026,186
+3604327199,town,Frankfort,Frankfort,Herkime;Herkimer,2016,2026,186
+3604328750,town,German Flatts,German Fla;German Flatts,Herkime;Herkimer,2016,2026,156
+3604334132,town,Herkimer,Herkimer,Herkime;Herkimer,2016,2026,186
+3604342664,town,Litchfield,Litchfield,Herkime;Herkimer,2016,2026,270
+3604342741,city,Little Falls,Little Fal;Little Falls,Herkime;Herkimer,2016,2026,186
+3604342752,town,Little Falls,Little Fal;Little Falls,Herkime;Herkimer,2016,2026,186
+3604344974,town,Manheim,Manheim,Herkime;Herkimer,2016,2026,186
+3604350584,town,Newport,Newport,Herkime;Herkimer,2016,2026,102
+3604353968,town,Norway,Norway,Herkime;Herkimer,2016,2026,102
+3604354507,town,Ohio,Ohio,Herkime;Herkimer,2016,2026,102
+3604364254,town,Russia,Russia,Herkime;Herkimer,2016,2026,102
+3604364837,town,Salisbury,Salisbury,Herkime;Herkimer,2016,2026,186
+3604365695,town,Schuyler,Schuyler,Herkime;Herkimer,2016,2026,156
+3604370794,town,Stark,Stark,Herkime;Herkimer,2016,2026,102
+3604378278,town,Warren,Warren,Herkimer,2016,2026,168
+3604378927,town,Webb,Webb,Herkime;Herkimer,2016,2026,102
+3604382568,town,Winfield,Winfield,Herkimer,2016,2026,84
+3604440,village,Barker,Barker,Niagara,2016,2026,198
+3604500210,town,Adams,Adams,Jeffers;Jefferson,2016,2026,186
+3604501176,town,Alexandria,Alexandria,Jeffers;Jefferson,2016,2026,186
+3604502297,town,Antwerp,Antwerp,Jeffers;Jefferson,2016,2026,102
+3604510242,town,Brownville,Brownville,Jeffers;Jefferson,2016,2026,186
+3604512364,town,Cape Vincent,Cape Vince;Cape Vincent,Jeffers;Jefferson,2016,2026,102
+3604513717,town,Champion,Champion,Jeffers;Jefferson,2016,2026,186
+3604516100,town,Clayton,Clayton,Jeffers;Jefferson,2016,2026,102
+3604524086,town,Ellisburg,Ellisburg,Jeffers;Jefferson,2016,2026,186
+3604534055,town,Henderson,Henderson,Jeffers;Jefferson,2016,2026,102
+3604535782,town,Hounsfield,Hounsfield,Jeffers;Jefferson,2016,2026,186
+3604542015,town,Le Ray,Le Ray,Jeffers;Jefferson,2016,2026,186
+3604543544,town,Lorraine,Lorraine,Jeffers;Jefferson,2016,2026,186
+3604543863,town,Lyme,Lyme,Jeffers;Jefferson,2016,2026,102
+3604555398,town,Orleans,Orleans,Jeffers;Jefferson,2016,2026,102
+3604556209,town,Pamelia,Pamelia,Jeffers;Jefferson,2016,2026,186
+3604557562,town,Philadelphia,Philadelph;Philadelphia,Jeffers;Jefferson,2016,2026,102
+3604563341,town,Rodman,Rodman,Jeffers;Jefferson,2016,2026,186
+3604564265,town,Rutland,Rutland,Jeffers;Jefferson,2016,2026,186
+3604573528,town,Theresa,Theresa,Jeffers;Jefferson,2016,2026,186
+3604578608,city,Watertown,Watertown,Jeffers;Jefferson,2016,2026,186
+3604578619,town,Watertown,Watertown,Jeffers;Jefferson,2016,2026,186
+3604582348,town,Wilna,Wilna,Jeffers;Jefferson,2016,2026,186
+3604583162,town,Worth,Worth,Jeffers;Jefferson,2016,2026,102
+3604803,village,Baxter Estates,Baxter Est;Baxter Estates,Nassau,2016,2026,132
+3604919081,town,Croghan,Croghan,Lewis,2016,2026,102
+3604920214,town,Denmark,Denmark,Lewis,2016,2026,102
+3604920555,town,Diana,Diana,Lewis,2016,2026,102
+3604930796,town,Greig,Greig,Lewis,2016,2026,102
+3604932358,town,Harrisburg,Harrisburg,Lewis,2016,2026,102
+3604942125,town,Lewis,Lewis,Lewis,2016,2026,102
+3604942213,town,Leyden,Leyden,Lewis,2016,2026,102
+3604943731,town,Lowville,Lowville,Lewis,2016,2026,186
+3604943995,town,Lyonsdale,Lyonsdale,Lewis,2016,2026,185
+3604945854,town,Martinsburg,Martinsbur;Martinsburg,Lewis,2016,2026,186
+3604948032,town,Montague,Montague,Lewis,2016,2026,102
+3604950001,town,New Bremen,New Bremen,Lewis,2016,2026,102
+3604955497,town,Osceola,Osceola,Lewis,2016,2026,102
+3604957925,town,Pinckney,Pinckney,Lewis,2016,2026,102
+3604975693,town,Turin,Turin,Lewis,2016,2026,184
+3604978729,town,Watson,Watson,Lewis,2016,2026,102
+3604981094,town,West Turin,West Turin,Lewis,2016,2026,180
+3605034,village,Bayville,Bayville,Nassau,2016,2026,132
+3605103364,town,Avon,AVON;Avon,Livings;Livingston,2016,2026,292
+3605111715,town,Caledonia,Caledonia,Livings;Livingston,2016,2026,192
+3605117618,town,Conesus,Conesus,Livings;Livingston,2016,2026,186
+3605128629,town,Geneseo,Geneseo,Livings;Livingston,2016,2026,306
+3605131016,town,Groveland,Groveland,Livings;Livingston,2016,2026,186
+3605141883,town,Leicester,Leicester,Livings;Livingston,2016,2026,288
+3605142334,town,Lima,LIMA;Lima,Livings;Livingston,2016,2026,186
+3605142961,town,Livonia,Livonia,Livings;Livingston,2016,2026,198
+3605148956,town,Mount Morris,Mount Morr;Mount Morris,Livings;Livingston,2016,2026,365
+3605151869,town,North Dansville,North Dansville,Livingston,2016,2026,168
+3605154089,town,Nunda,Nunda,Livings;Livingston,2016,2026,198
+3605155508,town,Ossian,Ossian,Livingston,2016,2026,168
+3605159179,town,Portage,Portage,Livings;Livingston,2016,2026,198
+3605170101,town,Sparta,Sparta,Livingston,2016,2026,168
+3605170475,town,Springwater,Springwater,Livingston,2016,2026,118
+3605181006,town,West Sparta,West Sparta,Livingston,2016,2026,168
+3605184022,town,York,York,Livings;Livingston,2016,2026,192
+3605308587,town,Brookfield,Brookfield,Madison,2016,2026,84
+3605313156,town,Cazenovia,Cazenovia,Madison,2016,2026,186
+3605320401,town,DeRuyter,DeRuyter;Deruyter,Madison,2016,2026,186
+3605323305,town,Eaton,Eaton,Madison,2016,2026,168
+3605325593,town,Fenner,Fenner,Madison,2016,2026,186
+3605328695,town,Georgetown,Georgetown,Madison,2016,2026,168
+3605331720,town,Hamilton,Hamilton,Madison,2016,2026,84
+3605341674,town,Lebanon,Lebanon,Madison,2016,2026,84
+3605341905,town,Lenox,Lenox,Madison,2016,2026,186
+3605342422,town,Lincoln,Lincoln,Madison,2016,2026,186
+3605344435,town,Madison,Madison,Madison,2016,2026,167
+3605349770,town,Nelson,Nelson,Madison,2016,2026,186
+3605354837,city,Oneida,Oneida,Madison,2016,2026,186
+3605367785,town,Smithfield,Smithfield,Madison,2016,2026,84
+3605371399,town,Stockbridge,Stockbridg;Stockbridge,Madison,2016,2026,186
+3605371993,town,Sullivan,Sullivan,Madison,2016,2026,186
+3605508246,town,Brighton,Brighton,Monroe,2016,2026,204
+3605515462,town,Chili,Chili,Monroe,2016,2026,306
+3605515957,town,Clarkson,Clarkson,Monroe,2016,2026,306
+3605528442,town,Gates,Gates,Monroe,2016,2026,204
+3605530290,town,Greece,Greece,Monroe,2016,2026,204
+3605531797,town,Hamlin,Hamlin,Monroe,2016,2026,306
+3605534099,town,Henrietta,Henrietta,Monroe,2016,2026,306
+3605537726,town,Irondequoit,Irondequoi;Irondequoit,Monroe,2016,2026,204
+3605546558,town,Mendon,MENDON;Mendon,Monroe,2016,2026,390
+3605554474,town,Ogden,Ogden,Monroe,2016,2026,306
+3605556561,town,Parma,Parma,Monroe,2016,2026,306
+3605557144,town,Penfield,Penfield,Monroe,2016,2026,204
+3605557221,town,Perinton,Perinton,Monroe,2016,2026,204
+3605558365,town,Pittsford,Pittsford,Monroe,2016,2026,204
+3605561808,town,Riga,Riga,Monroe,2016,2026,306
+3605563000,city,Rochester,Rochester,Monroe,2016,2026,204
+3605564144,town,Rush,Rush,Monroe,2016,2026,192
+3605572455,town,Sweden,Sweden,Monroe,2016,2026,299
+3605578971,town,Webster,Webster,Monroe,2016,2026,204
+3605581402,town,Wheatland,Wheatland,Monroe,2016,2026,298
+3605639,village,Bellerose,Bellerose,Nassau,2016,2026,132
+3605672,village,Belle Terre,Belle Terr;Belle Terre,Suffolk,2016,2026,132
+3605702066,city,Amsterdam,Amsterdam,Montgom;Montgomery,2016,2026,186
+3605702077,town,Amsterdam,Amsterdam,Montgom;Montgomery,2016,2026,186
+3605712122,town,Canajoharie,Canajohari;Canajoharie,Montgom;Montgomery,2016,2026,186
+3605713816,town,Charleston,Charleston,Montgom;Montgomery,2016,2026,102
+3605726308,town,Florida,Florida,Montgom;Montgomery,2016,2026,186
+3605729047,town,Glen,Glen,Montgom;Montgomery,2016,2026,186
+3605747614,town,Minden,Minden,Montgom;Montgomery,2016,2026,186
+3605747834,town,Mohawk,Mohawk,Montgom;Montgomery,2016,2026,186
+3605756099,town,Palatine,Palatine,Montgom;Montgomery,2016,2026,186
+3605763561,town,Root,Root,Montgom;Montgomery,2016,2026,102
+3605764650,town,St. Johnsville,St. Johnsv;St. Johnsville,Montgom;Montgomery,2016,2026,186
+3605771,village,Bellport,Bellport,Suffolk,2016,2026,132
+3605815,village,Belmont,BELMONT;Belmont,Allegan;Allegany,2016,2026,198
+3605848,village,Bemus Point,BEMUS POINT;Bemus Poin;Bemus Point,Chautau;Chautauqua,2016,2026,198
+3605929113,city,Glen Cove,Glen Cove,Nassau,2016,2026,132
+3605934000,town,Hempstead,Hempstead;Hempstead Town,Nassau,2016,2026,132
+3605943335,city,Long Beach,Long Beach,Nassau,2016,2026,132
+3605953000,town,North Hempstead,North Hemp;North Hempstead;North Hempstead Town,Nassau,2016,2026,132
+3605956000,town,Oyster Bay,Oyster Bay;Oyster Bay Town,Nassau,2016,2026,132
+3606046,village,Bergen,Bergen,Genesee,2016,2026,90
+3606311803,town,Cambria,CAMBRIA;Cambria,Niagara,2016,2026,292
+3606332490,town,Hartland,Hartland,Niagara,2016,2026,186
+3606342158,town,Lewiston,LEWISTON;Lewiston,Niagara,2016,2026,186
+3606343082,city,Lockport,Lockport,Niagara,2016,2026,168
+3606343093,town,Lockport,Lockport,Niagara,2016,2026,168
+3606350232,town,Newfane,Newfane,Niagara,2016,2026,270
+3606351033,town,Niagara,NIAGARA;Niagara,Niagara,2016,2026,186
+3606351055,city,Niagara Falls,NIAGARA FALLS;Niagara Fa;Niagara Falls,Niagara,2016,2026,186
+3606353682,city,North Tonawanda,NORTH TONAWANDA;North Tona;North Tonawanda,Niagara,2016,2026,186
+3606357111,town,Pendleton,Pendleton,Niagara,2016,2026,270
+3606359267,town,Porter,PORTER;Porter,Niagara,2016,2026,186
+3606364034,town,Royalton,Royalton,Niagara,2016,2026,186
+3606368330,town,Somerset,Somerset,Niagara,2016,2026,186
+3606381380,town,Wheatfield,WHEATFIELD;Wheatfield,Niagara,2016,2026,186
+3606382370,town,Wilson,WILSON;Wilson,Niagara,2016,2026,186
+3606502253,town,Annsville,Annsville,Oneida,2016,2026,186
+3606503155,town,Augusta,Augusta,Oneida,2016,2026,84
+3606503309,town,Ava,Ava,Oneida,2016,2026,102
+3606507366,town,Boonville,Boonville,Oneida,2016,2026,186
+3606508180,town,Bridgewater,Bridgewater,Oneida,2016,2026,84
+3606511858,town,Camden,Camden,Oneida,2016,2026,102
+3606519928,town,Deerfield,Deerfield,Oneida,2016,2026,186
+3606526297,town,Florence,Florence,Oneida,2016,2026,102
+3606526385,town,Floyd,Floyd,Oneida,2016,2026,186
+3606526627,town,Forestport,Forestport,Oneida,2016,2026,186
+3606539804,town,Kirkland,Kirkland,Oneida,2016,2026,270
+3606541762,town,Lee,Lee,Oneida,2016,2026,186
+3606545535,town,Marcy,Marcy,Oneida,2016,2026,186
+3606545755,town,Marshall,Marshall,Oneida,2016,2026,168
+3606550309,town,New Hartford,New Hartfo;New Hartford,Oneida,2016,2026,186
+3606556330,town,Paris,Paris,Oneida,2016,2026,186
+3606561126,town,Remsen,Remsen,Oneida,2016,2026,102
+3606563418,city,Rome,Rome,Oneida,2016,2026,186
+3606565134,town,Sangerfield,Sangerfield,Oneida,2016,2026,168
+3606566993,city,Sherrill,Sherrill,Oneida,2016,2026,186
+3606571212,town,Steuben,Steuben,Oneida,2016,2026,186
+3606575280,town,Trenton,Trenton,Oneida,2016,2026,186
+3606576540,city,Utica,Utica,Oneida,2016,2026,186
+3606577123,town,Vernon,Vernon,Oneida,2016,2026,186
+3606577178,town,Verona,Verona,Oneida,2016,2026,186
+3606577486,town,Vienna,Vienna,Oneida,2016,2026,102
+3606579862,town,Western,Western,Oneida,2016,2026,186
+3606580533,town,Westmoreland,Westmorela;Westmoreland,Oneida,2016,2026,186
+3606581754,town,Whitestown,Whitestown,Oneida,2016,2026,186
+3606711913,town,Camillus,Camillus,Onondag;Onondaga,2016,2026,270
+3606715704,town,Cicero,Cicero,Onondag;Onondaga,2016,2026,186
+3606716067,town,Clay,Clay,Onondag;Onondaga,2016,2026,186
+3606720478,town,De Witt,De Witt,Onondag;Onondaga,2016,2026,186
+3606723800,town,Elbridge,Elbridge,Onondag;Onondaga,2016,2026,354
+3606724878,town,Fabius,Fabius,Onondag;Onondaga,2016,2026,186
+3606728519,town,Geddes,Geddes,Onondag;Onondaga,2016,2026,186
+3606740266,town,LaFayette,LaFayette;Lafayette,Onondag;Onondaga,2016,2026,186
+3606744039,town,Lysander,Lysander,Onondag;Onondaga,2016,2026,186
+3606745029,town,Manlius,Manlius,Onondag;Onondaga,2016,2026,186
+3606745491,town,Marcellus,Marcellus,Onondaga,2016,2026,168
+3606754958,town,Onondaga,Onondaga,Onondag;Onondaga,2016,2026,186
+3606755651,town,Otisco,Otisco,Onondag;Onondaga,2016,2026,351
+3606759036,town,Pompey,Pompey,Onondag;Onondaga,2016,2026,186
+3606764815,town,Salina,Salina,Onondag;Onondaga,2016,2026,186
+3606767521,town,Skaneateles,Skaneatele;Skaneateles,Onondag;Onondaga,2016,2026,270
+3606770057,town,Spafford,Spafford,Onondaga,2016,2026,168
+3606773000,city,Syracuse,Syracuse,Onondag;Onondaga,2016,2026,186
+3606775638,town,Tully,Tully,Onondag;Onondaga,2016,2026,186
+3606776760,town,Van Buren,Van Buren,Onondag;Onondaga,2016,2026,270
+3606794,village,Black River,Black Rive;Black River,Jeffers;Jefferson,2016,2026,198
+3606849,village,Blasdell,BLASDELL;Blasdell,Erie,2016,2026,219
+3606908378,town,Bristol,BRISTOL;Bristol,Ontario,2016,2026,198
+3606912100,town,Canadice,Canadice,Ontario,2016,2026,102
+3606912144,city,Canandaigua,Canandaigu;Canandaigua,Ontario,2016,2026,198
+3606912155,town,Canandaigua,Canandaigu;Canandaigua,Ontario,2016,2026,345
+3606921699,town,East Bloomfield,EAST BLOOMFIELD;East Bloom;East Bloomfield,Ontario,2016,2026,390
+3606925406,town,Farmington,Farmington,Ontario,2016,2026,204
+3606928640,city,Geneva,Geneva,Ontario,2016,2026,168
+3606928651,town,Geneva,Geneva,Ontario,2016,2026,168
+3606929531,town,Gorham,Gorham,Ontario,2016,2026,168
+3606935551,town,Hopewell,Hopewell,Ontario,2016,2026,326
+3606944864,town,Manchester,Manchester,Ontario,2016,2026,282
+3606945,village,Bloomfield,BLOOMFIELD;Bloomfield,Ontario,2016,2026,198
+3606949440,town,Naples,Naples,Ontario,2016,2026,168
+3606957529,town,Phelps,Phelps,Ontario,2016,2026,168
+3606959,village,Bloomingburg,Bloomingbu;Bloomingburg,Sulliva;Sullivan,2016,2026,114
+3606961544,town,Richmond,RICHMOND;Richmond,Ontario,2016,2026,186
+3606966289,town,Seneca,Seneca,Ontario,2016,2026,168
+3606968660,town,South Bristol,South Bris;South Bristol,Ontario,2016,2026,114
+3606977387,town,Victor,Victor,Ontario,2016,2026,204
+3606979356,town,West Bloomfield,WEST BLOOMFIELD;West Bloom;West Bloomfield,Ontario,2016,2026,186
+3607107003,town,Blooming Grove,Blooming G;Blooming Grove,Orange,2016,2026,198
+3607115308,town,Chester,Chester,Orange,2016,2026,198
+3607118300,town,Cornwall,Cornwall,Orange,2016,2022,132
+3607118916,town,Crawford,Crawford,Orange,2016,2026,199
+3607119961,town,Deerpark,Deerpark,Orange,2016,2026,198
+3607129553,town,Goshen,Goshen,Orange,2016,2026,282
+3607130631,town,Greenville,Greenville,Orange,2016,2026,138
+3607131907,town,Hamptonburgh,HAMPTONBURGH;Hamptonbur;Hamptonburgh,Orange,2016,2026,198
+3607134550,town,Highlands,Highlands,Orange,2016,2026,342
+3607147042,city,Middletown,Middletown,Orange,2016,2026,198
+3607147713,town,Minisink,Minisink,Orange,2016,2026,204
+3607147999,town,Monroe,Monroe,Orange,2016,2026,204
+3607148153,town,Montgomery,MONTGOMERY;Montgomery,Orange,2016,2026,360
+3607148857,town,Mount Hope,Mount Hope,Orange,2016,2026,204
+3607150034,city,Newburgh,NEWBURGH;Newburgh,Orange,2016,2026,204
+3607150045,town,Newburgh,NEWBURGH;Newburgh,Orange,2016,2026,204
+3607150848,town,New Windsor,NEW WINDSOR;New Windso;New Windsor,Orange,2016,2026,204
+3607156185,town,Palm Tree,Palm Tree,Orange,2016,2026,204
+3607159388,city,Port Jervis,Port Jervi;Port Jervis,Orange,2016,2026,204
+3607175781,town,Tuxedo,Tuxedo,Orange,2016,2026,204
+3607177992,town,Wallkill,Wallkill,Orange,2016,2026,204
+3607178366,town,Warwick,Warwick,Orange,2016,2026,204
+3607178839,town,Wawayanda,Wawayanda,Orange,2016,2026,204
+3607190,village,Bolivar,BOLIVAR;Bolivar,Allegan;Allegany,2016,2026,144
+3607301044,town,Albion,Albion,Orleans,2016,2026,191
+3607304572,town,Barre,Barre,Orleans,2016,2026,192
+3607312496,town,Carlton,Carlton,Orleans,2016,2026,108
+3607315880,town,Clarendon,Clarendon,Orleans,2016,2026,108
+3607327958,town,Gaines,Gaines,Orleans,2016,2026,192
+3607339188,town,Kendall,Kendall,Orleans,2016,2026,198
+3607349286,town,Murray,Murray,Orleans,2016,2026,192
+3607361742,town,Ridgeway,Ridgeway,Orleans,2016,2026,192
+3607366751,town,Shelby,Shelby,Orleans,2016,2026,192
+3607383448,town,Yates,Yates,Orleans,2016,2026,192
+3607501055,town,Albion,Albion,Oswego,2016,2026,190
+3607501649,town,Amboy,Amboy,Oswego,2016,2026,108
+3607507674,town,Boylston,Boylston,Oswego,2016,2026,192
+3607517904,town,Constantia,Constantia,Oswego,2016,2026,192
+3607527815,city,Fulton,Fulton,Oswego,2016,2026,192
+3607529729,town,Granby,Granby,Oswego,2016,2026,192
+3607532028,town,Hannibal,Hannibal,Oswego,2016,2026,192
+3607532688,town,Hastings,Hastings,Oswego,2016,2026,192
+3607546822,town,Mexico,Mexico,Oswego,2016,2026,192
+3607547691,town,Minetto,Minetto,Oswego,2016,2026,192
+3607550342,town,New Haven,New Haven,Oswego,2016,2026,192
+3607555453,town,Orwell,Orwell,Oswego,2016,2026,192
+3607555574,city,Oswego,Oswego,Oswego,2016,2026,192
+3607555585,town,Oswego,Oswego,Oswego,2016,2026,192
+3607556154,town,Palermo,Palermo,Oswego,2016,2026,108
+3607556352,town,Parish,Parish,Oswego,2016,2026,108
+3607560873,town,Redfield,Redfield,Oswego,2016,2026,108
+3607561533,town,Richland,Richland,Oswego,2016,2026,192
+3607565079,town,Sandy Creek,Sandy Cree;Sandy Creek,Oswego,2016,2026,192
+3607565618,town,Schroeppel,Schroeppel,Oswego,2016,2026,192
+3607565992,town,Scriba,Scriba,Oswego,2016,2026,192
+3607577662,town,Volney,Volney,Oswego,2016,2026,192
+3607580500,town,West Monroe,West Monro;West Monroe,Oswego,2016,2026,192
+3607582073,town,Williamstown,Williamsto;Williamstown,Oswego,2016,2026,108
+3607711209,town,Burlington,Burlington,Otsego,2016,2026,84
+3607711528,town,Butternuts,Butternuts,Otsego,2016,2026,168
+3607715253,town,Cherry Valley,Cherry Val;Cherry Valley,Otsego,2016,2026,108
+3607719895,town,Decatur,Decatur,Otsego,2016,2026,108
+3607723613,town,Edmeston,Edmeston,Otsego,2016,2026,84
+3607724845,town,Exeter,Exeter,Otsego,2016,2026,84
+3607732589,town,Hartwick,Hartwick,Otsego,2016,2026,84
+3607741531,town,Laurens,Laurens,Otsego,2016,2026,84
+3607745920,town,Maryland,Maryland,Otsego,2016,2026,108
+3607746910,town,Middlefield,Middlefiel;Middlefield,Otsego,2016,2026,168
+3607747240,town,Milford,Milford,Otsego,2016,2026,84
+3607748494,town,Morris,Morris,Otsego,2016,2026,168
+3607750485,town,New Lisbon,New Lisbon,Otsego,2016,2026,84
+3607754881,city,Oneonta,Oneonta,Otsego,2016,2026,168
+3607754892,town,Oneonta,Oneonta,Otsego,2016,2026,168
+3607755629,town,Otego,Otego,Otsego,2016,2026,168
+3607755695,town,Otsego,Otsego,Otsego,2016,2026,84
+3607758343,town,Pittsfield,Pittsfield,Otsego,2016,2026,84
+3607758420,town,Plainfield,Plainfield,Otsego,2016,2026,84
+3607761467,town,Richfield,Richfield,Otsego,2016,2026,168
+3607763638,town,Roseboom,Roseboom,Otsego,2016,2026,108
+3607770310,town,Springfield,Springfield,Otsego,2016,2026,84
+3607776012,town,Unadilla,Unadilla,Otsego,2016,2026,84
+3607779972,town,Westford,Westford,Otsego,2016,2026,84
+3607783129,town,Worcester,Worcester,Otsego,2016,2026,108
+3607912529,town,Carmel,Carmel,Putnam,2016,2026,306
+3607939331,town,Kent,Kent,Putnam,2016,2026,84
+3607956748,town,Patterson,Patterson,Putnam,2016,2025,156
+3607957584,town,Philipstown,PHILIPSTOWN;Philipstow;Philipstown,Putnam,2016,2026,174
+3607960147,town,Putnam Valley,Putnam Valley,Putnam,2016,2025,78
+3607968924,town,Southeast,Southeast,Putnam,2016,2025,156
+3608070,village,Brewster,Brewster,Putnam,2016,2025,156
+3608103,village,Briarcliff Manor,Briarcliff;Briarcliff Manor,Westche;Westchester,2016,2026,258
+3608306189,town,Berlin,Berlin,Rensselaer,2016,2025,78
+3608310275,town,Brunswick,Brunswick,Renssel;Rensselaer,2016,2026,192
+3608322117,town,East Greenbush,East Green;East Greenbush,Renssel;Rensselaer,2016,2026,192
+3608323,village,Brightwaters,Brightwate;Brightwaters,Suffolk,2016,2026,138
+3608329674,town,Grafton,Grafton,Renssel;Rensselaer,2016,2026,192
+3608335463,town,Hoosick,Hoosick,Renssel;Rensselaer,2016,2026,108
+3608349517,town,Nassau,Nassau,Renssel;Rensselaer,2016,2026,108
+3608352100,town,North Greenbush,North Gree;North Greenbush,Renssel;Rensselaer,2016,2026,270
+3608357441,town,Petersburgh,Petersburgh,Rensselaer,2016,2025,78
+3608358398,town,Pittstown,Pittstown,Renssel;Rensselaer,2016,2026,192
+3608358805,town,Poestenkill,Poestenkil;Poestenkill,Renssel;Rensselaer,2016,2026,192
+3608361148,city,Rensselaer,Rensselaer,Renssel;Rensselaer,2016,2026,192
+3608365013,town,Sand Lake,Sand Lake,Rensselaer,2016,2026,168
+3608365486,town,Schaghticoke,Schaghtico;Schaghticoke,Renssel;Rensselaer,2016,2026,270
+3608365541,town,Schodack,Schodack,Renssel;Rensselaer,2016,2026,192
+3608371102,town,Stephentown,Stephentown,Rensselaer,2016,2025,78
+3608375484,city,Troy,Troy,Renssel;Rensselaer,2016,2026,192
+3608422,village,Broadalbin,Broadalbin,Fulton,2016,2026,204
+3608466,village,Brockport,Brockport,Monroe,2016,2026,210
+3608488,village,Brocton,BROCTON;Brocton,Chautau;Chautauqua,2016,2026,204
+3608532,village,Bronxville,Bronxville,Westche;Westchester,2016,2026,204
+3608715968,town,Clarkstown,Clarkstown,Rocklan;Rockland,2016,2026,204
+3608732765,town,Haverstraw,Haverstraw,Rocklan;Rockland,2016,2026,204
+3608755211,town,Orangetown,Orangetown,Rocklan;Rockland,2016,2026,204
+3608760510,town,Ramapo,Ramapo,Rocklan;Rockland,2016,2026,204
+3608771674,town,Stony Point,Stony Poin;Stony Point,Rocklan;Rockland,2016,2026,204
+3608907938,town,Brasher,Brasher,St. Law;St. Lawrence,2016,2026,108
+3608912342,town,Canton,Canton,St. Law;St. Lawrence,2016,2026,108
+3608915792,town,Clare,Clare,St. Law;St. Lawrence,2016,2026,108
+3608916287,town,Clifton,Clifton,St. Law;St. Lawrence,2016,2026,108
+3608917409,town,Colton,Colton,St. Law;St. Lawrence,2016,2026,108
+3608920038,town,De Kalb,De Kalb,St. Law;St. Lawrence,2016,2026,108
+3608920335,town,De Peyster,De Peyster,St. Law;St. Lawrence,2016,2026,108
+3608923646,town,Edwards,Edwards,St. Law;St. Lawrence,2016,2026,108
+3608925791,town,Fine,Fine,St. Law;St. Lawrence,2016,2026,108
+3608927100,town,Fowler,Fowler,St. Law;St. Lawrence,2016,2026,108
+3608929608,town,Gouverneur,Gouverneur,St. Law;St. Lawrence,2016,2026,108
+3608931841,town,Hammond,Hammond,St. Law;St. Lawrence,2016,2026,108
+3608934176,town,Hermon,Hermon,St. Law;St. Lawrence,2016,2026,108
+3608935595,town,Hopkinton,Hopkinton,St. Law;St. Lawrence,2016,2026,108
+3608941564,town,Lawrence,Lawrence,St. Law;St. Lawrence,2016,2026,108
+3608942631,town,Lisbon,Lisbon,St. Law;St. Lawrence,2016,2026,108
+3608943588,town,Louisville,Louisville,St. Law;St. Lawrence,2016,2026,108
+3608944391,town,Macomb,Macomb,St. Law;St. Lawrence,2016,2026,108
+3608944490,town,Madrid,Madrid,St. Law;St. Lawrence,2016,2026,108
+3608946030,town,Massena,Massena,St. Law;St. Lawrence,2016,2026,108
+3608948582,town,Morristown,Morristown,St. Law;St. Lawrence,2016,2026,108
+3608951330,town,Norfolk,Norfolk,St. Law;St. Lawrence,2016,2026,108
+3608954485,city,Ogdensburg,Ogdensburg,St. Law;St. Lawrence,2016,2026,108
+3608955563,town,Oswegatchie,Oswegatchi;Oswegatchie,St. Law;St. Lawrence,2016,2026,108
+3608956374,town,Parishville,Parishvill;Parishville,St. Law;St. Lawrence,2016,2026,108
+3608957716,town,Piercefield,Piercefiel;Piercefield,St. Law;St. Lawrence,2016,2026,108
+3608957771,town,Pierrepont,Pierrepont,St. Law;St. Lawrence,2016,2026,108
+3608958266,town,Pitcairn,Pitcairn,St. Law;St. Lawrence,2016,2026,108
+3608959575,town,Potsdam,Potsdam,St. Law;St. Lawrence,2016,2026,108
+3608963858,town,Rossie,Rossie,St. Law;St. Lawrence,2016,2026,108
+3608964221,town,Russell,Russell,St. Law;St. Lawrence,2016,2026,108
+3608971410,town,Stockholm,Stockholm,St. Law;St. Lawrence,2016,2026,108
+3608977739,town,Waddington,Waddington,St. Law;St. Lawrence,2016,2026,108
+3609104220,town,Ballston,Ballston,Saratog;Saratoga,2016,2026,192
+3609113926,town,Charlton,Charlton,Saratog;Saratoga,2016,2026,192
+3609116353,town,Clifton Park,Clifton Pa;Clifton Park,Saratog;Saratoga,2016,2026,270
+3609118223,town,Corinth,Corinth,Saratog;Saratoga,2016,2026,192
+3609119807,town,Day,Day,Saratog;Saratoga,2016,2026,108
+3609123591,town,Edinburg,Edinburg,Saratog;Saratoga,2016,2026,108
+3609128112,town,Galway,Galway,Saratog;Saratoga,2016,2026,108
+3609130444,town,Greenfield,Greenfield,Saratog;Saratoga,2016,2026,192
+3609131269,town,Hadley,Hadley,Saratog;Saratoga,2016,2026,108
+3609131489,town,Halfmoon,Halfmoon,Saratog;Saratoga,2016,2026,348
+3609144743,town,Malta,Malta,Saratog;Saratoga,2016,2026,270
+3609146360,city,Mechanicville,Mechanicville,Saratoga,2016,2025,156
+3609147537,town,Milton,Milton,Saratog;Saratoga,2016,2026,192
+3609148318,town,Moreau,Moreau,Saratog;Saratoga,2016,2026,192
+3609153737,town,Northumberland,Northumber;Northumberland,Saratog;Saratoga,2016,2026,192
+3609159949,town,Providence,Providence,Saratog;Saratoga,2016,2026,108
+3609165244,town,Saratoga,Saratoga,Saratog;Saratoga,2016,2026,192
+3609165255,city,Saratoga Springs,Saratoga S;Saratoga Springs,Saratog;Saratoga,2016,2026,192
+3609171333,town,Stillwater,Stillwater,Saratog;Saratoga,2016,2026,348
+3609178531,town,Waterford,Waterford,Saratog;Saratoga,2016,2026,192
+3609182403,town,Wilton,Wilton,Saratog;Saratoga,2016,2026,192
+3609321006,town,Duanesburg,Duanesburg,Schenec;Schenectady,2016,2026,192
+3609329366,town,Glenville,Glenville,Schenec;Schenectady,2016,2026,192
+3609351264,town,Niskayuna,Niskayuna,Schenec;Schenectady,2016,2026,192
+3609359861,town,Princetown,Princetown,Schenec;Schenectady,2016,2026,192
+3609363935,town,Rotterdam,Rotterdam,Schenec;Schenectady,2016,2026,192
+3609365508,city,Schenectady,Schenectad;Schenectady,Schenec;Schenectady,2016,2026,192
+3609506893,town,Blenheim,Blenheim,Schohar;Schoharie,2016,2026,108
+3609510154,town,Broome,Broome,Schohar;Schoharie,2016,2026,108
+3609512452,town,Carlisle,Carlisle,Schohar;Schoharie,2016,2026,192
+3609516639,town,Cobleskill,Cobleskill,Schohar;Schoharie,2016,2026,192
+3609517651,town,Conesville,Conesville,Schoharie,2016,2026,141
+3609524724,town,Esperance,Esperance,Schohar;Schoharie,2016,2026,108
+3609527826,town,Fulton,Fulton,Schohar;Schoharie,2016,2026,108
+3609528981,town,Gilboa,Gilboa,Schoharie,2016,2026,84
+3609538440,town,Jefferson,Jefferson,Schoharie,2016,2026,84
+3609546855,town,Middleburgh,Middleburg;Middleburgh,Schohar;Schoharie,2016,2026,108
+3609561599,town,Richmondville,Richmondvi;Richmondville,Schohar;Schoharie,2016,2026,192
+3609565596,town,Schoharie,Schoharie,Schohar;Schoharie,2016,2026,108
+3609566542,town,Seward,Seward,Schohar;Schoharie,2016,2026,108
+3609566641,town,Sharon,Sharon,Schohar;Schoharie,2016,2026,108
+3609572070,town,Summit,Summit,Schohar;Schoharie,2016,2026,108
+3609583195,town,Wright,Wright,Schohar;Schoharie,2016,2026,108
+3609712914,town,Catharine,Catharine,Schuyler,2016,2026,84
+3609713112,town,Cayuta,Cayuta,Schuyler,2016,2026,84
+3609720676,town,Dix,Dix,Schuyler,2016,2026,168
+3609733073,town,Hector,Hector,Schuyler,2016,2026,90
+3609748186,town,Montour,Montour,Schuyler,2016,2026,168
+3609755156,town,Orange,Orange,Schuyler,2016,2026,168
+3609760763,town,Reading,Reading,Schuyler,2016,2026,168
+3609775924,town,Tyrone,Tyrone,Schuyler,2016,2026,168
+3609918663,town,Covert,Covert,Seneca,2016,2026,168
+3609925505,town,Fayette,Fayette,Seneca,2016,2026,168
+3609938858,town,Junius,Junius,Seneca,2016,2026,168
+3609943225,town,Lodi,Lodi,Seneca,2016,2026,168
+3609955827,town,Ovid,Ovid,Seneca,2016,2026,90
+3609963440,town,Romulus,Romulus,Seneca,2016,2026,168
+3609966333,town,Seneca Falls,Seneca Falls,Seneca,2016,2026,168
+3609975902,town,Tyre,Tyre,Seneca,2016,2026,168
+3609976958,town,Varick,Varick,Seneca,2016,2026,168
+3609978564,town,Waterloo,Waterloo,Seneca,2016,2026,168
+3610100287,town,Addison,Addison,Steuben,2016,2026,90
+3610103342,town,Avoca,Avoca,Steuben,2016,2026,168
+3610104770,town,Bath,Bath,Steuben,2016,2026,96
+3610107740,town,Bradford,Bradford,Steuben,2016,2026,90
+3610111880,town,Cameron,Cameron,Steuben,2016,2026,90
+3610111946,town,Campbell,Campbell,Steuben,2016,2026,90
+3610112265,town,Canisteo,CANISTEO;Canisteo,Steuben,2016,2026,174
+3610112991,town,Caton,Caton,Steuben,2016,2026,90
+3610116738,town,Cohocton,Cohocton,Steuben,2016,2026,168
+3610118256,city,Corning,Corning,Steuben,2016,2026,90
+3610118267,town,Corning,Corning,Steuben,2016,2026,168
+3610119675,town,Dansville,Dansville,Steuben,2016,2026,168
+3610124647,town,Erwin,Erwin,Steuben,2016,2026,90
+3610127551,town,Fremont,FREMONT;Fremont,Steuben,2016,2026,174
+3610130741,town,Greenwood,GREENWOOD;Greenwood,Steuben,2016,2026,174
+3610132,village,Brookville,Brookville,Nassau,2016,2026,138
+3610132567,town,Hartsville,HARTSVILLE;Hartsville,Steuben,2016,2026,174
+3610135661,town,Hornby,Hornby,Steuben,2016,2026,168
+3610135672,city,Hornell,HORNELL;Hornell,Steuben,2016,2026,174
+3610135683,town,Hornellsville,HORNELLSVILLE;Hornellsville,Steuben,2016,2026,174
+3610135837,town,Howard,HOWARD;Howard,Steuben,2016,2026,174
+3610138319,town,Jasper,Jasper,Steuben,2016,2026,90
+3610142576,town,Lindley,Lindley,Steuben,2016,2026,90
+3610159718,town,Prattsburgh,Prattsburgh,Steuben,2016,2026,168
+3610159982,town,Pulteney,Pulteney,Steuben,2016,2026,168
+3610160653,town,Rathbone,Rathbone,Steuben,2016,2026,90
+3610173836,town,Thurston,Thurston,Steuben,2016,2026,90
+3610175440,town,Troupsburg,Troupsburg,Steuben,2016,2026,90
+3610175737,town,Tuscarora,Tuscarora;West Union,Steuben,2016,2026,168
+3610176496,town,Urbana,Urbana,Steuben,2016,2026,90
+3610178861,town,Wayland,Wayland,Steuben,2016,2026,168
+3610178883,town,Wayne,Wayne,Steuben,2016,2026,168
+3610181105,town,West Union,Arcade;WEST UNION;West Union,Steuben;Wyoming,2016,2026,174
+3610181457,town,Wheeler,Wheeler,Steuben,2016,2026,90
+3610182843,town,Woodhull,Woodhull,Steuben,2016,2026,90
+3610231,village,Brownville,Brownville,Jeffers;Jefferson,2016,2026,204
+3610286,village,Brushton,Brushton,Frankli;Franklin,2016,2026,120
+3610304000,town,Babylon,Babylon;Babylon Town,Suffolk,2016,2026,138
+3610310000,town,Brookhaven,Brookhaven;Brookhaven Town,Suffolk,2016,2026,138
+3610322194,town,East Hampton,East Hampt;East Hampton;East Hampton Town,Suffolk,2016,2026,138
+3610337000,town,Huntington,Huntington,Suffolk,2016,2026,138
+3610338000,town,Islip,Islip,Suffolk,2016,2026,138
+3610341,village,Buchanan,Buchanan,Westche;Westchester,2016,2026,204
+3610361984,town,Riverhead,Riverhead;Riverhead Town,Suffolk,2016,2026,138
+3610366839,town,Shelter Is,Shelter Is;Shelter Island,Suffolk,2021,2026,60
+3610368000,town,Smithtown,Smithtown,Suffolk,2016,2026,138
+3610368473,town,Southampton,Southampto;Southampton;Southampton Town,Suffolk,2016,2026,138
+3610369463,town,Southold,Southold;Southold Town,Suffolk,2016,2026,138
+3610506310,town,Bethel,Bethel,Sullivan,2016,2026,90
+3610511759,town,Callicoon,Callicoon,Sullivan,2016,2026,106
+3610516661,town,Cochecton,Cochecton,Sullivan,2016,2026,90
+3610520104,town,Delaware,Delaware,Sullivan,2016,2026,90
+3610525241,town,Fallsburg,Fallsburg,Sullivan,2016,2026,90
+3610526528,town,Forestburgh,Forestburg;Forestburgh,Sulliva;Sullivan,2016,2026,189
+3610527573,town,Fremont,Fremont,Sullivan,2016,2026,90
+3610534473,town,Highland,Highland,Sullivan,2016,2026,90
+3610542235,town,Liberty,Liberty,Sullivan,2016,2026,90
+3610543786,town,Lumberland,Lumberland,Sulliva;Sullivan,2016,2026,120
+3610544809,town,Mamakating,Mamakating,Sulliva;Sullivan,2016,2026,120
+3610549847,town,Neversink,NEVERSINK;Neversink,Sulliva;Sullivan,2016,2026,270
+3610563176,town,Rockland,Rockland,Sullivan,2016,2026,90
+3610573627,town,Thompson,Thompson,Sullivan,2016,2026,99
+3610575759,town,Tusten,Tusten,Sullivan,2016,2026,90
+3610704671,town,Barton,Barton,Tioga,2016,2026,90
+3610706145,town,Berkshire,Berkshire,Tioga,2016,2026,90
+3610712221,town,Candor,Candor,Tioga,2016,2026,168
+3610749913,town,Newark Valley,Newark Valley,Tioga,2016,2026,90
+3610751121,town,Nichols,Nichols,Tioga,2016,2026,168
+3610755893,town,Owego,Owego,Tioga,2016,2026,168
+3610761511,town,Richford,Richford,Tioga,2016,2026,90
+3610770178,town,Spencer,Spencer,Tioga,2016,2026,168
+3610773968,town,Tioga,Tioga,Tioga,2016,2026,168
+3610912606,town,Caroline,Caroline,Tompkins,2016,2026,168
+3610919620,town,Danby,Danby,Tompkins,2016,2026,168
+3610920962,town,Dryden,Dryden,Tompkins,2016,2026,168
+3610924548,town,Enfield,Enfield,Tompkins,2016,2026,168
+3610930972,town,Groton,Groton,Tompkins,2016,2026,168
+3610938077,city,Ithaca,Ithaca,Tompkins,2016,2026,168
+3610938088,town,Ithaca,Ithaca,Tompkins,2016,2026,168
+3610941234,town,Lansing,Lansing,Tompkins,2016,2026,168
+3610950254,town,Newfield,Newfield,Tompkins,2016,2026,168
+3610975990,town,Ulysses,Ulysses,Tompkins,2016,2026,168
+3611120247,town,Denning,DENNING;Denning,Ulster,2016,2026,180
+3611124691,town,Esopus,ESOPUS;Esopus,Ulster,2016,2026,204
+3611128255,town,Gardiner,GARDINER;Gardiner,Ulster,2016,2026,180
+3611132,village,Burdett,Burdett,Schuyler,2016,2026,90
+3611132116,town,Hardenburgh,Hardenburgh,Ulster,2016,2026,90
+3611137143,town,Hurley,HURLEY;Hurley,Ulster,2016,2026,204
+3611139727,city,Kingston,KINGSTON;Kingston,Ulster,2016,2026,204
+3611139738,town,Kingston,KINGSTON;Kingston,Ulster,2016,2026,204
+3611142994,town,Lloyd,LLOYD;Lloyd,Ulster,2016,2026,204
+3611145458,town,Marbletown,MARBLETOWN;Marbletown,Ulster,2016,2026,204
+3611145722,town,Marlborough,MARLBOROUGH;Marlboroug;Marlborough,Ulster,2016,2026,204
+3611150562,town,New Paltz,NEW PALTZ;New Paltz,Ulster,2016,2026,204
+3611154,village,Burke,Burke,Franklin,2016,2026,90
+3611154749,town,Olive,OLIVE;Olive,Ulster,2016,2026,180
+3611158552,town,Plattekill,PLATTEKILL;Plattekill,Ulster,2016,2026,180
+3611163011,town,Rochester,ROCHESTER;Rochester,Ulster,2016,2026,180
+3611163737,town,Rosendale,ROSENDALE;Rosendale,Ulster,2016,2026,180
+3611165299,town,Saugerties,SAUGERTIES;Saugerties,Ulster,2016,2026,192
+3611166597,town,Shandaken,Shandaken,Ulster,2016,2026,90
+3611166674,town,Shawangunk,SHAWANGUNK;Shawangunk,Ulster,2016,2026,372
+3611175935,town,Ulster,ULSTER;Ulster,Ulster,2016,2026,204
+3611178828,town,Wawarsing,WAWARSING;Wawarsing,Ulster,2016,2026,180
+3611183052,town,Woodstock,WOODSTOCK;Woodstock,Ulster,2016,2026,180
+3611307234,town,Bolton,Bolton,Warren,2016,2026,108
+3611315319,town,Chester,Chester,Warren,2016,2026,108
+3611329333,city,Glens Falls,Glens Fall;Glens Falls,Warren,2016,2026,192
+3611331335,town,Hague,Hague,Warren,2016,2026,108
+3611335639,town,Horicon,Horicon,Warren,2016,2026,108
+3611338715,town,Johnsburg,Johnsburg,Warren,2016,2026,108
+3611340519,town,Lake George,Lake Georg;Lake George,Warren,2016,2026,192
+3611340662,town,Lake Luzerne,Lake Luzer;Lake Luzerne,Warren,2016,2026,192
+3611360356,town,Queensbury,Queensbury,Warren,2016,2026,192
+3611371641,town,Stony Creek,Stony Cree;Stony Creek,Warren,2016,2026,108
+3611373814,town,Thurman,Thurman,Warren,2016,2026,108
+3611378300,town,Warrensburg,Warrensbur;Warrensburg,Warren,2016,2026,108
+3611502561,town,Argyle,Argyle,Washing;Washington,2016,2026,192
+3611511836,town,Cambridge,Cambridge,Washing;Washington,2016,2026,108
+3611520885,town,Dresden,Dresden,Washing;Washington,2016,2026,108
+3611522656,town,Easton,Easton,Washing;Washington,2016,2026,192
+3611526715,town,Fort Ann,Fort Ann,Washing;Washington,2016,2026,108
+3611526781,town,Fort Edward,Fort Edwar;Fort Edward,Washing;Washington,2016,2026,192
+3611530037,town,Granville,Granville,Washington,2016,2025,78
+3611530686,town,Greenwich,Greenwich,Washing;Washington,2016,2026,270
+3611531885,town,Hampton,Hampton,Washing;Washington,2016,2026,108
+3611532457,town,Hartford,Hartford,Washing;Washington,2016,2026,108
+3611533040,town,Hebron,Hebron,Washington,2016,2025,78
+3611538143,town,Jackson,Jackson,Washing;Washington,2016,2026,186
+3611539650,town,Kingsbury,Kingsbury,Washing;Washington,2016,2026,192
+3611560092,town,Putnam,Putnam,Washing;Washington,2016,2026,108
+3611564782,town,Salem,Salem,Washington,2016,2025,78
+3611581578,town,White Creek,White Cree;White Creek,Washing;Washington,2016,2026,108
+3611581633,town,Whitehall,Whitehall,Washing;Washington,2016,2026,108
+3611702440,town,Arcadia,Arcadia,Wayne,2016,2026,168
+3611704,village,Caledonia,Caledonia,Livings;Livingston,2016,2026,210
+3611711473,town,Butler,Butler,Wayne,2016,2026,210
+3611728013,town,Galen,Galen,Wayne,2016,2026,252
+3611737165,town,Huron,Huron,Wayne,2016,2026,210
+3611743973,town,Lyons,Lyons,Wayne,2016,2026,168
+3611744160,town,Macedon,Macedon,Wayne,2016,2026,372
+3611745645,town,Marion,Marion,Wayne,2016,2026,210
+3611755013,town,Ontario,Ontario,Wayne,2016,2026,210
+3611756198,town,Palmyra,Palmyra,Wayne,2016,2026,168
+3611763605,town,Rose,Rose,Wayne,2016,2026,210
+3611765343,town,Savannah,Savannah,Wayne,2016,2026,210
+3611768220,town,Sodus,Sodus,Wayne,2016,2026,210
+3611778102,town,Walworth,Walworth,Wayne,2016,2026,294
+3611782040,town,Williamson,Williamson,Wayne,2016,2026,210
+3611782689,town,Wolcott,Wolcott,Wayne,2016,2026,210
+3611825,village,Cambridge,Cambridge,Washing;Washington,2016,2026,120
+3611847,village,Camden,Camden,Oneida,2016,2026,120
+3611902,village,Camillus,Camillus,Onondag;Onondaga,2016,2026,204
+3611905320,town,Bedford,Bedford,Westche;Westchester,2016,2026,288
+3611918410,town,Cortlandt,Cortlandt,Westche;Westchester,2016,2026,204
+3611921820,town,Eastchester,Eastcheste;Eastchester,Westche;Westchester,2016,2026,204
+3611930367,town,Greenburgh,Greenburgh,Westche;Westchester,2016,2026,204
+3611942136,town,Lewisboro,Lewisboro,Westchester,2016,2025,84
+3611944842,town,Mamaroneck,Mamaroneck,Westche;Westchester,2016,2026,204
+3611949011,town,Mount Pleasant,Mount Plea;Mount Pleasant,Westche;Westchester,2016,2026,204
+3611949121,city,Mount Vernon,Mount Vern;Mount Vernon,Westche;Westchester,2016,2026,204
+3611950078,town,New Castle,New Castle,Westche;Westchester,2016,2026,204
+3611950617,city,New Rochelle,New Rochel;New Rochelle,Westche;Westchester,2016,2026,204
+3611951693,town,North Castle,North Cast;North Castle,Westche;Westchester,2016,2026,204
+3611953517,town,North Salem,North Salem,Westchester,2016,2025,101
+3611955541,town,Ossining,Ossining,Westche;Westchester,2016,2026,204
+3611956979,city,Peekskill,Peekskill,Westche;Westchester,2016,2026,204
+3611959685,town,Pound Ridge,Pound Ridge,Westchester,2016,2025,84
+3611964309,city,Rye,Rye,Westche;Westchester,2016,2026,204
+3611968308,town,Somers,Somers,Westchester,2016,2026,174
+3611981677,city,White Plains,White Plai;White Plains,Westche;Westchester,2016,2024,156
+3611981677,village,Irvington/ CityofWhitePlains,Irvington/ CityofWhitePlains;Irvington/ Cityofwhiteplains,Westchester,2024,2026,48
+3611984000,city,Yonkers,Yonkers,Westche;Westchester,2016,2026,204
+3611984077,town,Yorktown,Yorktown,Westche;Westchester,2016,2026,288
+3612102418,town,Arcade,ARCADE;Arcade;Attica,Wyoming,2016,2026,204
+3612103012,town,Attica,ATTICA;Attica;Bennington,Wyoming,2016,2026,192
+3612105936,town,Bennington,BENNINGTON;Bennington;Castile,Wyoming,2016,2026,174
+3612111,village,Canajoharie,Canajohari;Canajoharie,Montgom;Montgomery,2016,2026,204
+3612112782,town,Castile,CASTILE;Castile;Covington,Wyoming,2016,2026,258
+3612118696,town,Covington,COVINGTON;Covington;Eagle,Wyoming,2016,2026,282
+3612121369,town,Eagle,EAGLE;Eagle;Gainesville,Wyoming,2016,2026,204
+3612127980,town,Gainesville,GAINESVILLE;Gainesville;Java,Wyoming,2016,2026,174
+3612128596,town,Genesee Falls,Genesee Fa;Genesee Falls,Wyoming,2016,2026,324
+3612138341,town,Java,JAVA;Java;Middlebury,Wyoming,2016,2026,174
+3612146877,town,Middlebury,MIDDLEBURY;Middlebury;Orangeville,Wyoming,2016,2026,174
+3612155222,town,Orangeville,ORANGEVILLE;Orangevill;Orangeville;Pike,Wyoming,2016,2026,192
+3612157254,town,Perry,Perry,Wyoming,2016,2026,174
+3612157826,town,Pike,PIKE;Pike;Sheldon,Wyoming,2016,2026,228
+3612166773,town,Sheldon,SHELDON;Sheldon,Wyoming,2016,2026,172
+3612177,village,Canaseraga,Canaseraga,Allegany,2016,2026,90
+3612178344,town,Warsaw,Warsaw,Wyoming,2016,2026,173
+3612181325,town,Wethersfield,Wethersfie;Wethersfield,Wyoming,2016,2026,108
+3612188,village,Canastota,Canastota,Madison,2016,2026,204
+3612210,village,Candor,Candor,Tioga,2016,2026,168
+3612254,village,Canisteo,CANISTEO;Canisteo,Steuben,2016,2026,174
+3612304594,town,Barrington,Barrington,Yates,2016,2026,167
+3612306002,town,Benton,Benton,Yates,2016,2026,167
+3612331,village,Canton,Canton,St. Law;St. Lawrence,2016,2026,120
+3612338044,town,Italy,Italy,Yates,2016,2026,167
+3612338583,town,Jerusalem,Jerusalem,Yates,2016,2026,167
+3612347020,town,Middlesex,Middlesex,Yates,2016,2026,167
+3612347504,town,Milo,Milo,Yates,2016,2026,167
+3612353,village,Cape Vincent,Cape Vince;Cape Vincent,Jeffers;Jefferson,2016,2026,120
+3612359597,town,Potter,Potter,Yates,2016,2026,89
+3612370816,town,Starkey,Starkey,Yates,2016,2026,167
+3612375055,town,Torrey,Torrey,Yates,2016,2026,167
+3612683,village,Carthage,Carthage,Jeffers;Jefferson,2016,2026,204
+3612749,village,Cassadaga,CASSADAGA;Cassadaga,Chautau;Chautauqua,2016,2026,204
+3612771,village,Castile,CASTILE;Castile,Wyoming,2016,2026,84
+3612870,village,Castleton-on-Hudson,Castleton-;Castleton-On-Hudson;Castleton-on-Hudson,Renssel;Rensselaer,2016,2026,204
+3612881,village,Castorland,Castorland,Lewis,2016,2026,120
+3612958,village,Cato,Cato,Cayuga,2016,2026,144
+3613002,village,Catskill,CATSKILL;Catskill,Greene,2016,2026,204
+3613024,village,Cattaraugus,CATTARAUGUS;Cattaraugu;Cattaraugus,Cattara;Cattaraugus,2016,2026,225
+3613068,village,Cayuga,Cayuga,Cayuga,2016,2026,168
+3613079,village,Cayuga Heights,Cayuga Heights,Tompkins,2016,2026,168
+3613145,village,Cazenovia,Cazenovia,Madison,2016,2026,204
+3613233,village,Cedarhurst,Cedarhurst,Nassau,2016,2026,138
+3613288,village,Celoron,CELORON;Celoron,Chautauqua,2016,2026,84
+3613585,village,Central Square,Central Sq;Central Square,Oswego,2016,2026,204
+3613618,village,Centre Isl,Centre Isl;Centre Island,Nassau,2021,2026,60
+3613739,village,Champlain,Champlain,Clinton,2016,2026,168
+3613981,village,Chateaugay,Chateaugay,Franklin,2016,2026,90
+3614003,village,Chatham,Chatham,Columbia,2016,2025,102
+3614036,village,Chaumont,Chaumont,Jeffers;Jefferson,2016,2026,120
+3615242,village,Cherry Valley,Cherry Val;Cherry Valley,Otsego,2016,2026,120
+3615297,village,Chester,Chester,Orange,2016,2026,204
+3615400,village,Chestnut Ridge,Chestnut R;Chestnut Ridge,Rocklan;Rockland,2016,2026,204
+3615561,village,Chittenango,Chittenang;Chittenango,Madison,2016,2026,204
+3615638,village,Churchville,Churchville,Monroe,2016,2026,90
+3616089,village,Clayton,Clayton,Jeffers;Jefferson,2016,2026,120
+3616111,village,Clayville,Clayville,Oneida,2016,2026,204
+3616188,village,Cleveland,Cleveland,Oswego,2016,2026,120
+3616375,village,Clifton Springs,Clifton Springs,Ontario,2016,2026,216
+3616419,village,Clinton,Clinton,Oneida,2016,2026,204
+3616573,village,Clyde,Clyde,Wayne,2016,2026,168
+3616628,village,Cobleskill,Cobleskill,Schohar;Schoharie,2016,2026,204
+3616727,village,Cohocton,Cohocton,Steuben,2016,2026,168
+3616815,village,Cold Brook,Cold Brook,Herkime;Herkimer,2016,2026,120
+3616936,village,Cold Spring,COLD SPRING;Cold Sprin;Cold Spring,Putnam,2016,2026,180
+3617332,village,Colonie,Colonie,Albany,2016,2026,204
+3617882,village,Constableville,Constablev;Constableville,Lewis,2016,2026,120
+3618047,village,Cooperstown,Cooperstown,Otsego,2016,2026,140
+3618135,village,Copenhagen,Copenhagen,Lewis,2016,2026,120
+3618201,village,Corfu,CORFU;Corfu,Genesee,2016,2026,204
+3618212,village,Corinth,Corinth,Saratog;Saratoga,2016,2026,204
+3618333,town,Cornwall-On-Hudson,CORNWALL-ON-HUDSON;Cornwall-On-Hudson;Cornwall-on-hudson,Orange,2024,2026,40
+3618333,village,Cornwall-on-Hudson,Cornwall-On-Hudson;Cornwall-o;Cornwall-on-Hudson;Cornwall-on-hudson,Orange,2016,2026,164
+3618597,village,Cove Neck,Cove Neck,Nassau,2021,2026,60
+3618718,village,Coxsackie,COXSACKIE;Coxsackie,Greene,2016,2026,204
+3619070,village,Croghan,Croghan,Lewis,2016,2026,120
+3619213,village,Croton-on-Hudson,Croton-On-Hudson;Croton-on-;Croton-on-Hudson,Westche;Westchester,2016,2026,204
+3619356,village,Cuba,CUBA;Cuba,Allegan;Allegany,2016,2026,204
+3619642,village,Dannemora,Dannemora,Clinton,2016,2026,216
+3619664,village,Dansville,Dansville,Livingston,2016,2026,168
+3619994,village,Deferiet,Deferiet,Jeffers;Jefferson,2016,2026,204
+3620082,village,Delanson,Delanson,Schenec;Schenectady,2016,2026,120
+3620115,village,Delevan,DELEVAN;Delevan,Cattara;Cattaraugus,2016,2026,204
+3620126,village,Delhi,Delhi,Delaware,2016,2026,90
+3620313,village,Depew,DEPEW;Depew,Erie,2016,2026,337
+3620346,village,Deposit,Deposit,Broome & Delaware,2016,2026,216
+3620379,village,Dering Har,Dering Har;Dering Harbor,Suffolk,2021,2026,60
+3620390,village,DeRuyter,DeRuyter;Deruyter,Madison,2016,2026,204
+3620500,village,Dexter,Dexter,Jeffers;Jefferson,2016,2026,204
+3620698,village,Dobbs Ferry,Dobbs Ferr;Dobbs Ferry,Westche;Westchester,2016,2026,204
+3620731,village,Dolgeville,Dolgeville,Herkimer,2016,2026,204
+3620896,village,Dresden,Dresden,Yates,2016,2026,167
+3620951,village,Dryden,Dryden,Tompkins,2016,2026,168
+3621050,village,Dundee,Dundee,Yates,2016,2026,167
+3621523,village,Earlville,Earlville,Chenango & Madison,2016,2026,114
+3621589,village,East Aurora,EAST AURORA;East Aurora,Erie,2016,2026,174
+3622183,village,East Hampton,East Hampt;East Hampton,Suffolk,2016,2026,138
+3622260,village,East Hills,East Hills,Nassau,2016,2026,138
+3622865,village,East Rochester,East Roche;East Rochester,Monroe,2016,2026,210
+3622876,village,East Rockaway,East Rocka;East Rockaway,Nassau,2016,2026,138
+3623052,village,East Syracuse,East Syrac;East Syracuse,Onondag;Onondaga,2016,2026,204
+3623217,village,East Williston,East Willi;East Williston,Nassau,2016,2026,138
+3623745,village,Elba,ELBA;Elba,Genesee,2016,2026,204
+3623789,village,Elbridge,Elbridge,Onondaga,2016,2026,168
+3623965,village,Ellenville,ELLENVILLE;Ellenville,Ulster,2016,2026,180
+3624020,village,Ellicottville,ELLICOTTVILLE;Ellicottvi;Ellicottville,Cattara;Cattaraugus,2016,2026,204
+3624075,village,Ellisburg,Ellisburg,Jeffers;Jefferson,2016,2026,204
+3624251,village,Elmira Heights,Elmira Heights,Chemung,2016,2026,216
+3624295,village,Elmsford,Elmsford,Westche;Westchester,2016,2026,204
+3624515,village,Endicott,Endicott,Broome,2016,2026,168
+3624713,village,Esperance,Esperance,Schohar;Schoharie,2016,2026,120
+3624823,village,Evans Mills,Evans Mill;Evans Mills,Jeffers;Jefferson,2016,2026,204
+3624867,village,Fabius,Fabius,Onondag;Onondaga,2016,2026,204
+3624988,village,Fair Haven,Fair Haven,Cayuga,2016,2026,120
+3625076,village,Fairport,Fairport,Monroe,2016,2026,94
+3625164,village,Falconer,FALCONER;Falconer,Chautau;Chautauqua,2016,2026,144
+3625384,village,Farmingdale,Farmingdal;Farmingdale,Nassau,2016,2026,138
+3625428,village,Farnham,FARNHAM;Farnham,Erie,2016,2026,204
+3625527,village,Fayetteville,Fayettevil;Fayetteville,Onondag;Onondaga,2016,2026,204
+3625967,village,Fishkill,FISHKILL;Fishkill,Dutches;Dutchess,2016,2026,204
+3626209,village,Fleischmanns,Fleischmanns,Delaware,2016,2026,90
+3626264,village,Floral Park,Floral Par;Floral Park,Nassau,2016,2026,138
+3626319,village,Florida,Florida,Orange,2016,2026,204
+3626352,village,Flower Hill,Flower Hil;Flower Hill,Nassau,2016,2026,138
+3626462,village,Fonda,Fonda,Montgom;Montgomery,2016,2026,204
+3626704,village,Fort Ann,Fort Ann,Washing;Washington,2016,2026,120
+3626770,village,Fort Edward,Fort Edwar;Fort Edward,Washing;Washington,2016,2026,204
+3626880,village,Fort Johnson,Fort Johns;Fort Johnson,Montgom;Montgomery,2016,2026,204
+3626924,village,Fort Plain,Fort Plain,Montgom;Montgomery,2016,2026,204
+3627188,village,Frankfort,Frankfort,Herkime;Herkimer,2016,2026,204
+3627221,village,Franklin,Franklin,Delaware,2016,2026,90
+3627331,village,Franklinville,FRANKLINVILLE;Franklinvi;Franklinville,Cattara;Cattaraugus,2016,2026,204
+3627419,village,Fredonia,FREDONIA;Fredonia,Chautau;Chautauqua,2016,2026,204
+3627485,village,Freeport,Freeport,Nassau,2016,2026,78
+3627529,village,Freeville,Freeville,Tompkins,2016,2026,168
+3627859,village,Fultonville,Fultonvill;Fultonville,Montgom;Montgomery,2016,2026,204
+3627969,village,Gainesville,GAINESVILLE;Gainesville,Wyoming,2016,2026,174
+3628101,village,Galway,Galway,Saratog;Saratoga,2016,2026,120
+3628178,village,Garden City,Garden Cit;Garden City,Nassau,2016,2026,138
+3628618,village,Geneseo,Geneseo,Livings;Livingston,2016,2026,330
+3628959,village,Gilbertsville,Gilbertsville,Otsego,2016,2026,90
+3629322,village,Glen Park,Glen Park,Jeffers;Jefferson,2016,2026,204
+3629542,village,Goshen,Goshen,Orange,2016,2026,288
+3629597,village,Gouverneur,Gouverneur,St. Law;St. Lawrence,2016,2026,120
+3629630,village,Gowanda,GOWANDA;Gowanda,Erie;Erie Cattaraugus,2016,2026,198
+3629872,village,Grand View-on-Hudson,Grand View;Grand View-On-Hudson;Grand View-on-Hudson,Rocklan;Rockland,2016,2026,204
+3630026,village,Granville,Granville,Washington,2016,2025,78
+3630169,village,Great Neck,Great Neck,Nassau,2016,2026,138
+3630191,village,Great Neck Estates,Great Neck;Great Neck Estates,Nassau,2016,2026,138
+3630213,village,Great Neck Plaza,Great Neck;Great Neck Plaza,Nassau,2016,2026,138
+3630521,village,Green Island,Green Isla;Green Island,Albany,2016,2026,204
+3630675,village,Greenwich,Greenwich,Washing;Washington,2016,2026,204
+3630752,village,Greenwood Lake,Greenwood;Greenwood Lake,Orange,2016,2026,204
+3630961,village,Groton,Groton,Tompkins,2016,2026,84
+3631291,village,Hagaman,Hagaman,Montgom;Montgomery,2016,2026,204
+3631643,village,Hamburg,HAMBURG;Hamburg,Erie,2016,2026,174
+3631830,village,Hammond,Hammond,St. Law;St. Lawrence,2016,2026,120
+3631852,village,Hammondsport,Hammondsport,Steuben,2016,2026,90
+3631940,village,Hancock,Hancock,Delaware,2016,2026,168
+3632017,village,Hannibal,Hannibal,Oswego,2016,2026,204
+3632325,village,Harriman,Harriman,Orange,2016,2026,204
+3632402,town,Harrison,Harrison,Westchester,2024,2026,48
+3632402,village,Harrison,Harrison,Westche;Westchester,2016,2024,156
+3632710,village,Hastings-on-Hudson,Hastings-On-Hudson;Hastings-o;Hastings-on-Hudson,Westche;Westchester,2016,2026,204
+3632754,village,Haverstraw,Haverstraw,Rocklan;Rockland,2016,2026,204
+3632963,village,Head of the Harbor,Head Of The Harbor;Head of th;Head of the Harbor,Suffolk,2016,2026,138
+3633139,village,Hempstead,Hempstead,Nassau,2016,2026,138
+3634121,village,Herkimer,Herkimer,Herkime;Herkimer,2016,2026,204
+3634264,village,Heuvelton,Heuvelton,St. Law;St. Lawrence,2016,2026,120
+3634297,village,Hewlett Bay Park,Hewlett Ba;Hewlett Bay Park,Nassau,2016,2026,138
+3634308,village,Hewlett Harbor,Hewlett Ha;Hewlett Harbor,Nassau,2016,2026,138
+3634319,village,Hewlett Neck,Hewlett Ne;Hewlett Neck,Nassau,2016,2026,138
+3634495,village,Highland Falls,Highland F;Highland Falls;Highlands,Orange,2016,2026,264
+3634660,village,Hillburn,Hillburn,Rocklan;Rockland,2016,2026,204
+3634847,village,Hilton,Hilton,Monroe,2016,2026,210
+3634979,village,Hobart,Hobart,Delaware,2016,2026,90
+3635144,village,Holland Patent,Holland Pa;Holland Patent,Oneida,2016,2026,204
+3635155,village,Holley,Holley,Orleans,2016,2026,204
+3635276,village,Homer,Homer,Cortlan;Cortland,2016,2026,228
+3635364,village,Honeoye Falls,HONEOYE FALLS;Honeoye Fa;Honeoye Falls,Monroe,2016,2026,204
+3635474,village,Hoosick Falls,Hoosick Fa;Hoosick Falls,Renssel;Rensselaer,2016,2026,120
+3635694,village,Horseheads,Horseheads,Chemung,2016,2026,168
+3635980,village,Hudson Falls,Hudson Fal;Hudson Falls,Washing;Washington,2016,2026,204
+3636167,village,Hunter,HUNTER;Hunter,Greene,2016,2026,180
+3637022,village,Huntington Bay,Huntington;Huntington Bay,Suffolk,2016,2026,138
+3637275,village,Ilion,Ilion,Herkime;Herkimer,2016,2026,204
+3637528,village,Interlaken,Interlaken,Seneca,2016,2026,90
+3637803,village,Irvington,Irvington,Westche;Westchester,2016,2026,204
+3637840,village,Islandia,Islandia,Suffolk,2016,2026,138
+3637847,village,Island Park,Island Par;Island Park,Nassau,2016,2026,138
+3638506,village,Jeffersonville,Jeffersonville,Sullivan,2016,2026,90
+3638748,village,Johnson City,Johnson City,Broome,2016,2026,168
+3638825,village,Jordan,Jordan,Onondaga,2016,2026,168
+3638934,village,Kaser,Kaser,Rocklan;Rockland,2016,2026,204
+3639232,village,Kenmore,KENMORE;Kenmore,Erie,2016,2026,204
+3639309,village,Kensington,Kensington,Nassau,2016,2026,138
+3639562,village,Kinderhook,Kinderhook,Columbi;Columbia,2016,2026,120
+3639694,village,Kings Point,Kings Poin;Kings Point,Nassau,2016,2026,138
+3640200,village,Lacona,Lacona,Oswego,2016,2026,204
+3640508,village,Lake George,Lake Georg;Lake George,Warren,2016,2026,204
+3640530,village,Lake Grove,Lake Grove,Suffolk,2016,2026,138
+3640937,village,Lake Success,Lake Succe;Lake Success,Nassau,2016,2026,138
+3641069,village,Lakewood,LAKEWOOD;Lakewood,Chautau;Chautauqua,2016,2026,204
+3641135,village,Lancaster,LANCASTER;Lancaster,Erie,2016,2026,174
+3641223,village,Lansing,Lansing,Tompkins,2016,2026,168
+3641333,village,Larchmont,Larchmont,Westche;Westchester,2016,2026,204
+3641432,village,Lattingtown,Lattingtow;Lattingtown,Nassau,2016,2026,138
+3641487,village,Laurel Hollow,Laurel Hol;Laurel Hollow,Nassau,2016,2026,138
+3641520,village,Laurens,Laurens,Otsego,2016,2026,90
+3641553,village,Lawrence,Lawrence,Nassau,2016,2026,138
+3641872,village,Leicester,Leicester,Livings;Livingston,2016,2026,177
+3642026,village,Le Roy,Le Roy,Genesee,2016,2026,210
+3642147,village,Lewiston,LEWISTON;Lewiston,Niagara,2016,2026,204
+3642224,village,Liberty,Liberty,Sullivan,2016,2026,90
+3642323,village,Lima,LIMA;Lima,Livings;Livingston,2016,2026,144
+3642554,village,Lindenhurst,Lindenhurs;Lindenhurst,Suffolk,2016,2026,138
+3642642,village,Lisle,Lisle,Broome,2016,2026,90
+3642829,village,Little Valley,LITTLE VALLEY;Little Valley,Cattaraugus,2016,2026,84
+3642884,village,Liverpool,Liverpool,Onondag;Onondaga,2016,2026,204
+3642950,village,Livonia,Livonia,Livings;Livingston,2016,2026,210
+3643005,village,Lloyd Harbor,Lloyd Harb;Lloyd Harbor,Suffolk,2016,2026,138
+3643214,village,Lodi,Lodi,Seneca,2016,2026,84
+3643720,village,Lowville,Lowville,Lewis,2016,2026,204
+3643874,village,Lynbrook,Lynbrook,Nassau,2016,2026,138
+3643918,village,Lyndonville,Lyndonvill;Lyndonville,Orleans,2016,2026,204
+3644006,village,Lyons Falls,Lyons Fall;Lyons Falls,Lewis,2016,2026,228
+3644193,village,McGraw,McGraw;Mcgraw,Cortlan;Cortland,2016,2026,204
+3644424,village,Madison,Madison,Madison,2016,2026,84
+3644710,village,Malone,Malone,Frankli;Franklin,2016,2026,120
+3644787,village,Malverne,Malverne,Nassau,2016,2026,138
+3644831,village,Mamaroneck,Mamaroneck,Westche;Westchester,2016,2026,204
+3644853,village,Manchester,Manchester,Ontario,2016,2026,288
+3645018,village,Manlius,Manlius,Onondag;Onondaga,2016,2026,204
+3645073,village,Mannsville,Mannsville,Jeffers;Jefferson,2016,2026,204
+3645106,village,Manorhaven,Manorhaven,Nassau,2016,2026,138
+3645480,village,Marcellus,Marcellus,Onondaga,2016,2026,168
+3645557,village,Margaretville,Margaretville,Delaware,2016,2026,168
+3645997,village,Massapequa Park,Massapequa;Massapequa Park,Nassau,2016,2026,138
+3646019,village,Massena,Massena,St. Law;St. Lawrence,2016,2026,96
+3646107,village,Matinecock,Matinecock,Nassau,2016,2026,138
+3646162,village,Maybrook,MAYBROOK;Maybrook,Orange,2016,2026,204
+3646206,village,Mayfield,Mayfield,Fulton,2016,2026,120
+3646239,village,Mayville,MAYVILLE;Mayville,Chautauqua,2016,2026,84
+3646415,village,Medina,Medina,Orleans,2016,2026,228
+3646536,village,Menands,Menands,Albany,2016,2026,204
+3646646,village,Meridian,Meridian,Cayuga,2016,2026,120
+3646811,village,Mexico,Mexico,Oswego,2016,2026,204
+3646866,village,Middleburgh,Middleburg;Middleburgh,Schohar;Schoharie,2016,2026,120
+3646998,village,Middleport,Middleport,Niagara,2016,2026,228
+3647108,village,Middleville,Middlevill;Middleville,Herkime;Herkimer,2016,2026,204
+3647229,village,Milford,Milford,Otsego,2016,2026,84
+3647273,village,Millbrook,MILLBROOK;Millbrook,Dutches;Dutchess,2016,2026,180
+3647361,village,Millerton,MILLERTON;Millerton,Dutches;Dutchess,2016,2026,180
+3647405,village,Mill Neck,Mill Neck,Nassau,2016,2026,138
+3647427,village,Millport,Millport,Chemung,2016,2026,168
+3647636,village,Mineola,Mineola,Nassau,2016,2026,138
+3647757,village,Minoa,Minoa,Onondag;Onondaga,2016,2026,204
+3647823,village,Mohawk,Mohawk,Herkime;Herkimer,2016,2026,204
+3647988,village,Monroe,Monroe,Orange,2016,2026,204
+3648090,village,Montebello,Montebello,Rocklan;Rockland,2016,2026,204
+3648142,village,Montgomery,MONTGOMERY;Montgomery,Orange,2016,2026,204
+3648175,village,Monticello,Monticello,Sullivan,2016,2026,87
+3648197,village,Montour Falls,Montour Falls,Schuyler,2016,2026,216
+3648296,village,Moravia,Moravia,Cayuga,2016,2026,168
+3648483,village,Morris,Morris,Otsego,2016,2026,84
+3648593,village,Morrisville,Morrisville,Madison,2016,2026,168
+3648890,village,Mount Kisco,Mount Kisc;Mount Kisco,Westche;Westchester,2016,2026,204
+3648945,village,Mount Morris,Mount Morr;Mount Morris,Livings;Livingston,2016,2026,210
+3649220,village,Munnsville,Munnsville,Madison,2016,2026,204
+3649231,village,Munsey Park,Munsey Par;Munsey Park,Nassau,2016,2026,138
+3649330,village,Muttontown,Muttontown,Nassau,2016,2026,138
+3649429,village,Naples,Naples,Ontario,2016,2026,168
+3649506,village,Nassau,Nassau,Renssel;Rensselaer,2016,2026,120
+3649748,village,Nelliston,Nelliston,Montgom;Montgomery,2016,2026,204
+3649781,village,Nelsonville,NELSONVILLE;Nelsonvill;Nelsonville,Putnam,2016,2026,180
+3649891,village,Newark,Newark,Wayne,2016,2026,168
+3649902,village,Newark Valley,Newark Valley,Tioga,2016,2026,84
+3649946,village,New Berlin,New Berlin,Chenango,2016,2026,84
+3650298,village,New Hartford,New Hartfo;New Hartford,Oneida,2016,2026,204
+3650353,village,New Hempstead,New Hempst;New Hempstead,Rocklan;Rockland,2016,2026,204
+3650397,village,New Hyde Park,New Hyde P;New Hyde Park,Nassau,2016,2026,138
+3650551,village,New Paltz,NEW PALTZ;New Paltz,Ulster,2016,2026,204
+3650573,village,Newport,Newport,Herkime;Herkimer,2016,2026,120
+3650705,village,New Square,New Square,Rocklan;Rockland,2016,2026,204
+3651011,village,New York Mills,New York M;New York Mills,Oneida,2016,2026,204
+3651110,village,Nichols,Nichols,Tioga,2016,2026,167
+3651286,village,Nissequogu,Nissequogu;Nissequogue,Suffolk,2021,2026,60
+3651792,village,North Collins,NORTH COLLINS;North Coll;North Collins,Erie,2016,2026,204
+3652188,village,North Have,North Have;North Haven,Suffolk,2021,2026,60
+3653022,village,North Hills,North Hill;North Hills,Nassau,2016,2026,138
+3653055,village,North Hornell,NORTH HORNELL;North Hornell,Steuben,2016,2026,168
+3653396,village,Northport,Northport,Suffolk,2016,2026,138
+3653660,village,North Syracuse,North Syra;North Syracuse,Onondag;Onondaga,2016,2026,204
+3653770,village,Northville,Northville,Fulton,2016,2026,120
+3654012,village,Norwood,Norwood,St. Law;St. Lawrence,2016,2026,120
+3654078,village,Nunda,Nunda,Livings;Livingston,2016,2026,204
+3654100,village,Nyack,Nyack,Rocklan;Rockland,2016,2026,204
+3654155,village,Oakfield,OAKFIELD;Oakfield,Genesee,2016,2026,204
+3654430,village,Ocean Beac,Ocean Beac;Ocean Beach,Suffolk,2021,2026,60
+3654452,village,Odessa,Odessa,Schuyler,2016,2026,108
+3654562,village,Old Brookville,Old Brookv;Old Brookville,Nassau,2016,2026,138
+3654617,village,Old Field,Old Field,Suffolk,2016,2026,138
+3654705,village,Old Westbury,Old Westbu;Old Westbury,Nassau,2016,2026,138
+3654848,village,Oneida Castle,Oneida Cas;Oneida Castle,Oneida,2016,2026,204
+3655266,village,Orchard Park,ORCHARD PARK;Orchard Park,Erie,2016,2026,168
+3655365,village,Oriskany,Oriskany,Oneida,2016,2026,204
+3655376,village,Oriskany Falls,Oriskany Falls,Oneida,2016,2026,84
+3655530,village,Ossining,Ossining,Westche;Westchester,2016,2026,204
+3655618,village,Otego,Otego,Otsego,2016,2026,144
+3655673,village,Otisville,Otisville,Orange,2016,2026,120
+3655816,village,Ovid,Ovid,Seneca,2016,2026,108
+3655882,village,Owego,Owego,Tioga,2016,2026,168
+3655948,village,Oxford,Oxford,Chenango,2016,2026,168
+3656011,village,Oyster Bay Cove,Oyster Bay;Oyster Bay Cove,Nassau,2016,2026,138
+3656088,village,Painted Post,Painted Post,Steuben,2016,2026,84
+3656110,village,Palatine Bridge,Palatine B;Palatine Bridge,Montgom;Montgomery,2016,2026,204
+3656187,village,Palmyra,Palmyra,Wayne,2016,2026,168
+3656231,village,Panama,PANAMA;Panama,Chautau;Chautauqua,2016,2026,204
+3656341,village,Parish,Parish,Oswego,2016,2026,120
+3656660,village,Patchogue,Patchogue,Suffolk,2016,2026,138
+3656814,village,Pawling,Pawling,Dutchess,2016,2025,78
+3657001,village,Pelham,Pelham,Westche;Westchester,2016,2026,204
+3657023,village,Pelham Manor,Pelham Man;Pelham Manor,Westche;Westchester,2016,2026,204
+3657177,village,Penn Yan,Penn Yan,Yates,2016,2026,130
+3657243,village,Perry,Perry,Wyoming,2016,2026,222
+3657518,village,Phelps,Phelps,Ontario,2016,2026,168
+3657639,village,Philmont,Philmont,Columbia,2016,2025,78
+3657661,village,Phoenix,Phoenix,Oswego,2016,2026,204
+3657749,village,Piermont,Piermont,Rocklan;Rockland,2016,2026,204
+3658354,village,Pittsford,Pittsford,Monroe,2016,2026,210
+3658475,village,Plandome,Plandome,Nassau,2016,2026,138
+3658486,village,Plandome Heights,Plandome H;Plandome Heights,Nassau,2016,2026,138
+3658497,village,Plandome Manor,Plandome M;Plandome Manor,Nassau,2016,2026,138
+3658728,village,Pleasantville,Pleasantvi;Pleasantville,Westche;Westchester,2016,2026,204
+3658937,village,Poland,Poland,Herkime;Herkimer,2016,2026,120
+3658992,village,Pomona,Pomona,Rocklan;Rockland,2016,2026,204
+3659157,village,Poquott,Poquott,Suffolk,2016,2026,138
+3659212,village,Port Byron,Port Byron,Cayuga,2016,2026,168
+3659223,village,Port Chester,Port Chest;Port Chester,Westche;Westchester,2016,2026,204
+3659245,village,Port Dickinson,Port Dickinson,Broome,2016,2026,168
+3659355,village,Port Jefferson,Port Jeffe;Port Jefferson,Suffolk,2016,2026,138
+3659454,village,Port Leyden,Port Leyde;Port Leyden,Lewis,2016,2026,120
+3659498,village,Portville,PORTVILLE;Portville,Cattara;Cattaraugus,2016,2026,204
+3659531,village,Port Washington North,Port Washi;Port Washington North,Nassau,2016,2026,138
+3659564,village,Potsdam,Potsdam,St. Law;St. Lawrence,2016,2026,120
+3659960,village,Pulaski,Pulaski,Oswego,2016,2026,204
+3660422,village,Quogue,Quogue,Suffolk,2016,2026,138
+3660675,village,Ravena,RAVENA;Ravena,Albany,2016,2026,384
+3660829,village,Red Creek,Red Creek,Wayne,2016,2026,210
+3660895,village,Red Hook,RED HOOK;Red Hook,Dutches;Dutchess,2016,2026,180
+3661115,village,Remsen,Remsen,Oneida,2016,2026,120
+3661159,village,Rensselaer Falls,Rensselaer;Rensselaer Falls,St. Law;St. Lawrence,2016,2026,120
+3661346,village,Rhinebeck,RHINEBECK;Rhinebeck,Dutches;Dutchess,2016,2026,180
+3661434,village,Richburg,RICHBURG;Richburg,Allegan;Allegany,2016,2026,168
+3661489,village,Richfield Springs,Richfield Springs,Otsego,2016,2026,168
+3661621,village,Richville,Richville,St. Law;St. Lawrence,2016,2026,120
+3662061,village,Riverside,Riverside,Steuben,2016,2026,84
+3663264,village,Rockville Centre,Rockville Centre,Nassau,2016,2026,78
+3663770,village,Roslyn,Roslyn,Nassau,2016,2026,138
+3663792,village,Roslyn Estates,Roslyn Est;Roslyn Estates,Nassau,2016,2026,138
+3663803,village,Roslyn Harbor,Roslyn Har;Roslyn Harbor,Nassau,2016,2026,138
+3663957,village,Round Lake,Round Lake,Saratoga,2016,2026,162
+3663979,village,Rouses Point,Rouses Point,Clinton,2016,2026,123
+3664199,village,Rushville,Rushville,Ontario & Yates,2016,2026,216
+3664232,village,Russell Gardens,Russell Ga;Russell Gardens,Nassau,2016,2026,138
+3664325,village,Rye Brook,Rye Brook,Westche;Westchester,2016,2026,204
+3664408,village,Sackets Harbor,Sackets Ha;Sackets Harbor,Jeffers;Jefferson,2016,2026,204
+3664430,village,Saddle Rock,Saddle Roc;Saddle Rock,Nassau,2016,2026,138
+3664452,village,Sagaponack,Sagaponack,Suffolk,2016,2026,108
+3664485,village,Sag Harbor,Sag Harbor,Suffolk,2016,2026,138
+3664639,village,St. Johnsville,St. Johnsv;St. Johnsville,Montgom;Montgomery,2016,2026,120
+3664881,village,Saltaire,Saltaire,Suffolk,2021,2026,60
+3665035,village,Sands Point,Sands Poin;Sands Point,Nassau,2016,2026,138
+3665068,village,Sandy Creek,Sandy Cree;Sandy Creek,Oswego,2016,2026,204
+3665233,village,Saranac Lake,Saranac La;Saranac Lake,Franklin,2016,2026,120
+3665288,village,Saugerties,SAUGERTIES;Saugerties,Ulster,2016,2026,204
+3665354,village,Savona,Savona,Steuben,2016,2026,84
+3665431,village,Scarsdale,Scarsdale,Westche;Westchester,2016,2026,204
+3665475,village,Schaghticoke,Schaghtico;Schaghticoke,Renssel;Rensselaer,2016,2026,114
+3665585,village,Schoharie,Schoharie,Schohar;Schoharie,2016,2026,114
+3665750,village,Schuylerville,Schuylervi;Schuylerville,Saratog;Saratoga,2016,2026,198
+3665893,village,Scotia,Scotia,Schenec;Schenectady,2016,2026,198
+3665959,village,Scottsville,Scottsvill;Scottsville,Monroe,2016,2026,204
+3666047,village,Sea Cliff,Sea Cliff,Nassau,2016,2026,138
+3666663,village,Sharon Springs,Sharon Spr;Sharon Springs,Schohar;Schoharie,2016,2026,111
+3666949,village,Sherman,SHERMAN;Sherman,Chautau;Chautauqua,2016,2026,132
+3667191,village,Shoreham,Shoreham,Suffolk,2021,2026,60
+3667257,village,Shortsville,Shortsvill;Shortsville,Ontario,2016,2026,204
+3667334,village,Sidney,Sidney,Delaware,2016,2026,84
+3667411,village,Silver Creek,SILVER CREEK;Silver Creek,Chautauqua,2016,2026,168
+3667466,village,Silver Springs,SILVER SPRINGS;Silver Springs,Wyoming,2016,2026,84
+3667488,village,Sinclairville,SINCLAIRVILLE;Sinclairvi;Sinclairville,Chautau;Chautauqua,2016,2026,192
+3667510,village,Skaneateles,Skaneatele;Skaneateles,Onondag;Onondaga,2016,2026,192
+3667638,village,Sleepy Hollow,Sleepy Hol;Sleepy Hollow,Westche;Westchester,2016,2026,204
+3667686,village,Sloan,SLOAN;Sloan,Erie,2016,2026,168
+3667708,village,Sloatsburg,Sloatsburg,Rocklan;Rockland,2016,2026,204
+3668099,village,Smyrna,Smyrna,Chenango,2016,2026,84
+3668209,village,Sodus,Sodus,Wayne,2016,2026,210
+3668242,village,Sodus Point,Sodus Poin;Sodus Point,Wayne,2016,2026,210
+3668286,village,Solvay,Solvay,Onondag;Onondaga,2016,2026,192
+3668462,village,Southampton,Southampto;Southampton,Suffolk,2016,2026,138
+3668610,village,South Blooming Grove,South Bloo;South Blooming Grove,Orange,2016,2026,204
+3668847,village,South Corning,South Corning,Steuben,2016,2026,84
+3668891,village,South Dayton,South Dayton,Cattaraugus,2016,2026,84
+3669023,village,South Floral Park,South Flor;South Floral Park,Nassau,2016,2026,138
+3669078,village,South Glens Falls,South Glen;South Glens Falls,Saratog;Saratoga,2016,2026,192
+3669441,village,South Nyack,South Nyac;South Nyack,Rocklan;Rockland,2016,2022,132
+3670123,village,Speculator,Speculator,Hamilto;Hamilton,2016,2026,108
+3670167,village,Spencer,Spencer,Tioga,2016,2026,168
+3670189,village,Spencerport,Spencerpor;Spencerport,Monroe,2016,2026,146
+3670420,village,Spring Valley,Spring Val;Spring Valley,Rocklan;Rockland,2016,2026,204
+3670442,village,Springville,SPRINGVILLE;Springville,Erie,2016,2026,84
+3670618,village,Stamford,Stamford,Delaware,2016,2026,108
+3671267,village,Stewart Manor,Stewart Ma;Stewart Manor,Nassau,2016,2026,138
+3671322,village,Stillwater,Stillwater,Saratoga,2016,2025,78
+3671894,village,Suffern,Suffern,Rocklan;Rockland,2016,2026,204
+3672521,village,Sylvan Beach,Sylvan Bea;Sylvan Beach,Oneida,2016,2026,192
+3673143,village,Tannersville,TANNERSVILLE;Tannersvil;Tannersville,Greene,2016,2026,180
+3673176,village,Tarrytown,Tarrytown,Westche;Westchester,2016,2026,204
+3673605,village,Thomaston,Thomaston,Nassau,2016,2026,138
+3674023,village,Tivoli,TIVOLI;Tivoli,Dutches;Dutchess,2016,2026,180
+3675506,village,Trumansburg,Trumansburg,Tompkins,2016,2026,168
+3675583,village,Tuckahoe,Tuckahoe,Westche;Westchester,2016,2026,204
+3675627,village,Tully,Tully,Onondag;Onondaga,2016,2026,192
+3675682,village,Turin,Turin,Lewis,2016,2026,108
+3675803,village,Tuxedo Park,Tuxedo Par;Tuxedo Park,Orange,2016,2026,204
+3676001,village,Unadilla,Unadilla,Otsego,2016,2026,84
+3676155,village,Union Springs,Union Springs,Cayuga,2016,2026,168
+3676210,village,Unionville,Unionville,Orange,2016,2026,204
+3676331,village,Upper Brookville,Upper Broo;Upper Brookville,Nassau,2016,2026,138
+3676386,village,Upper Nyack,Upper Nyac;Upper Nyack,Rocklan;Rockland,2016,2026,204
+3676617,village,Valatie,Valatie,Columbi;Columbia,2016,2026,108
+3676672,village,Valley Falls,Valley Fal;Valley Falls,Renssel;Rensselaer,2016,2026,108
+3676705,village,Valley Stream,Valley Str;Valley Stream,Nassau,2016,2026,138
+3677112,village,Vernon,Vernon,Oneida,2016,2026,192
+3677376,village,Victor,Victor,Ontario,2021,2026,78
+3677431,village,Victory,Victory,Saratog;Saratoga,2016,2026,192
+3677519,village,Village of the Branch,Village Of The Branch;Village of;Village of the Branch,Suffolk,2016,2026,138
+3677684,village,Voorheesville,Voorheesvi;Voorheesville,Albany,2016,2026,192
+3677728,village,Waddington,Waddington,St. Law;St. Lawrence,2016,2026,108
+3677849,village,Walden,Walden,Orange,2016,2026,168
+3678036,village,Walton,Walton,Delaware,2016,2026,168
+3678113,village,Wampsville,Wampsville,Madison,2016,2026,192
+3678168,village,Wappingers Falls,WAPPINGERS FALLS;Wappingers;Wappingers Falls,Dutches;Dutchess,2016,2026,204
+3678333,village,Warsaw,Warsaw,Wyoming,2016,2026,173
+3678355,village,Warwick,Warwick,Orange,2016,2026,204
+3678465,village,Washingtonville,Washington;Washingtonville,Orange,2016,2026,204
+3678520,village,Waterford,Waterford,Saratog;Saratoga,2016,2026,192
+3678553,village,Waterloo,Waterloo,Seneca,2016,2026,216
+3678663,village,Waterville,Waterville,Oneida,2016,2026,216
+3678696,village,Watkins Glen,Watkins Glen,Schuyler,2016,2026,192
+3678850,village,Wayland,Wayland,Steuben,2016,2026,168
+3678960,village,Webster,Webster,Monroe,2016,2026,210
+3679015,village,Weedsport,Weedsport,Cayuga,2016,2026,168
+3679081,village,Wellsburg,Wellsburg,Chemung,2016,2026,168
+3679092,village,Wellsville,WELLSVILLE;Wellsville,Allegan;Allegany,2016,2026,192
+3679174,village,Wesley Hills,Wesley Hil;Wesley Hills,Rocklan;Rockland,2016,2026,204
+3679444,village,Westbury,Westbury,Nassau,2016,2026,138
+3679499,village,West Carthage,West Carth;West Carthage,Jeffers;Jefferson,2016,2026,192
+3679939,village,Westfield,WESTFIELD;Westfield,Chautauqua,2016,2026,84
+3680181,village,Westhampton Beach,Westhampto;Westhampton Beach,Suffolk,2016,2026,138
+3680186,village,West Hampt,West Hampt,Suffolk,2022,2024,30
+3680203,village,West Haverstraw,West Haver;West Haverstraw,Rocklan;Rockland,2016,2026,204
+3681292,village,West Winfield,West Winfield,Herkimer,2016,2026,84
+3681622,village,Whitehall,Whitehall,Washing;Washington,2016,2026,108
+3681710,village,Whitesboro,Whitesboro,Oneida,2016,2026,192
+3681831,village,Whitney Point,Whitney Point,Broome,2016,2026,84
+3682084,village,Williamsville,WILLIAMSVILLE;Williamsvi;Williamsville,Erie,2016,2026,192
+3682117,village,Williston Park,Williston;Williston Park,Nassau,2016,2026,138
+3682359,village,Wilson,WILSON;Wilson,Niagara,2016,2026,192
+3682524,village,Windsor,Windsor,Broome,2016,2026,84
+3682678,village,Wolcott,Wolcott,Wayne,2016,2026,258
+3682750,town,Woodbury,Woodbury,Orange,2024,2026,24
+3682750,village,Woodbury,Woodbury,Orange,2016,2026,318
+3682953,village,Woodridge,Woodridge,Sullivan,2016,2026,84
+3682986,village,Woodsburgh,Woodsburgh,Nassau,2016,2026,138
+3683272,village,Wurtsboro,Wurtsboro,Sulliva;Sullivan,2016,2026,120
+3683371,village,Wyoming,WYOMING;Wyoming,Wyoming,2016,2026,168
+3684099,village,Yorkville,Yorkville,Oneida,2016,2026,192
+3684143,village,Youngstown,YOUNGSTOWN;Youngstown,Niagara,2016,2026,192

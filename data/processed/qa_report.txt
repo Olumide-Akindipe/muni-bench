@@ -1,0 +1,157 @@
+MUNI-BENCH QA REPORT
+Verification record: docs/VERIFY_CHECKLIST.md; decisions: docs/DECISIONS.md
+
+1. RAW ROW COUNTS
+   nypa_projects.csv                             2,942
+   uer_community_2016_2020.csv                 151,576
+   uer_community_2021_on.csv                   142,956
+   uer_zip_2016_2021.csv                        78,306
+   uer_zip_2021_on.csv                          18,164
+   OSC files in data/raw/osc/: 1
+
+2. ENTITIES (OSC local governments)
+   fire district           935
+   town                    933
+   school district         717
+   village                 561
+   city                     61
+   county                   57
+   fiscal years in file: 1995 to 2026
+   Comptroller section labels found (decision V1):
+     BALANCE SHEET                            nan          rows= 2,288,500  other=        0
+     CHANGE IN EQUITY                         nan          rows=   856,530  other=        0
+     EXPENDITURE                              expenditure  rows= 3,444,696  other=   70,264
+     FBNP                                     nan          rows=   614,499  other=        0
+     GL                                       nan          rows= 1,844,992  other=        0
+     REVENUE                                  revenue      rows= 1,417,679  other=   89,931
+     STATEMENT OF EXPENDITURES AND OTHER USES expenditure  rows= 4,887,602  other=  100,595
+     STATEMENT OF REVENUES AND OTHER SOURCES  revenue      rows= 2,003,506  other=  132,531
+   label families inside 2016-2025 (rows; most governments in any one year):
+     short      expenditure  rows= 2,563,390 governments=   923
+     short      revenue      rows= 1,060,334 governments=   923
+   government-years with both label families: 0; statement rows dropped as copies: 0; both kept: 0 (see osc_label_overlap.csv)
+   share of 2016-2025 revenue lines that are other sources: 10.2%
+   expenditure lines with no category that are not refunding escrow: 0 (kept in expenditures_openbook; listed in osc_uncategorized_lines.csv)
+   Open Book components, share of 2016-2025 gross totals: fiduciary_rev 8.25%, transfers_in 5.28%, proceeds_of_debt 4.9%, fiduciary_exp 8.41%, transfers_out 5.39%, refunding_escrow 0.75%
+   reconciliation with Open Book New York (author hand checks, data/hand_checks.csv):
+     government                            year  revenue gap  expend. gap  debt gap
+     City of Albany                        2019            0            0         0
+     Village of Red Hook                   2019            0            0         0
+     Meadowmere Fire District              2018            0            0         0
+     County of Nassau                      2021            0            0         0
+     Town of Bethlehem                     2019            0            0         0
+     Town of Colonie                       2019            0            0         0
+     Town of Red Hook                      2025            0            0         0
+     Village of Red Hook                   2025            0            0         0
+     Village of Alexandria Bay             2025            0            0         0
+     Marathon Central School District      2020            0            0         0
+     County of Wyoming                     2022            0            0         0
+     Williamson Central School District    2023            0            0         0
+     Open Book totals reproduced: 24 of 24 (within 1 dollar of source rounding)
+
+3. OSC -> UER COMMUNITY LINK (cities, towns, villages)
+   exact                         1,504
+   unmatched                        32
+   not_in_panel_years               19
+   accepted: 1,504 of 1,536 active in 2016-2025 (97.9%); 19 dissolved before 2016
+   links where NYSERDA used more than one code: 14
+   shared records (one NYSERDA record, two governments; flagged uer_shared_record): 2
+     3682750  Town of Woodbury
+     3682750  Village of Woodbury
+     3632402  Town of Harrison
+     3632402  Village of Harrison
+   unmatched, all 32 (likely causes: own municipal electric utility, or a town and village reported once):
+     010334500000  Town of Green Island (town, Albany, last FY 2025)
+     040465301970  Village of Gowanda (village, Cattaraugus, last FY 2026)
+     060415500950  Village of Cherry Creek (village, Chautauqua, last FY 2018)
+     070485005040  Village of Van Etten (village, Chemung, last FY 2018)
+     080434302030  Village of Greene (village, Chenango, last FY 2026)
+     080477404550  Village of Sherburne (village, Chenango, last FY 2026)
+     110450802940  Village of Marathon (village, Cortland, last FY 2026)
+     150455104040  Village of Port Henry (village, Essex, last FY 2016)
+     150459402570  Village of Lake Placid (village, Essex, last FY 2023)
+     160401504940  Village of Tupper Lake (village, Franklin, last FY 2026)
+     220465903880  Village of Philadelphia (village, Jefferson, last FY 2025)
+     220482204860  Village of Theresa (village, Jefferson, last FY 2026)
+     230423402170  Village of Harrisville (village, Lewis, last FY 2018)
+     250436302110  Village of Hamilton (village, Madison, last FY 2026)
+     260325250000  Town of East Rochester (town, Monroe, last FY 2025)
+     300408200500  Village of Boonville (village, Oneida, last FY 2026)
+     300483200355  Village of Barneveld (village, Oneida, last FY 2016)
+     330454202545  Village of Kiryas Joel (village, Orange, last FY 2025)
+     380456101435  Village of East Nassau (village, Rensselaer, last FY 2026)
+     400439002230  Village of Hermon (village, St. Lawrence, last FY 2017)
+     400455303250  Village of Morristown (village, St. Lawrence, last FY 2019)
+     430471204220  Village of Richmondville (village, Schoharie, last FY 2026)
+     460405600360  Village of Bath (village, Steuben, last FY 2025)
+     470409602985  Village of Mastic Beach (village, Suffolk, last FY 2018)
+     470478705315  Village of West Hampton Dunes (village, Suffolk, last FY 2024)
+     470479002050  Village of Greenport (village, Suffolk, last FY 2025)
+     490405405220  Village of Waverly (village, Tioga, last FY 2026)
+     530473804370  Village of Salem (village, Washington, last FY 2016)
+     550355450000  Town of Mount Kisco (town, Westchester, last FY 2025)
+     550364600000  Town of Pelham (town, Westchester, last FY 2025)
+     550373400000  Town of Rye (town, Westchester, last FY 2025)
+     550375100000  Town of Scarsdale (town, Westchester, last FY 2025)
+
+4. NYPA PROJECT -> OSC ENTITY LINK
+   not_in_scope_nyc              1,490
+   not_in_scope_state              699
+   exact                           681
+   not_in_scope_other               52
+   partial_review+author_accept     13
+   fuzzy_review+author_accept        1
+   unmatched+author_assign           1
+   fuzzy_auto                        1
+   partial_review+author_assign      1
+   class_mismatch_review+author_accept      1
+   class_mismatch_review+author_assign      1
+   other_county_review+author_accept      1
+   projects: 2,942 (completed 1987 to 2026)
+   in local-government scope: 701; linked: 701 (100.0%)
+
+5. REVIEW QUEUE
+   0 uncertain matches await your decision (review_queue.csv)
+
+6. PANEL 2016-2025
+   rows: 32,640  entities: 3,264  years: 2016-2025
+   year  with_finance  with_full_year_electricity  mean_elec_months  nypa_projects
+   2016         3,127                       1,093              10.7             13
+   2017         3,121                       1,096              10.7             12
+   2018         3,109                       1,054              10.6             27
+   2019         3,093                       1,028              10.6             23
+   2020         3,080                       1,022              10.6             23
+   2021         3,071                          83               6.4             33
+   2022         3,063                         505               8.9             30
+   2023         3,041                         571               9.2             55
+   2024         2,983                         938               9.8             19
+   2025         2,843                       1,002              10.0             13
+
+7. RANGE CHECKS
+   revenues_total         n= 30,530 min=               0 max=   6,339,278,000 negatives=0
+   expenditures_total     n= 30,528 min=           3,492 max=   5,859,773,000 negatives=0
+   elec_mwh               n= 12,925 min=               0 max=       2,786,512 negatives=0
+   gas_therms             n=  7,244 min=               0 max=     478,882,081 negatives=0
+   nypa_cost              n= 32,640 min=               0 max=      29,843,184 negatives=0
+   electricity entity-months withheld for privacy: 9,964
+   elec entity-months with a negative value (excluded): 42
+   gas entity-months with a negative value (excluded): 22
+
+8. SPOT CHECKS (check each against the source website)
+   [known] 010201000000 City of Albany (city) 2019: revenues=210651694.0 elec_mwh=1189663.666 nypa_projects=0
+   [known] 380257000000 City of Troy (city) 2019: revenues=125187018.0 elec_mwh=89266.766 nypa_projects=0
+   [known] 010318700000 Town of Colonie (town) 2019: revenues=118326879.0 elec_mwh=669921.1190000001 nypa_projects=0
+   [known] 010307100000 Town of Bethlehem (town) 2019: revenues=67384459.0 elec_mwh=591294.741 nypa_projects=0
+   [known] 130370300000 Town of Red Hook (town) 2019: revenues=7181554.64 elec_mwh=26819.69 nypa_projects=0
+   [known] 130470304160 Village of Red Hook (village) 2019: revenues=5175993.27 elec_mwh=7026.57 nypa_projects=0
+   [max elec_mwh] 140207000000 City of Buffalo (city) 2018: revenues=565829493.4 elec_mwh=2786511.734 nypa_projects=2
+   [max expenditures_total] 280100000000 County of Nassau (county) 2021: revenues=6339278000.0 elec_mwh=None nypa_projects=0
+   [max nypa_cost] 310255000000 City of Syracuse (city) 2021: revenues=418094578.0 elec_mwh=638345.812 nypa_projects=1
+   [random seed 20261211] 110750800100 Marathon Central School District (school district) 2020: revenues=18783353.0 elec_mwh=None nypa_projects=0
+   [random seed 20261211] 560100000000 County of Wyoming (county) 2022: revenues=182928912.63 elec_mwh=None nypa_projects=0
+   [random seed 20261211] 220400900080 Village of Alexandria Bay (village) 2025: revenues=5733492.0 elec_mwh=12787.5 nypa_projects=0
+   [random seed 20261211] 540791000200 Williamson Central School District (school district) 2023: revenues=33670030.0 elec_mwh=None nypa_projects=0
+   [random seed 20261211] 281138606000 Meadowmere Fire District (fire district) 2018: revenues=737008.0 elec_mwh=None nypa_projects=0
+
+9. FLAGS
+   none

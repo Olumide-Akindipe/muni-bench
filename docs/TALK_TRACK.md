@@ -12,7 +12,7 @@ What it makes possible: side-by-side comparison of 3,264 local governments on sp
 
 Who can use it: municipal energy managers, regional planning boards, NYSERDA and NYPA program staff, and researchers.
 
-Where it is: GitHub (Olumide-Akindipe/muni-bench) and Zenodo, with a permanent DOI.
+Where it is: GitHub (Olumide-Akindipe/muni-bench) and Zenodo, DOI 10.5281/zenodo.23314416.
 
 ## Two-sentence version
 

@@ -51,7 +51,16 @@ If the run shows a red cross, attach a screenshot of the failed step; the most l
 
 ```
 date,artifact_or_event,type,venue_or_host,link_or_doi,status,prong_tags,metrics_snapshot,files_saved,notes
-2026-10-12,MUNI-BENCH v0.1.0 release,dataset,Zenodo + GitHub,DOI from the Zenodo record,live,"P1, P2",0 downloads at release,release_page.pdf; zenodo_record.pdf,First public release after verification
+2026-10-12,MUNI-BENCH v0.1.0 release (code archive),software,Zenodo + GitHub,10.5281/zenodo.23314418 (concept 10.5281/zenodo.23314416),live,"P1, P2",0 downloads at release,release_page.pdf; zenodo_record.pdf,First public release after verification
 ```
 
 Save a PDF of the GitHub release page and the Zenodo record that day. Publications not logged the day they happen are the ones that go missing at petition time.
+
+## Part E. v0.1.1: put the data inside the DOI (2026-10-12)
+
+Zenodo's GitHub link archives only the repository, not files attached to a release, so v0.1.0's DOI holds the code only. v0.1.1 commits the verified tables to the repository and adds `.zenodo.json`, which tells Zenodo the resource type is Dataset.
+
+Evidence log row for v0.1.1 (add the version DOI from the Zenodo record):
+```
+2026-10-12,MUNI-BENCH v0.1.1 release (data archive),dataset,Zenodo + GitHub,[v0.1.1 version DOI] (concept 10.5281/zenodo.23314416),live,"P1, P2",0 downloads at release,release_page.pdf; zenodo_record.pdf,Adds verified data files; values identical to v0.1.0 build
+```

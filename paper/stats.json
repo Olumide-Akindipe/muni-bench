@@ -1,0 +1,337 @@
+{
+  "raw_rows_nypa_projects": 2942,
+  "raw_rows_uer_community_2016_2020": 151576,
+  "raw_rows_uer_community_2021_on": 142956,
+  "raw_rows_uer_zip_2016_2021": 78306,
+  "raw_rows_uer_zip_2021_on": 18164,
+  "entities_total": 3264,
+  "entities_fire_district": 935,
+  "entities_town": 933,
+  "entities_school_district": 717,
+  "entities_village": 561,
+  "entities_city": 61,
+  "entities_county": 57,
+  "osc_first_fy": 1995,
+  "osc_last_fy": 2026,
+  "finance_both_families": 0,
+  "finance_statement_dropped_as_copy": 0,
+  "other_sources_share_pct": 10.2,
+  "uncategorized_non_escrow_lines": 0,
+  "share_fiduciary_rev_pct": 8.25,
+  "share_transfers_in_pct": 5.28,
+  "share_proceeds_of_debt_pct": 4.9,
+  "share_fiduciary_exp_pct": 8.41,
+  "share_transfers_out_pct": 5.39,
+  "share_refunding_escrow_pct": 0.75,
+  "open_book_totals_checked": 24,
+  "open_book_totals_exact": 24,
+  "open_book_reconciliation": [
+    {
+      "government": "City of Albany",
+      "year": 2019,
+      "revenue_gap": 0,
+      "expenditure_gap": 0,
+      "debt_gap": 0
+    },
+    {
+      "government": "Village of Red Hook",
+      "year": 2019,
+      "revenue_gap": 0,
+      "expenditure_gap": 0,
+      "debt_gap": 0
+    },
+    {
+      "government": "Meadowmere Fire District",
+      "year": 2018,
+      "revenue_gap": 0,
+      "expenditure_gap": 0,
+      "debt_gap": 0
+    },
+    {
+      "government": "County of Nassau",
+      "year": 2021,
+      "revenue_gap": 0,
+      "expenditure_gap": 0,
+      "debt_gap": 0
+    },
+    {
+      "government": "Town of Bethlehem",
+      "year": 2019,
+      "revenue_gap": 0,
+      "expenditure_gap": 0,
+      "debt_gap": 0
+    },
+    {
+      "government": "Town of Colonie",
+      "year": 2019,
+      "revenue_gap": 0,
+      "expenditure_gap": 0,
+      "debt_gap": 0
+    },
+    {
+      "government": "Town of Red Hook",
+      "year": 2025,
+      "revenue_gap": 0,
+      "expenditure_gap": 0,
+      "debt_gap": 0
+    },
+    {
+      "government": "Village of Red Hook",
+      "year": 2025,
+      "revenue_gap": 0,
+      "expenditure_gap": 0,
+      "debt_gap": 0
+    },
+    {
+      "government": "Village of Alexandria Bay",
+      "year": 2025,
+      "revenue_gap": 0,
+      "expenditure_gap": 0,
+      "debt_gap": 0
+    },
+    {
+      "government": "Marathon Central School District",
+      "year": 2020,
+      "revenue_gap": 0,
+      "expenditure_gap": 0,
+      "debt_gap": 0
+    },
+    {
+      "government": "County of Wyoming",
+      "year": 2022,
+      "revenue_gap": 0,
+      "expenditure_gap": 0,
+      "debt_gap": 0
+    },
+    {
+      "government": "Williamson Central School District",
+      "year": 2023,
+      "revenue_gap": 0,
+      "expenditure_gap": 0,
+      "debt_gap": 0
+    }
+  ],
+  "uer_link_candidates": 1536,
+  "uer_dissolved_before_panel": 19,
+  "uer_link_accepted": 1504,
+  "uer_link_rate_pct": 97.9,
+  "uer_links_with_alternate_codes": 14,
+  "uer_shared_records": 2,
+  "nypa_projects_total": 2942,
+  "nypa_first_year": 1987,
+  "nypa_last_year": 2026,
+  "nypa_projects_panel_years": 767,
+  "nypa_method_not_in_scope_nyc": 1490,
+  "nypa_method_not_in_scope_state": 699,
+  "nypa_method_exact": 681,
+  "nypa_method_not_in_scope_other": 52,
+  "nypa_method_partial_review+author_accept": 13,
+  "nypa_method_fuzzy_review+author_accept": 1,
+  "nypa_method_unmatched+author_assign": 1,
+  "nypa_method_fuzzy_auto": 1,
+  "nypa_method_partial_review+author_assign": 1,
+  "nypa_method_class_mismatch_review+author_accept": 1,
+  "nypa_method_class_mismatch_review+author_assign": 1,
+  "nypa_method_other_county_review+author_accept": 1,
+  "nypa_linked": 701,
+  "nypa_in_scope": 701,
+  "nypa_link_rate_in_scope_pct": 100.0,
+  "review_queue": 0,
+  "panel_rows": 32640,
+  "panel_entities": 3264,
+  "by_year": {
+    "2016": {
+      "with_finance": 3127,
+      "full_year_elec": 1093,
+      "mean_elec_months": 10.7,
+      "nypa_projects": 13
+    },
+    "2017": {
+      "with_finance": 3121,
+      "full_year_elec": 1096,
+      "mean_elec_months": 10.7,
+      "nypa_projects": 12
+    },
+    "2018": {
+      "with_finance": 3109,
+      "full_year_elec": 1054,
+      "mean_elec_months": 10.6,
+      "nypa_projects": 27
+    },
+    "2019": {
+      "with_finance": 3093,
+      "full_year_elec": 1028,
+      "mean_elec_months": 10.6,
+      "nypa_projects": 23
+    },
+    "2020": {
+      "with_finance": 3080,
+      "full_year_elec": 1022,
+      "mean_elec_months": 10.6,
+      "nypa_projects": 23
+    },
+    "2021": {
+      "with_finance": 3071,
+      "full_year_elec": 83,
+      "mean_elec_months": 6.4,
+      "nypa_projects": 33
+    },
+    "2022": {
+      "with_finance": 3063,
+      "full_year_elec": 505,
+      "mean_elec_months": 8.9,
+      "nypa_projects": 30
+    },
+    "2023": {
+      "with_finance": 3041,
+      "full_year_elec": 571,
+      "mean_elec_months": 9.2,
+      "nypa_projects": 55
+    },
+    "2024": {
+      "with_finance": 2983,
+      "full_year_elec": 938,
+      "mean_elec_months": 9.8,
+      "nypa_projects": 19
+    },
+    "2025": {
+      "with_finance": 2843,
+      "full_year_elec": 1002,
+      "mean_elec_months": 10.0,
+      "nypa_projects": 13
+    }
+  },
+  "elec_entity_months_withheld": 9964,
+  "elec_entity_months_invalid": 42,
+  "gas_entity_months_invalid": 22,
+  "spot_checks": [
+    {
+      "why": "known",
+      "municipal_code": "010201000000",
+      "entity": "City of Albany",
+      "year": 2019,
+      "revenues_total": 210651694.0,
+      "elec_mwh": 1189663.666,
+      "nypa_projects": 0
+    },
+    {
+      "why": "known",
+      "municipal_code": "380257000000",
+      "entity": "City of Troy",
+      "year": 2019,
+      "revenues_total": 125187018.0,
+      "elec_mwh": 89266.766,
+      "nypa_projects": 0
+    },
+    {
+      "why": "known",
+      "municipal_code": "010318700000",
+      "entity": "Town of Colonie",
+      "year": 2019,
+      "revenues_total": 118326879.0,
+      "elec_mwh": 669921.1190000001,
+      "nypa_projects": 0
+    },
+    {
+      "why": "known",
+      "municipal_code": "010307100000",
+      "entity": "Town of Bethlehem",
+      "year": 2019,
+      "revenues_total": 67384459.0,
+      "elec_mwh": 591294.741,
+      "nypa_projects": 0
+    },
+    {
+      "why": "known",
+      "municipal_code": "130370300000",
+      "entity": "Town of Red Hook",
+      "year": 2019,
+      "revenues_total": 7181554.64,
+      "elec_mwh": 26819.69,
+      "nypa_projects": 0
+    },
+    {
+      "why": "known",
+      "municipal_code": "130470304160",
+      "entity": "Village of Red Hook",
+      "year": 2019,
+      "revenues_total": 5175993.27,
+      "elec_mwh": 7026.57,
+      "nypa_projects": 0
+    },
+    {
+      "why": "max elec_mwh",
+      "municipal_code": "140207000000",
+      "entity": "City of Buffalo",
+      "year": 2018,
+      "revenues_total": 565829493.4,
+      "elec_mwh": 2786511.734,
+      "nypa_projects": 2
+    },
+    {
+      "why": "max expenditures_total",
+      "municipal_code": "280100000000",
+      "entity": "County of Nassau",
+      "year": 2021,
+      "revenues_total": 6339278000.0,
+      "elec_mwh": null,
+      "nypa_projects": 0
+    },
+    {
+      "why": "max nypa_cost",
+      "municipal_code": "310255000000",
+      "entity": "City of Syracuse",
+      "year": 2021,
+      "revenues_total": 418094578.0,
+      "elec_mwh": 638345.812,
+      "nypa_projects": 1
+    },
+    {
+      "why": "random seed 20261211",
+      "municipal_code": "110750800100",
+      "entity": "Marathon Central School District",
+      "year": 2020,
+      "revenues_total": 18783353.0,
+      "elec_mwh": null,
+      "nypa_projects": 0
+    },
+    {
+      "why": "random seed 20261211",
+      "municipal_code": "560100000000",
+      "entity": "County of Wyoming",
+      "year": 2022,
+      "revenues_total": 182928912.63,
+      "elec_mwh": null,
+      "nypa_projects": 0
+    },
+    {
+      "why": "random seed 20261211",
+      "municipal_code": "220400900080",
+      "entity": "Village of Alexandria Bay",
+      "year": 2025,
+      "revenues_total": 5733492.0,
+      "elec_mwh": 12787.5,
+      "nypa_projects": 0
+    },
+    {
+      "why": "random seed 20261211",
+      "municipal_code": "540791000200",
+      "entity": "Williamson Central School District",
+      "year": 2023,
+      "revenues_total": 33670030.0,
+      "elec_mwh": null,
+      "nypa_projects": 0
+    },
+    {
+      "why": "random seed 20261211",
+      "municipal_code": "281138606000",
+      "entity": "Meadowmere Fire District",
+      "year": 2018,
+      "revenues_total": 737008.0,
+      "elec_mwh": null,
+      "nypa_projects": 0
+    }
+  ],
+  "flags": [],
+  "sample_mode": false
+}

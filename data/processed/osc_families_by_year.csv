@@ -1,0 +1,121 @@
+family,kind,class_n,year,rows,amount,governments
+short,expenditure,city,2016,9334,5691891816.52,61
+short,expenditure,city,2017,9336,5847409461.22,61
+short,expenditure,city,2018,9380,5878357797.3,61
+short,expenditure,city,2019,9241,5942532463.56,61
+short,expenditure,city,2020,9170,6275915681.72,61
+short,expenditure,city,2021,9237,7063614174.99,61
+short,expenditure,city,2022,8904,7267804302.27,59
+short,expenditure,city,2023,8380,7713935411.88,58
+short,expenditure,city,2024,8218,8275270011.21,57
+short,expenditure,city,2025,7435,8343164641.64,51
+short,expenditure,county,2016,13210,28187631995.75,57
+short,expenditure,county,2017,13171,28568592266.41,57
+short,expenditure,county,2018,13198,27846796808.41,57
+short,expenditure,county,2019,13217,28758693542.46,57
+short,expenditure,county,2020,13223,29784521711.1,57
+short,expenditure,county,2021,13149,32429776718.59,57
+short,expenditure,county,2022,13300,33147581716.8,57
+short,expenditure,county,2023,12826,35778677202.08,57
+short,expenditure,county,2024,12765,37373166323.55,57
+short,expenditure,county,2025,12503,38700705674.23,56
+short,expenditure,fire district,2016,6741,903035955.25,853
+short,expenditure,fire district,2017,6740,927656662.45,853
+short,expenditure,fire district,2018,6696,944374772.72,847
+short,expenditure,fire district,2019,6670,995168152.96,835
+short,expenditure,fire district,2020,6671,968388533.25,829
+short,expenditure,fire district,2021,6680,1060583310.72,830
+short,expenditure,fire district,2022,6813,1130007528.08,831
+short,expenditure,fire district,2023,6482,1129445537.55,821
+short,expenditure,fire district,2024,6377,1192818436.04,797
+short,expenditure,fire district,2025,6080,1255339846.9,746
+short,expenditure,school district,2016,103766,42476357831.0,691
+short,expenditure,school district,2017,103982,43930228048.0,691
+short,expenditure,school district,2018,104368,45396463347.0,691
+short,expenditure,school district,2019,104950,46366639928.0,691
+short,expenditure,school district,2020,104433,47201629406.0,690
+short,expenditure,school district,2021,102294,47983724430.0,689
+short,expenditure,school district,2022,108152,50761602033.0,688
+short,expenditure,school district,2023,111619,53651024282.0,689
+short,expenditure,school district,2024,110411,56760864879.0,689
+short,expenditure,school district,2025,109005,59288918654.0,689
+short,expenditure,town,2016,85342,8525735727.48,923
+short,expenditure,town,2017,85506,8658604817.08,922
+short,expenditure,town,2018,85486,9172854802.92,919
+short,expenditure,town,2019,85482,9532730861.93,919
+short,expenditure,town,2020,85000,17948405704.97,915
+short,expenditure,town,2021,84057,21421868080.74,909
+short,expenditure,town,2022,83918,23084772336.16,907
+short,expenditure,town,2023,77812,23828729803.48,901
+short,expenditure,town,2024,76506,25591378550.670002,883
+short,expenditure,town,2025,71798,27843929759.420002,833
+short,expenditure,village,2016,42168,3317595813.62,541
+short,expenditure,village,2017,41714,3365993877.77,536
+short,expenditure,village,2018,41496,3458306663.8,534
+short,expenditure,village,2019,41263,3563602952.93,530
+short,expenditure,village,2020,40938,3788246726.06,528
+short,expenditure,village,2021,40727,3831039845.77,525
+short,expenditure,village,2022,40059,4003630663.1,521
+short,expenditure,village,2023,36786,4175673975.2400002,515
+short,expenditure,village,2024,35774,4492925749.49,499
+short,expenditure,village,2025,33431,4436384997.51,468
+short,revenue,city,2016,4942,5784507002.42,61
+short,revenue,city,2017,4928,5779243199.9,61
+short,revenue,city,2018,4920,5903572637.7,61
+short,revenue,city,2019,4872,6008840844.83,61
+short,revenue,city,2020,4894,6163709026.52,61
+short,revenue,city,2021,4934,7379385922.15,61
+short,revenue,city,2022,4806,7680403626.06,59
+short,revenue,city,2023,4431,7959761964.22,58
+short,revenue,city,2024,4352,8216059740.51,57
+short,revenue,city,2025,3940,7965042679.24,51
+short,revenue,county,2016,8782,28338735526.71,57
+short,revenue,county,2017,8748,28539609692.94,57
+short,revenue,county,2018,8806,28217342292.88,57
+short,revenue,county,2019,8790,29306968733.47,57
+short,revenue,county,2020,8822,30249864290.58,57
+short,revenue,county,2021,8804,34808053061.79,57
+short,revenue,county,2022,8922,35771734431.66,57
+short,revenue,county,2023,8450,36685444300.07,57
+short,revenue,county,2024,8416,37800459176.67,57
+short,revenue,county,2025,8238,38587429070.13,56
+short,revenue,fire district,2016,5233,929977604.64,854
+short,revenue,fire district,2017,5188,995045851.96,854
+short,revenue,fire district,2018,5171,1014806927.96,847
+short,revenue,fire district,2019,5233,1038261254.82,835
+short,revenue,fire district,2020,5097,1071305177.13,829
+short,revenue,fire district,2021,5036,1178926260.5,830
+short,revenue,fire district,2022,5075,1167778953.91,831
+short,revenue,fire district,2023,4570,1285458174.27,821
+short,revenue,fire district,2024,4485,1312314808.47,797
+short,revenue,fire district,2025,4187,1427585791.24,746
+short,revenue,school district,2016,28562,43307212497.0,691
+short,revenue,school district,2017,28423,44499657500.0,691
+short,revenue,school district,2018,28741,45855732654.0,691
+short,revenue,school district,2019,29082,46933541785.0,691
+short,revenue,school district,2020,28757,47560433918.0,690
+short,revenue,school district,2021,28896,49115619011.0,689
+short,revenue,school district,2022,29157,52295415432.0,688
+short,revenue,school district,2023,29635,55392605568.0,689
+short,revenue,school district,2024,29205,58666313941.0,689
+short,revenue,school district,2025,29097,59314992675.0,689
+short,revenue,town,2016,40712,8834399474.51,923
+short,revenue,town,2017,40967,9055243110.13,922
+short,revenue,town,2018,41415,9657475738.1,919
+short,revenue,town,2019,41846,9505190278.63,919
+short,revenue,town,2020,41696,18407592018.84,915
+short,revenue,town,2021,41593,22296621761.93,909
+short,revenue,town,2022,42045,23842628900.19,907
+short,revenue,town,2023,37331,24163436123.55,901
+short,revenue,town,2024,37030,25763471014.61,883
+short,revenue,town,2025,35187,27840197562.600002,833
+short,revenue,village,2016,19806,3413205331.43,541
+short,revenue,village,2017,19630,3534369467.45,536
+short,revenue,village,2018,19723,3466906378.13,534
+short,revenue,village,2019,19653,3712551169.61,530
+short,revenue,village,2020,19735,3727467053.84,528
+short,revenue,village,2021,19533,4001149106.03,525
+short,revenue,village,2022,19601,4103811527.69,521
+short,revenue,village,2023,17401,4317881649.35,515
+short,revenue,village,2024,16780,4630123309.12,499
+short,revenue,village,2025,16023,4529053593.11,468
