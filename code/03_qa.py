@@ -60,6 +60,25 @@ def main() -> None:
         w("   Comptroller section labels found (decision V1):")
         for r in pd.read_csv(sec_file).itertuples():
             w(f"     {str(r.section):40s} {r.kind!s:12s} rows={r.rows:>10,}  other={r.other_rows:>9,}")
+    fy = C.PROCESSED / "osc_families_by_year.csv"
+    if fy.exists():
+        f = pd.read_csv(fy)
+        t = f.groupby(["family", "kind"]).agg(rows=("rows", "sum"),
+                                               govts=("governments", "max")).reset_index()
+        w("   label families inside 2016-2025 (rows; most governments in any one year):")
+        for r in t.itertuples():
+            w(f"     {r.family:10s} {r.kind:12s} rows={r.rows:>10,} governments={r.govts:>6,}")
+    ov = C.PROCESSED / "osc_label_overlap.csv"
+    if ov.exists():
+        o = pd.read_csv(ov)
+        S["finance_both_families"] = len(o)
+        S["finance_statement_dropped_as_copy"] = int((o.action == "statement_dropped_as_copy").sum())
+        w(f"   government-years with both label families: {len(o):,}; statement rows dropped "
+          f"as copies: {S['finance_statement_dropped_as_copy']:,}; both kept: "
+          f"{int((o.action == 'both_kept').sum()):,} (see osc_label_overlap.csv)")
+        if (o.action == "both_kept").any():
+            flags.append(f"{int((o.action == 'both_kept').sum())} government-years have both "
+                         f"label families with different lines; check osc_label_overlap.csv")
     if "revenues_excl_other_sources" in panel:
         rt, rx = panel.revenues_total.sum(), panel.revenues_excl_other_sources.sum()
         S["other_sources_share_pct"] = round(100 * (rt - rx) / rt, 1) if rt else None

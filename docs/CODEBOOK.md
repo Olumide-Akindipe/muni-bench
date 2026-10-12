@@ -12,9 +12,9 @@
 | county | County as OSC reports it | OSC |
 | year | Fiscal year label in OSC data; calendar year for energy and NYPA columns | See LIMITATIONS 2 |
 | revenues_total | Sum of all revenue lines including other sources, dollars. Matches the Comptroller's full total | OSC, sum of AMOUNT where the section is revenue or other sources |
-| revenues_excl_other_sources | Revenues without other sources (borrowing proceeds, interfund transfers in). Use this to compare governments | as above, excluding the "other sources" section label or account codes 5000 to 5999 |
+| revenues_excl_other_sources | Revenues without other sources (borrowing proceeds, interfund transfers in). Use this to compare governments | as above, excluding account codes 5000 to 5999 (and any section labelled only "Other Sources") |
 | expenditures_total | Sum of all expenditure lines including other uses, dollars | OSC, sum of AMOUNT where the section is expenditure or other uses |
-| expenditures_excl_other_uses | Expenditures without other uses (interfund transfers out) | as above, excluding the "other uses" section label or account codes 9900 to 9999 |
+| expenditures_excl_other_uses | Expenditures without other uses (interfund transfers out) | as above, excluding account codes 9900 to 9999 (and any section labelled only "Other Uses") |
 | exp_street_lighting | Expenditure in function 5182, dollars | OSC account code, first four digits |
 | exp_buildings | Expenditure in function 1620, dollars | as above |
 | exp_water | Expenditure in functions 8310 to 8350, dollars | as above |
@@ -72,6 +72,12 @@ One row per ZIP code, energy type and calendar year: zip_code, data_class, year,
 
 ## uer_communities.csv
 One row per NYSERDA community code and class: fips, com_type_n, com_name (most common spelling), name_variants (every spelling seen), counties (as NYSERDA wrote them), first_year, last_year, n_rows.
+
+## osc_label_overlap.csv
+One row per government, year and kind (revenue or expenditure) that has rows under both of the Comptroller's label styles ("REVENUE" and "STATEMENT OF REVENUES AND OTHER SOURCES", and the expenditure equivalents): line counts and amounts under each, the share of statement lines that repeat a short-label line, and the action taken (statement_dropped_as_copy when 90% or more repeat, otherwise both_kept).
+
+## osc_families_by_year.csv
+Rows, amounts and number of governments under each label style, by kind, class of government and year, 2016 to 2025.
 
 ## osc_sections.csv
 Every Comptroller section label found, how the pipeline classed it (revenue or expenditure), its row count, and how many rows count as other sources or uses. Lets anyone confirm decision V1 against the source file.

@@ -180,3 +180,24 @@ def test_other_sources_and_uses_reported_both_ways():
     assert r.revenues_excl_other_sources < r.revenues_total
     assert r.revenues_total / r.revenues_excl_other_sources == pytest.approx(1.7 / 1.2, rel=1e-6)
     assert r.expenditures_excl_other_uses < r.expenditures_total
+
+
+def test_statement_label_copies_not_double_counted():
+    o = pd.read_csv(P / "osc_label_overlap.csv", dtype={"municipal_code": str})
+    a = o[(o.municipal_code == "010101000000") & (o.year == 2019)].iloc[0]
+    assert a.action == "statement_dropped_as_copy"
+    t = o[(o.municipal_code == "010102000000") & (o.year == 2019)].iloc[0]
+    assert t.action == "both_kept"
+    raw = pd.read_csv(ROOT / "data/raw/osc/osc_sample.csv", dtype=str)
+    r = raw[(raw.MUNICIPAL_CODE == "010101000000") & (raw.CALENDAR_YEAR == "2019") &
+            (raw.ACCOUNT_CODE_SECTION == "REVENUE")]
+    p = _panel()
+    got = p[(p.municipal_code == "010101000000") & (p.year == 2019)].revenues_total.iloc[0]
+    assert got == pytest.approx(r.AMOUNT.astype(float).sum())
+
+
+def test_statement_label_is_not_other_sources():
+    p = _panel()
+    t = p[(p.municipal_code == "010102000000") & (p.year == 2019)].iloc[0]
+    # statement-label lines with ordinary account codes count as ordinary revenue
+    assert t.revenues_excl_other_sources > 0.5 * t.revenues_total

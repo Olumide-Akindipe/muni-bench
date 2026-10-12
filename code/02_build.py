@@ -72,17 +72,22 @@ def load_osc() -> pd.DataFrame:
         lambda s: (re.sub(r"\D", "", s) + "0000")[:4])
     # Decision V1 (author, 2026-10-12): report totals two ways. "Other sources"
     # (borrowing proceeds, interfund transfers in) and "other uses" (transfers out) are
-    # identified by the section label when the file has one, or by the NYS Uniform
-    # System of Accounts code ranges: revenue codes 5000-5999, expenditure codes 9900-9999.
-    is_src = sec.str.contains("SOURCE")
-    is_use = sec.str.contains(r"\bUSES?\b")
-    rev = sec.str.contains("REV") | is_src
-    exp = sec.str.contains("EXP") | is_use
+    # identified by NYS Uniform System of Accounts code ranges: revenue codes 5000-5999,
+    # expenditure codes 9900-9999. A section label counts only when it names other
+    # sources or uses alone; labels such as "STATEMENT OF REVENUES AND OTHER SOURCES"
+    # hold ordinary revenue too and are classed by account code like everything else.
+    only_src = sec.str.fullmatch(r"\s*OTHER (FINANCING )?SOURCES?\s*")
+    only_use = sec.str.fullmatch(r"\s*OTHER (FINANCING )?USES?\s*")
+    rev = sec.str.contains("REV") | only_src
+    exp = sec.str.contains("EXP") | only_use
     osc["kind"] = pd.Series(pd.NA, index=osc.index, dtype="object")
     osc.loc[rev, "kind"] = "revenue"
     osc.loc[exp & ~rev, "kind"] = "expenditure"
-    osc["other"] = ((osc.kind == "revenue") & (is_src | osc.function.str.startswith("5"))) | \
-                   ((osc.kind == "expenditure") & (is_use | osc.function.str.startswith("99")))
+    osc["other"] = ((osc.kind == "revenue") & (only_src | osc.function.str.startswith("5"))) | \
+                   ((osc.kind == "expenditure") & (only_use | osc.function.str.startswith("99")))
+    # Label family: the file uses short labels ("REVENUE") and statement labels
+    # ("STATEMENT OF REVENUES AND OTHER SOURCES"). Kept so double counting can be checked.
+    osc["family"] = sec.str.startswith("STATEMENT").map({True: "statement", False: "short"})
     return osc
 
 
@@ -97,8 +102,44 @@ def build_entities(osc: pd.DataFrame) -> pd.DataFrame:
     return ent.sort_values("municipal_code").reset_index(drop=True)
 
 
+def dedupe_families(d: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Guard against double counting. Where one government-year-kind has rows under
+    both label families, compare their (account code, amount) lines. If 90% or more of
+    the statement-family lines repeat a short-family line, the statement rows are
+    copies and are dropped. Otherwise both are kept. Every case is logged."""
+    d = d[d.kind.notna()].copy()
+    k = ["municipal_code", "year", "kind"]
+    cols = k + ["short_lines", "statement_lines", "short_amount", "statement_amount",
+                "statement_share_repeated", "action"]
+    fams = d.groupby(k).family.nunique().rename("nfam").reset_index()
+    keys = fams[fams.nfam > 1][k]
+    if keys.empty:
+        return d, pd.DataFrame(columns=cols)
+    sub = d.merge(keys, on=k)
+    sub["amt2"] = sub.amount.round(2)
+    sh = sub[sub.family == "short"][k + ["account_code", "amt2"]].drop_duplicates()
+    st = sub[sub.family == "statement"][k + ["account_code", "amt2"]]
+    st = st.merge(sh.assign(rep=True), on=k + ["account_code", "amt2"], how="left")
+    st["rep"] = st["rep"].fillna(False).astype(bool)
+    share = st.groupby(k).rep.mean().rename("statement_share_repeated")
+    summ = sub.groupby(k + ["family"]).agg(n=("amount", "size"), amt=("amount", "sum")).unstack("family")
+    log = pd.DataFrame({"short_lines": summ[("n", "short")], "statement_lines": summ[("n", "statement")],
+                        "short_amount": summ[("amt", "short")].round(2),
+                        "statement_amount": summ[("amt", "statement")].round(2)}).join(share)
+    log["statement_share_repeated"] = log.statement_share_repeated.round(3)
+    log["action"] = log.statement_share_repeated.ge(0.9).map(
+        {True: "statement_dropped_as_copy", False: "both_kept"})
+    log = log.reset_index()[cols]
+    dropkeys = log[log.action == "statement_dropped_as_copy"][k].assign(_drop=True)
+    d = d.merge(dropkeys, on=k, how="left")
+    d = d[~(d._drop.fillna(False).astype(bool) & (d.family == "statement"))].drop(columns="_drop")
+    return d, log
+
+
 def build_finance(osc: pd.DataFrame) -> pd.DataFrame:
     d = osc[osc["year"].between(C.PANEL_START, C.PANEL_END)]
+    d, overlap = dedupe_families(d)
+    overlap.to_csv(C.PROCESSED / "osc_label_overlap.csv", index=False)
     g = d.groupby(["municipal_code", "year"])
     k = ["municipal_code", "year"]
     rv, ex = d[d.kind == "revenue"], d[d.kind == "expenditure"]
@@ -368,6 +409,11 @@ def main() -> None:
         .groupby(["section", "kind"], dropna=False)
         .agg(rows=("amount", "size"), other_rows=("other_i", "sum"))
         .reset_index().to_csv(C.PROCESSED / "osc_sections.csv", index=False))
+    (osc[osc.year.between(C.PANEL_START, C.PANEL_END) & osc.kind.notna()]
+        .groupby(["family", "kind", "class_n", "year"], dropna=False)
+        .agg(rows=("amount", "size"), amount=("amount", "sum"),
+             governments=("municipal_code", "nunique"))
+        .reset_index().to_csv(C.PROCESSED / "osc_families_by_year.csv", index=False))
 
     u = load_uer(C.UER_COMMUNITY)
     comm, energy = community_annual(u)

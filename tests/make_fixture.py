@@ -73,7 +73,17 @@ def osc():
                              "CLASS_DESCRIPTION": cls, "COUNTY": county,
                              "ACCOUNT_CODE": acct, "ACCOUNT_CODE_SECTION": sec,
                              "AMOUNT": round(amt, 2)})
-    return pd.DataFrame(rows)
+    df = pd.DataFrame(rows)
+    # Albany 2019: the same revenue lines repeated under a statement label (a copy)
+    cp = df[(df.MUNICIPAL_CODE == "010101000000") & (df.CALENDAR_YEAR == 2019) &
+            (df.ACCOUNT_CODE_SECTION == "REVENUE")].copy()
+    cp["ACCOUNT_CODE_SECTION"] = "STATEMENT OF REVENUES AND OTHER SOURCES"
+    # Troy 2019: statement-label lines that are NOT copies (different accounts)
+    nc = df[(df.MUNICIPAL_CODE == "010102000000") & (df.CALENDAR_YEAR == 2019) &
+            (df.ACCOUNT_CODE_SECTION == "REVENUE")].copy()
+    nc["ACCOUNT_CODE_SECTION"] = "STATEMENT OF REVENUES AND OTHER SOURCES"
+    nc["ACCOUNT_CODE"] = "A2701"
+    return pd.concat([df, cp, nc], ignore_index=True)
 
 
 def uer_community(years):
