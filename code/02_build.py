@@ -232,8 +232,17 @@ def load_uer(names) -> pd.DataFrame:
     u = pd.concat(frames, ignore_index=True)
     u = u[u["data_field_display_name"].str.startswith("Total Consumption", na=False)].copy()
     u["unit"] = u["unit"].str.strip().str.lower()
-    keep = ((u.data_class == "electricity") & (u.unit == "mwh")) | \
-           ((u.data_class == "natural_gas") & (u.unit == "therms"))
+    # The Beginning 2021 file truncates labels in some utilities' submissions: NYSEG
+    # electricity 2021 to 2023 says "MW" for MWh, and gas 2021 to 2024 says "Th" or "The"
+    # for therms (found 2026-10-23; v0.1.1 dropped these rows). Only Total Consumption
+    # rows reach this point, so the capacity-tag rows that truly use MW are already out.
+    elec_units = {"mwh", "mw"}
+    gas_units = {"therms", "therm", "the", "th"}
+    keep = ((u.data_class == "electricity") & u.unit.isin(elec_units)) | \
+           ((u.data_class == "natural_gas") & u.unit.isin(gas_units))
+    (u.assign(kept=keep).groupby(["data_class", "unit", "year", "kept"], dropna=False)
+      .size().rename("rows").reset_index()
+      .to_csv(C.PROCESSED / "uer_unit_labels.csv", index=False))
     u = u[keep].copy()
     for c in ("year", "month"):
         u[c] = pd.to_numeric(u[c], errors="coerce").astype("Int64")
@@ -267,7 +276,8 @@ def community_annual(u: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     monthly["reported"] = monthly["any_value"] & ~monthly["any_withheld"] & ~monthly["any_invalid"]
     monthly.loc[~monthly["reported"], ["value", "accounts"]] = pd.NA
     ann = (monthly.groupby(["fips", "data_class", "year"])
-           .agg(total=("value", "sum"), months_reported=("reported", "sum"),
+           # min_count=1: a year with no reported month stays blank rather than 0
+           .agg(total=("value", lambda s: s.sum(min_count=1)), months_reported=("reported", "sum"),
                 months_withheld=("any_withheld", "sum"), months_invalid=("any_invalid", "sum"),
                 accounts_avg=("accounts", "mean"))
            .reset_index())
@@ -444,7 +454,7 @@ def apply_review(link: pd.DataFrame, source: str, id_col: str, target_col: str,
     correct OSC municipal_code (NYPA rows) or NYSERDA fips (UER rows)."""
     link = link.copy()
     link["accepted"] = link["method"].isin(["exact", "fuzzy_auto"])
-    f = C.ROOT / "data" / "review_decisions.csv"
+    f = C.REVIEW_DECISIONS
     if f.exists():
         d = pd.read_csv(f, dtype=str).fillna("")
         if "target" not in d:

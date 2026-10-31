@@ -1,0 +1,15 @@
+__pycache__/
+.pytest_cache/
+.env
+*.pem
+.venv/
+venv/
+# Raw inputs are large and re-downloadable; the release archive on Zenodo carries them.
+data/raw/*.csv
+data/raw/osc/
+data/sample/
+
+# Python packaging
+dist/
+build/
+*.egg-info/

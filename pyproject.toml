@@ -1,0 +1,57 @@
+# Plain-language header: this file tells Python how to package MUNI-BENCH for PyPI, so
+# anyone can run "pip install muni-bench-ny" and load the data in two lines. The package
+# holds only the small data loader in src/muni_bench; the data itself is downloaded from
+# Zenodo, and the build pipeline (code/) stays in the repository for reproduction.
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "muni-bench-ny"
+dynamic = ["version"]
+description = "Load MUNI-BENCH: New York local government finance, community energy use and NYPA efficiency projects, linked by government and year (2016 to 2025)."
+readme = "PYPI_README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Stephen Olumide Akindipe", email = "oluakins1108@gmail.com" }]
+keywords = ["municipal finance", "energy use", "energy efficiency", "New York State",
+            "local government", "Utility Energy Registry", "panel data", "open data"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+dependencies = ["pandas>=2.0"]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[project.urls]
+Homepage = "https://github.com/Olumide-Akindipe/muni-bench"
+Dataset = "https://doi.org/10.5281/zenodo.23314416"
+Documentation = "https://github.com/Olumide-Akindipe/muni-bench/blob/main/docs/CODEBOOK.md"
+Issues = "https://github.com/Olumide-Akindipe/muni-bench/issues"
+
+[project.scripts]
+muni-bench = "muni_bench.cli:main"
+
+[tool.hatch.version]
+path = "src/muni_bench/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/muni_bench"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/muni_bench", "tests/test_package.py", "PYPI_README.md", "LICENSE",
+           "LICENSE-DATA.md", "CITATION.cff", "pyproject.toml"]
+
+[tool.pytest.ini_options]
+markers = ["network: needs internet access to Zenodo (run with -m network)"]
+addopts = "-m 'not network'"

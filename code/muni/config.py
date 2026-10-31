@@ -4,14 +4,23 @@ Plain-language header: this file lists where every source lives and the few
 choices the pipeline makes (panel years, which accounts count as energy-related).
 You only open it if you want to change one of those choices.
 """
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-RAW = ROOT / "data" / "raw"
-PROCESSED = ROOT / "data" / "processed"
-SAMPLE = ROOT / "data" / "sample"
-PAPER = ROOT / "paper"
+# Where data is read and written. Normally the repository itself. The tests set
+# MUNI_BENCH_WORKDIR to a temporary folder so they never overwrite the published
+# tables or the maintainer's review decisions.
+WORK = Path(os.environ["MUNI_BENCH_WORKDIR"]).resolve() if os.environ.get("MUNI_BENCH_WORKDIR") \
+    else ROOT
+RAW = WORK / "data" / "raw"
+PROCESSED = WORK / "data" / "processed"
+SAMPLE = WORK / "data" / "sample"
+PAPER = WORK / "paper"
 FIGS = PAPER / "figures"
+REVIEW_DECISIONS = WORK / "data" / "review_decisions.csv"
+HAND_CHECKS = WORK / "data" / "hand_checks.csv"
+FONTS = ROOT / "paper" / "fonts"
 
 PANEL_START, PANEL_END = 2016, 2025
 

@@ -1,6 +1,6 @@
 # MUNI-BENCH v0.1 verification report
 
-*Plain-language header: this file records the hand checks that compare MUNI-BENCH values with the public sources they come from. Every number below can be found again on the source website or in the source file named next to it.*
+*Header: this file records the hand checks that compare MUNI-BENCH values with the public sources they come from. Every number below can be found again on the source website or in the source file named next to it.*
 
 | | |
 |---|---|
@@ -25,7 +25,7 @@ No sampled value in MUNI-BENCH differs from its source. The finance checks found
 
 ## 2. Method
 
-1. Rows were taken from `VERIFY_CHECKLIST.md` Part 3: places known to the author, the largest values in the panel, five random rows (seed 20261211), and the Wyoming County linkage fix. Colonie 2019 finance and Village of Red Hook 2025 finance were added as extra rows.
+1. Rows were taken from the maintainer's verification checklist: places known to the author, the largest values in the panel, five random rows (seed 20261211), and the Wyoming County linkage fix. Colonie 2019 finance and Village of Red Hook 2025 finance were added as extra rows.
 2. Energy: the author exported the NYSERDA community file from data.ny.gov, filtered to the community, community type, year, `data_class` electricity and `data_field_display_name` "Total Consumption (T)", and summed the monthly values.
 3. NYPA: the author searched the NYPA completed projects file on data.ny.gov by customer name.
 4. Finance: the author opened the Open Book New York Trend report (Revenues and Expenditures) for each government and year. Claude then summed the same government-year in the Comptroller bulk file by account code to explain every difference.
@@ -147,7 +147,7 @@ Recorded in the decision log on 2026-10-12.
 |---|---|
 | `CODEBOOK.md` | Define the V1r columns. State the year convention: year is the fiscal year in which the period ends (January to December for cities, towns, counties and fire districts; June to May for villages; July to June for school districts); energy is calendar year. State that NYPA records include renewables such as solar PV. Add the V3r town and village rule |
 | `LIMITATIONS.md` | Add: water and sewer enterprise funds (EW, ES) report depreciation rather than capital outlay, so energy-relevant water and sewer spending is understated for those governments in grant years. Add: in refunding years Open Book totals include bond proceeds in revenue but exclude the matching escrow payment from expenditure |
-| `VERIFY_CHECKLIST.md` | Use the exact label "Total Consumption (T)" and filter `com_name` and `com_type`. Replace the Open Book address with https://www.osc.ny.gov/open-book-new-york and name the Trend report. Describe `nypa_projects_cumulative` as cumulative since 1987 |
+| Verification checklist (maintainer's working file) | Use the exact label "Total Consumption (T)" and filter `com_name` and `com_type`. Replace the Open Book address with https://www.osc.ny.gov/open-book-new-york and name the Trend report. Describe `nypa_projects_cumulative` as cumulative since 1987 |
 
 ## 8. Limits of this verification
 

@@ -2,7 +2,7 @@
 
 **Status:** v0.1.1, released 2026-10-12, verified by the maintainer | **DOI:** [10.5281/zenodo.23314416](https://doi.org/10.5281/zenodo.23314416) | **Maintainer:** Stephen Olumide Akindipe, [ORCID 0000-0002-1846-9662](https://orcid.org/0000-0002-1846-9662) | **License:** code [MIT](LICENSE), data and documents [CC BY 4.0](LICENSE-DATA.md)
 
-**In plain terms:** The State of New York publishes the finances of each local government, how much energy is consumed in each community, and which public buildings and assets received NYPA energy efficiency projects. This information is stored in separate databases that use different names, labels and codes, so it is rarely brought together. This disconnect limits the ability to compare energy investments and policy across local governments. MUNI-BENCH joins this information into a unified table, one row per government per year from 2016 to 2025, and records exactly how each link was made. This allows planners, municipal officers, decision-makers and researchers to compare governments without rebuilding the links themselves.
+**Background:** The State of New York publishes the finances of each local government each year. This record shows how much energy is consumed in each community, and which public buildings and assets received NYPA energy efficiency projects. This information is stored in separate databases with different names, labels and codes, so the information from these databases are rarely brought together for analysis. This disconnect between these databases limits the ability to compare energy investments and policy across local governments. MUNI-BENCH solves this challenge by joining this information into a unified table, one row per government per year from 2016 to 2025, and records exactly how each link was made. This allows planners, municipal officers, decision-makers and researchers to compare governments without rebuilding the links themselves.
 
 New here? Read [docs/START_HERE.md](docs/START_HERE.md) first. Terms are explained in [docs/GLOSSARY.md](docs/GLOSSARY.md).
 
@@ -15,16 +15,32 @@ code/01_fetch.py        downloads NYSERDA and NYPA files; logs provenance
 code/02_build.py        cleans, links, builds the panel
 code/03_qa.py           quality report and paper/stats.json
 code/04_figures.py      figures (--final removes the draft label)
+code/05_paper.py        preprint numbers and figures (paper/paper_stats.json)
 code/muni/              configuration and name-matching helpers
 data/raw/               inputs (not committed; PROVENANCE.txt is, with each file's fingerprint)
 data/raw/osc/           place the Comptroller export here
 data/processed/         outputs and qa_report.txt (committed from the verified build)
 data/review_decisions.csv   maintainer's accept/reject decisions on uncertain links
 docs/                   START_HERE, GLOSSARY, BUILD_SPEC, CODEBOOK, LIMITATIONS,
-                        VERIFY_CHECKLIST, VERIFICATION_REPORT, DECISIONS,
-                        NEXT_STEPS, PUBLISH_GUIDE, TALK_TRACK
+                        VERIFICATION_REPORT, DECISIONS, REVIEW_SUGGESTIONS
+                      
 tests/                  synthetic fixture and end-to-end tests
+src/muni_bench/         the pip package: downloads and loads released tables
+pyproject.toml          packaging for PyPI (pip install muni-bench-ny)
 ```
+
+## Use the data in Python
+
+```
+pip install muni-bench-ny
+```
+
+```python
+import muni_bench as mb
+panel = mb.load_panel(version="0.1.2")   # downloads once from Zenodo, checks it, caches it
+```
+
+The package is a small loader for the archived releases; see [PYPI_README.md](PYPI_README.md). Every table can also be downloaded directly from Zenodo.
 
 ## Run it
 
@@ -71,6 +87,7 @@ Read [docs/LIMITATIONS.md](docs/LIMITATIONS.md) before using or citing anything 
 Cite all versions with the concept DOI [10.5281/zenodo.23314416](https://doi.org/10.5281/zenodo.23314416); it always resolves to the latest version. Version DOIs: v0.1.0 [10.5281/zenodo.23314418](https://doi.org/10.5281/zenodo.23314418) (code archive only); v0.1.1 [10.5281/zenodo.23314738](https://doi.org/10.5281/zenodo.23314738) (data and code; values identical to the v0.1.0 build).
 
 Suggested citation: Akindipe, S. O. (2026). *MUNI-BENCH: Entity-Level Linkage of New York Local Government Finance, Community Energy Use, and Public-Facility Efficiency Projects* (Version 0.1.1) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.23314416
+
 
 ## Related
 

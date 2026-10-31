@@ -50,9 +50,9 @@ The Comptroller site uses a form, so this file cannot be fetched automatically.
 |---|---|---|
 | Reply "community" or "ZIP only", and confirm your author details | Now | 2 min |
 | Download the Comptroller zip (above) | Now | 5 min |
-| Run the build (your computer or GitHub, see PUBLISH_GUIDE.md) | After the download | 20 min, mostly waiting |
+| Run the build (your computer or GitHub, see the README section "Run it") | After the download | 20 min, mostly waiting |
 | Decide the uncertain matches in `review_queue.csv` | After the build | 30 to 60 min |
-| Check results with `VERIFY_CHECKLIST.md` | After the build | 1 to 2 hours |
+| Check results by hand against the sources (recorded in `VERIFICATION_REPORT.md`) | After the build | 1 to 2 hours |
 | Approve publishing | After checking | 5 min |
 
 ## The steps ahead
@@ -64,4 +64,4 @@ The Comptroller site uses a form, so this file cannot be fetched automatically.
 5. **Your review and verification.** You rule on uncertain matches and check rows by hand.
 6. **Publish.** GitHub release and Zenodo DOI.
 
-*You are here: steps 1 to 5 complete (2026-10-12). Step 6, publish, is in docs/PUBLISH_GUIDE.md Parts C and D.*
+*You are here: all six steps complete. v0.1.0 and v0.1.1 were published on 2026-10-12 (concept DOI 10.5281/zenodo.23314416).*

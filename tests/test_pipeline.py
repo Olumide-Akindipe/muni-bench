@@ -1,13 +1,25 @@
 """End-to-end tests on the synthetic sample. Run: python -m pytest -q tests/"""
+import os
+import shutil
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 import pandas as pd
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
-P = ROOT / "data" / "processed"
+# Run against a throwaway copy so the published tables and the maintainer's review
+# decisions in data/ are never touched.
+WORK = Path(tempfile.mkdtemp(prefix="muni-bench-test-"))
+os.environ["MUNI_BENCH_WORKDIR"] = str(WORK)
+(WORK / "data").mkdir(parents=True)
+for _f in ("review_decisions.csv", "hand_checks.csv"):
+    if (ROOT / "data" / _f).exists():
+        shutil.copy(ROOT / "data" / _f, WORK / "data" / _f)
+P = WORK / "data" / "processed"
+RAWD = WORK / "data" / "raw"
 sys.path.insert(0, str(ROOT / "code"))
 from muni.names import infer_class, name_key  # noqa: E402
 
@@ -38,7 +50,7 @@ def test_panel_is_balanced():
 
 
 def test_multi_utility_months_summed():
-    raw = pd.concat([pd.read_csv(ROOT / "data/raw" / f) for f in
+    raw = pd.concat([pd.read_csv(RAWD / f) for f in
                      ("uer_community_2016_2020.csv", "uer_community_2021_on.csv")])
     r = raw[(raw.com_name == "Colonie") & (raw.year == 2019) & (raw.data_class == "electricity")]
     p = pd.read_csv(P / "panel_2016_2025.csv", dtype={"municipal_code": str})
@@ -62,7 +74,7 @@ def test_nypa_scope_and_links():
 
 
 def test_review_decision_applied(tmp_path):
-    dec = ROOT / "data" / "review_decisions.csv"
+    dec = WORK / "data" / "review_decisions.csv"
     saved = dec.read_text() if dec.exists() else None
     dec.write_text("source,record_id,decision\nnypa,P0002,reject\n")
     try:
@@ -106,7 +118,7 @@ def test_negative_month_invalid():
 
 
 def test_two_pieces_same_utility_summed():
-    raw = pd.read_csv(ROOT / "data/raw/uer_community_2016_2020.csv")
+    raw = pd.read_csv(RAWD / "uer_community_2016_2020.csv")
     r = raw[(raw.com_name == "Red Hook") & (raw.com_type == "Village") & (raw.year == 2019)
             & (raw.data_class == "electricity")]
     assert (r.month == 5).sum() == 2
@@ -156,7 +168,7 @@ def test_school_customer_never_moved_to_village():
 
 
 def test_assign_decision():
-    dec = ROOT / "data" / "review_decisions.csv"
+    dec = WORK / "data" / "review_decisions.csv"
     saved = dec.read_text() if dec.exists() else None
     l = pd.read_csv(P / "link_nypa.csv", dtype=str)
     pid = l[l.customer == "TARRYTOWN USFD"].project_code.iloc[0]
@@ -188,7 +200,7 @@ def test_statement_label_copies_not_double_counted():
     assert a.action == "statement_dropped_as_copy"
     t = o[(o.municipal_code == "010102000000") & (o.year == 2019)].iloc[0]
     assert t.action == "both_kept"
-    raw = pd.read_csv(ROOT / "data/raw/osc/osc_sample.csv", dtype=str)
+    raw = pd.read_csv(RAWD / "osc/osc_sample.csv", dtype=str)
     r = raw[(raw.MUNICIPAL_CODE == "010101000000") & (raw.CALENDAR_YEAR == "2019") &
             (raw.ACCOUNT_CODE_SECTION == "REVENUE")]
     p = _panel()
@@ -221,3 +233,18 @@ def test_openbook_rule_v1r():
     assert r.revenues_openbook + r.transfers_in + r.fiduciary_rev == pytest.approx(rt)
     assert (r.expenditures_openbook + r.transfers_out + r.fiduciary_exp +
             r.refunding_escrow) == pytest.approx(et)
+
+
+def test_truncated_unit_labels_kept():
+    """NYSEG 'MW' and gas 'Th'/'The' labels in 2021 to 2023 are MWh and therms."""
+    c = pd.read_csv(P / "community_energy_annual.csv")
+    y = c[c.year.between(2021, 2023)]
+    assert (y.elec_months_reported.max() == 12) and (y.gas_months_reported.max() == 12)
+    lab = pd.read_csv(P / "uer_unit_labels.csv")
+    assert lab.kept.astype(bool).all()
+
+
+def test_fully_withheld_year_is_blank_not_zero():
+    p = pd.read_csv(P / "panel_2016_2025.csv", dtype={"municipal_code": str})
+    sj = p[(p.entity_name == "SAINT JOHNSVILLE") & (p.year == 2018)].iloc[0]
+    assert sj.gas_months_reported == 0 and pd.isna(sj.gas_therms)

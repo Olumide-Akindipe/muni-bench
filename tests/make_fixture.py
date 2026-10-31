@@ -116,7 +116,10 @@ def uer_community(years):
                     for dc, unit, field in [("electricity", "MWh", "3_nat_consumption"),
                                             ("natural_gas", "Therms", "6_nat_consumption")]:
                         val = round(rng.uniform(500, 50000), 2)
-                        if uname == "St. Johnsville" and dc == "natural_gas" and m in (1, 2):
+                        if 2021 <= y <= 2023:   # truncated labels seen in the real 2021+ file
+                            unit = {"MWh": "MW" if u == "NYSEG" else "MWh",
+                                    "Therms": "Th" if u == "NYSEG" else "The"}[unit]
+                        if uname == "St. Johnsville" and dc == "natural_gas" and (m in (1, 2) or y == 2018):
                             val = -999
                         if uname == "Bethlehem" and dc == "electricity" and y == 2017 and m == 3:
                             val = -500.0          # negative correction row

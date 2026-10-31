@@ -1,0 +1,43 @@
+# Plain-language header: every time the Python package code changes, GitHub builds
+# the package, checks it the way PyPI will, installs it fresh and runs its tests on
+# Linux, Windows and macOS. A red cross here means: do not release yet.
+name: package-ci
+
+on:
+  push:
+    branches: [main]
+    paths: ["src/**", "tests/test_package.py", "pyproject.toml", "PYPI_README.md",
+            ".github/workflows/package-ci.yml"]
+  pull_request:
+    paths: ["src/**", "tests/test_package.py", "pyproject.toml", "PYPI_README.md",
+            ".github/workflows/package-ci.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python: ["3.10", "3.11", "3.12", "3.13"]
+        include:
+          - { os: windows-latest, python: "3.12" }
+          - { os: macos-latest, python: "3.12" }
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "${{ matrix.python }}" }
+      - run: python -m pip install --upgrade pip build twine pytest
+      - run: python -m build
+      - run: python -m twine check --strict dist/*
+      - name: Install the built wheel (not the source folder)
+        shell: bash
+        run: python -m pip install dist/*.whl
+      - run: python -m pytest -q tests/test_package.py
+      - name: Download a real release from Zenodo (Linux, newest Python only)
+        if: matrix.os == 'ubuntu-latest' && matrix.python == '3.13'
+        run: python -m pytest -q -m network tests/test_package.py

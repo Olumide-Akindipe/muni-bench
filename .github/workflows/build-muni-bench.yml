@@ -7,7 +7,7 @@ name: build-muni-bench
 on:
   workflow_dispatch:
   pull_request:
-    paths: ["code/**", "tests/**"]
+    paths: ["code/**", "tests/test_pipeline.py", "tests/make_fixture.py"]
 
 permissions:
   contents: read
@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install -r requirements.txt
-      - run: python -m pytest -q tests/
+      - run: python -m pytest -q tests/test_pipeline.py
 
   build:
     if: github.event_name == 'workflow_dispatch'
@@ -39,6 +39,7 @@ jobs:
       - run: python code/02_build.py
       - run: python code/03_qa.py
       - run: python code/04_figures.py --final
+      - run: python code/05_paper.py
       - uses: actions/upload-artifact@v4
         with:
           name: muni-bench-build

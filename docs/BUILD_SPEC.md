@@ -1,6 +1,6 @@
 # MUNI-BENCH build spec
 
-*Plain-language header: this is the one-page plan the whole build follows. You do not need to edit it. If the project changes shape, this file changes first. A plain reading of each line is in the right-hand notes below the spec.*
+*This is the one-page plan the whole build follows. You do not need to edit it. If the project changes shape, this file changes first. A plain reading of each line is in the right-hand notes below the spec.*
 
 ```
 PROJECT:        MUNI-BENCH. Archetype: open dataset (1), with a data descriptor
@@ -54,7 +54,7 @@ OUTPUTS:        data/processed/entities.csv          one row per OSC entity
                 docs/VERIFICATION_REPORT.md          author hand checks
 VENUES:         GitHub (Olumide-Akindipe/muni-bench), Zenodo DOI (v0.1.0, Dec 2026).
                 Later: data descriptor (e.g. Data in Brief or Scientific Data).
-VERIFY POINTS:  V1 to V8, see docs/VERIFY_CHECKLIST.md and the decision log.
+VERIFY POINTS:  V1 to V8, see docs/DECISIONS.md and docs/VERIFICATION_REPORT.md.
 LICENSE:        Code MIT. Derived data and documents CC BY 4.0, attributing OSC,
                 NYSERDA, NYPA and data.ny.gov.
 DECISIONS:      Community-level UER replaces ZIP-level UER as the panel's energy

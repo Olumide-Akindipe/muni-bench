@@ -1,0 +1,67 @@
+# Plain-language header: this puts the muni-bench package on PyPI.
+#   * Trial run: Actions > publish-pypi > Run workflow. Uploads to TestPyPI only.
+#   * Real release: publishing a GitHub release whose tag starts with "v" (for example
+#     v0.1.2) uploads to PyPI. The same release also triggers the Zenodo DOI.
+# No password or token is stored anywhere: PyPI trusts this workflow directly
+# ("trusted publishing"), set up once on pypi.org. The osc-input pre-release and any
+# tag that does not match the package version are refused.
+name: publish-pypi
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (startsWith(github.event.release.tag_name, 'v') && !github.event.release.prerelease)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python -m pip install --upgrade pip build twine pytest
+      - name: Release tag must match the package version
+        if: github.event_name == 'release'
+        env: { TAG: "${{ github.event.release.tag_name }}" }
+        run: |
+          PKG=$(python -c "import re;print(re.search(r'__version__ = \"(.+?)\"', open('src/muni_bench/__init__.py').read()).group(1))")
+          echo "tag=${TAG#v} package=$PKG"
+          if [ "${TAG#v}" != "$PKG" ]; then
+            echo "::error::Tag $TAG does not match __version__ $PKG in src/muni_bench/__init__.py"; exit 1
+          fi
+      - run: python -m build
+      - run: python -m twine check --strict dist/*
+      - run: python -m pip install dist/*.whl && python -m pytest -q tests/test_package.py
+      - uses: actions/upload-artifact@v4
+        with: { name: dist, path: dist/ }
+
+  testpypi:
+    if: github.event_name == 'workflow_dispatch'
+    needs: build
+    runs-on: ubuntu-latest
+    environment: { name: testpypi, url: "https://test.pypi.org/p/muni-bench-ny" }
+    permissions: { id-token: write }
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { name: dist, path: dist/ }
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+          skip-existing: true
+
+  pypi:
+    if: github.event_name == 'release'
+    needs: build
+    runs-on: ubuntu-latest
+    environment: { name: pypi, url: "https://pypi.org/p/muni-bench-ny" }
+    permissions: { id-token: write }
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { name: dist, path: dist/ }
+      - uses: pypa/gh-action-pypi-publish@release/v1

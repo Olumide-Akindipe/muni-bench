@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Step 3: quality checks. Writes data/processed/qa_report.txt and paper/stats.json.
 
-Plain-language header: this script counts everything, reports how many
+Info: this script counts everything, reports how many
 governments were matched and how, flags anything that looks wrong, and picks
 rows for you to check by hand against the original websites. Read
 qa_report.txt before trusting any number. stats.json holds every number that
@@ -39,7 +39,7 @@ def main() -> None:
     S, out, flags = {}, [], []
     w = out.append
     w("MUNI-BENCH QA REPORT" + ("  [SAMPLE DATA: SYNTHETIC, NOT REAL]" if sample_mode else ""))
-    w("Verification record: docs/VERIFY_CHECKLIST.md; decisions: docs/DECISIONS.md\n")
+    w("Verification record: docs/VERIFICATION_REPORT.md; decisions: docs/DECISIONS.md\n")
 
     w("1. RAW ROW COUNTS")
     for p in sorted(C.RAW.glob("*.csv")):
@@ -102,7 +102,7 @@ def main() -> None:
                                                     "transfers_out", "refunding_escrow"]))
     else:
         flags.append("Open Book columns not computed: Comptroller file has no LEVEL_1_CATEGORY")
-    hc = C.ROOT / "data" / "hand_checks.csv"
+    hc = C.HAND_CHECKS
     if hc.exists() and "revenues_openbook" in panel:
         h = pd.read_csv(hc, dtype={"municipal_code": str})
         m = h.merge(panel, on=["municipal_code", "year"], how="inner")
@@ -125,6 +125,18 @@ def main() -> None:
           f"(within 1 dollar of source rounding)")
         if recs and totals_exact < 2 * len(recs):
             flags.append(f"Open Book reconciliation: {2 * len(recs) - totals_exact} totals differ")
+
+    ul = C.PROCESSED / "uer_unit_labels.csv"
+    if ul.exists():
+        lab = pd.read_csv(ul)
+        w("\n   NYSERDA unit labels on Total Consumption rows (uer_unit_labels.csv):")
+        for (dc, un, kept), g in lab.groupby(["data_class", "unit", "kept"], dropna=False):
+            w(f"     {dc:<12} {str(un):<8} kept={kept!s:<5} rows={int(g.rows.sum()):>9,}  "
+              f"years {int(g.year.min())} to {int(g.year.max())}")
+        dropped = int(lab[~lab.kept.astype(bool)].rows.sum())
+        S["uer_rows_dropped_for_unit"] = dropped
+        if dropped:
+            flags.append(f"{dropped} NYSERDA Total Consumption rows dropped for an unknown unit label")
 
     w("\n3. OSC -> UER COMMUNITY LINK (cities, towns, villages)")
     acc = luer[luer.accepted.astype(str) == "True"]
