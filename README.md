@@ -90,9 +90,9 @@ Read [docs/LIMITATIONS.md](docs/LIMITATIONS.md) before using or citing anything 
 
 ## Citation
 
-Cite all versions with the concept DOI [10.5281/zenodo.23314416](https://doi.org/10.5281/zenodo.23314416); it always resolves to the latest version. Version DOIs: v0.1.0 [10.5281/zenodo.23314418](https://doi.org/10.5281/zenodo.23314418) (code archive only); v0.1.1 [10.5281/zenodo.23314738](https://doi.org/10.5281/zenodo.23314738) (data and code; values identical to the v0.1.0 build).
+Cite all versions with the concept DOI [10.5281/zenodo.23314416](https://doi.org/10.5281/zenodo.23314416); it always resolves to the latest version. Version DOIs: v0.1.0 [10.5281/zenodo.23314418](https://doi.org/10.5281/zenodo.23314418) (code archive only); v0.1.1 [10.5281/zenodo.23314738](https://doi.org/10.5281/zenodo.23314738) (data and code; values identical to the v0.1.0 build); v0.1.2 [10.5281/zenodo.23832195](https://doi.org/10.5281/zenodo.23832195) (corrected energy data).
 
-Suggested citation: Akindipe, S. O. (2026). *MUNI-BENCH: Entity-Level Linkage of New York Local Government Finance, Community Energy Use, and Public-Facility Efficiency Projects* (Version 0.1.1) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.23314416
+Suggested citation: Akindipe, S. O. (2026). *MUNI-BENCH: Entity-Level Linkage of New York Local Government Finance, Community Energy Use, and Public-Facility Efficiency Projects* (Version 0.1.2) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.23832195
 
 
 ## Related
