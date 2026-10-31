@@ -226,9 +226,17 @@ def build_finance(osc: pd.DataFrame) -> pd.DataFrame:
 
 
 # -------------------------------------------------------------- UER community
-def load_uer(names) -> pd.DataFrame:
-    frames = [pd.read_csv(C.RAW / f"{n}.csv", dtype=str, low_memory=False) for n in names
-              if (C.RAW / f"{n}.csv").exists()]
+def _read_uer(path) -> pd.DataFrame:
+    f = pd.read_csv(path, dtype=str, low_memory=False)
+    if "unit" not in f:
+        # The 2016 to 2020 ZIP file has no unit column. Its protocol reports electricity
+        # in MWh and gas in therms (values per account match the files that carry units).
+        f["unit"] = f["data_class"].map({"electricity": "mwh", "natural_gas": "therms"})
+    return f
+
+
+def load_uer(names, log_name: str = "uer_unit_labels.csv") -> pd.DataFrame:
+    frames = [_read_uer(C.RAW / f"{n}.csv") for n in names if (C.RAW / f"{n}.csv").exists()]
     u = pd.concat(frames, ignore_index=True)
     u = u[u["data_field_display_name"].str.startswith("Total Consumption", na=False)].copy()
     u["unit"] = u["unit"].str.strip().str.lower()
@@ -242,7 +250,7 @@ def load_uer(names) -> pd.DataFrame:
            ((u.data_class == "natural_gas") & u.unit.isin(gas_units))
     (u.assign(kept=keep).groupby(["data_class", "unit", "year", "kept"], dropna=False)
       .size().rename("rows").reset_index()
-      .to_csv(C.PROCESSED / "uer_unit_labels.csv", index=False))
+      .to_csv(C.PROCESSED / log_name, index=False))
     u = u[keep].copy()
     for c in ("year", "month"):
         u[c] = pd.to_numeric(u[c], errors="coerce").astype("Int64")
@@ -575,7 +583,7 @@ def main() -> None:
 
 def zip_companion() -> pd.DataFrame:
     try:
-        z = load_uer(C.UER_ZIP)
+        z = load_uer(C.UER_ZIP, log_name="uer_zip_unit_labels.csv")
     except ValueError:
         return pd.DataFrame()
     z["zip_code"] = z["zip_code"].str.zfill(5)

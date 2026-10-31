@@ -194,6 +194,8 @@ if __name__ == "__main__":
     osc().to_csv(C.SAMPLE / "osc_sample.csv", index=False)
     uer_community(range(2016, 2021)).to_csv(C.SAMPLE / "uer_community_2016_2020.csv", index=False)
     uer_community(range(2021, 2026)).to_csv(C.SAMPLE / "uer_community_2021_on.csv", index=False)
-    uer_zip(range(2016, 2020)).to_csv(C.SAMPLE / "uer_zip_2016_2021.csv", index=False)
+    # The real 2016 to 2020 ZIP file has no unit column
+    uer_zip(range(2016, 2020)).drop(columns="unit").to_csv(C.SAMPLE / "uer_zip_2016_2021.csv",
+                                                           index=False)
     nypa().to_csv(C.SAMPLE / "nypa_projects.csv", index=False)
     print("Synthetic sample written to data/sample/")

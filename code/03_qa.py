@@ -126,17 +126,21 @@ def main() -> None:
         if recs and totals_exact < 2 * len(recs):
             flags.append(f"Open Book reconciliation: {2 * len(recs) - totals_exact} totals differ")
 
-    ul = C.PROCESSED / "uer_unit_labels.csv"
-    if ul.exists():
+    for log, key, what in [("uer_unit_labels.csv", "uer_rows_dropped_for_unit", "community"),
+                           ("uer_zip_unit_labels.csv", "uer_zip_rows_dropped_for_unit", "ZIP")]:
+        ul = C.PROCESSED / log
+        if not ul.exists():
+            continue
         lab = pd.read_csv(ul)
-        w("\n   NYSERDA unit labels on Total Consumption rows (uer_unit_labels.csv):")
+        w(f"\n   NYSERDA {what} unit labels on Total Consumption rows ({log}):")
         for (dc, un, kept), g in lab.groupby(["data_class", "unit", "kept"], dropna=False):
             w(f"     {dc:<12} {str(un):<8} kept={kept!s:<5} rows={int(g.rows.sum()):>9,}  "
               f"years {int(g.year.min())} to {int(g.year.max())}")
         dropped = int(lab[~lab.kept.astype(bool)].rows.sum())
-        S["uer_rows_dropped_for_unit"] = dropped
+        S[key] = dropped
         if dropped:
-            flags.append(f"{dropped} NYSERDA Total Consumption rows dropped for an unknown unit label")
+            flags.append(f"{dropped} NYSERDA {what} Total Consumption rows dropped for an "
+                         f"unknown unit label")
 
     w("\n3. OSC -> UER COMMUNITY LINK (cities, towns, villages)")
     acc = luer[luer.accepted.astype(str) == "True"]

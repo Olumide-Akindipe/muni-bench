@@ -248,3 +248,12 @@ def test_fully_withheld_year_is_blank_not_zero():
     p = pd.read_csv(P / "panel_2016_2025.csv", dtype={"municipal_code": str})
     sj = p[(p.entity_name == "SAINT JOHNSVILLE") & (p.year == 2018)].iloc[0]
     assert sj.gas_months_reported == 0 and pd.isna(sj.gas_therms)
+
+
+def test_zip_file_without_unit_column_is_kept():
+    z = pd.read_csv(P / "zip_energy_annual.csv")
+    assert set(range(2016, 2020)) <= set(z.year)
+    lab = pd.read_csv(P / "uer_zip_unit_labels.csv")
+    assert lab.kept.astype(bool).all()
+    com = pd.read_csv(P / "uer_unit_labels.csv")   # community log is not overwritten
+    assert set(com.unit) <= {"mwh", "mw", "therms", "th", "the"}
