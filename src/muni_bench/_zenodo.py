@@ -31,8 +31,8 @@ NO_DATA = {"0.1.0": "v0.1.0 archived the code only. Use 0.1.1 or later."}
 KNOWN_ISSUES = {
     "0.1.1": ("MUNI-BENCH 0.1.1 understates community energy for 2021 to 2024: NYSEG "
               "electricity (2021 to 2023) and natural gas (2021 to 2024) rows with truncated "
-              "unit labels were dropped. Fixed in 0.1.2. Finance and NYPA columns are not "
-              "affected."),
+              "unit labels were dropped, and the ZIP companion table omits 2016 to 2020. "
+              "Fixed in 0.1.2. Finance and NYPA columns are not affected."),
 }
 
 

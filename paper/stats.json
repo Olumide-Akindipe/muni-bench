@@ -111,6 +111,8 @@
       "debt_gap": 0
     }
   ],
+  "uer_rows_dropped_for_unit": 0,
+  "uer_zip_rows_dropped_for_unit": 0,
   "uer_link_candidates": 1536,
   "uer_dissolved_before_panel": 19,
   "uer_link_accepted": 1504,
@@ -172,20 +174,20 @@
     },
     "2021": {
       "with_finance": 3071,
-      "full_year_elec": 83,
-      "mean_elec_months": 6.4,
+      "full_year_elec": 578,
+      "mean_elec_months": 8.3,
       "nypa_projects": 33
     },
     "2022": {
       "with_finance": 3063,
-      "full_year_elec": 505,
-      "mean_elec_months": 8.9,
+      "full_year_elec": 990,
+      "mean_elec_months": 10.0,
       "nypa_projects": 30
     },
     "2023": {
       "with_finance": 3041,
-      "full_year_elec": 571,
-      "mean_elec_months": 9.2,
+      "full_year_elec": 1055,
+      "mean_elec_months": 10.2,
       "nypa_projects": 55
     },
     "2024": {
@@ -201,7 +203,7 @@
       "nypa_projects": 13
     }
   },
-  "elec_entity_months_withheld": 9964,
+  "elec_entity_months_withheld": 10051,
   "elec_entity_months_invalid": 42,
   "gas_entity_months_invalid": 22,
   "spot_checks": [
@@ -247,7 +249,7 @@
       "entity": "Town of Red Hook",
       "year": 2019,
       "revenues_total": 7181554.64,
-      "elec_mwh": 26819.69,
+      "elec_mwh": 26819.690000000002,
       "nypa_projects": 0
     },
     {
@@ -265,7 +267,7 @@
       "entity": "City of Buffalo",
       "year": 2018,
       "revenues_total": 565829493.4,
-      "elec_mwh": 2786511.734,
+      "elec_mwh": 2786511.7339999997,
       "nypa_projects": 2
     },
     {
@@ -283,7 +285,7 @@
       "entity": "City of Syracuse",
       "year": 2021,
       "revenues_total": 418094578.0,
-      "elec_mwh": 638345.812,
+      "elec_mwh": 638345.8119999999,
       "nypa_projects": 1
     },
     {

@@ -1,5 +1,5 @@
 MUNI-BENCH QA REPORT
-Verification record: docs/VERIFY_CHECKLIST.md; decisions: docs/DECISIONS.md
+Verification record: docs/VERIFICATION_REPORT.md; decisions: docs/DECISIONS.md
 
 1. RAW ROW COUNTS
    nypa_projects.csv                             2,942
@@ -48,6 +48,17 @@ Verification record: docs/VERIFY_CHECKLIST.md; decisions: docs/DECISIONS.md
      County of Wyoming                     2022            0            0         0
      Williamson Central School District    2023            0            0         0
      Open Book totals reproduced: 24 of 24 (within 1 dollar of source rounding)
+
+   NYSERDA community unit labels on Total Consumption rows (uer_unit_labels.csv):
+     electricity  mw       kept=True  rows=   18,319  years 2021 to 2023
+     electricity  mwh      kept=True  rows=  153,266  years 2016 to 2026
+     natural_gas  th       kept=True  rows=    9,327  years 2021 to 2023
+     natural_gas  the      kept=True  rows=   23,967  years 2021 to 2024
+     natural_gas  therms   kept=True  rows=   89,653  years 2016 to 2026
+
+   NYSERDA ZIP unit labels on Total Consumption rows (uer_zip_unit_labels.csv):
+     electricity  mwh      kept=True  rows=   56,316  years 2016 to 2026
+     natural_gas  therms   kept=True  rows=   40,154  years 2016 to 2026
 
 3. OSC -> UER COMMUNITY LINK (cities, towns, villages)
    exact                         1,504
@@ -121,19 +132,19 @@ Verification record: docs/VERIFY_CHECKLIST.md; decisions: docs/DECISIONS.md
    2018         3,109                       1,054              10.6             27
    2019         3,093                       1,028              10.6             23
    2020         3,080                       1,022              10.6             23
-   2021         3,071                          83               6.4             33
-   2022         3,063                         505               8.9             30
-   2023         3,041                         571               9.2             55
+   2021         3,071                         578               8.3             33
+   2022         3,063                         990              10.0             30
+   2023         3,041                       1,055              10.2             55
    2024         2,983                         938               9.8             19
    2025         2,843                       1,002              10.0             13
 
 7. RANGE CHECKS
    revenues_total         n= 30,530 min=               0 max=   6,339,278,000 negatives=0
    expenditures_total     n= 30,528 min=           3,492 max=   5,859,773,000 negatives=0
-   elec_mwh               n= 12,925 min=               0 max=       2,786,512 negatives=0
-   gas_therms             n=  7,244 min=               0 max=     478,882,081 negatives=0
+   elec_mwh               n= 13,866 min=               0 max=       2,786,512 negatives=0
+   gas_therms             n=  9,084 min=               0 max=     478,882,081 negatives=0
    nypa_cost              n= 32,640 min=               0 max=      29,843,184 negatives=0
-   electricity entity-months withheld for privacy: 9,964
+   electricity entity-months withheld for privacy: 10,051
    elec entity-months with a negative value (excluded): 42
    gas entity-months with a negative value (excluded): 22
 
@@ -142,11 +153,11 @@ Verification record: docs/VERIFY_CHECKLIST.md; decisions: docs/DECISIONS.md
    [known] 380257000000 City of Troy (city) 2019: revenues=125187018.0 elec_mwh=89266.766 nypa_projects=0
    [known] 010318700000 Town of Colonie (town) 2019: revenues=118326879.0 elec_mwh=669921.1190000001 nypa_projects=0
    [known] 010307100000 Town of Bethlehem (town) 2019: revenues=67384459.0 elec_mwh=591294.741 nypa_projects=0
-   [known] 130370300000 Town of Red Hook (town) 2019: revenues=7181554.64 elec_mwh=26819.69 nypa_projects=0
+   [known] 130370300000 Town of Red Hook (town) 2019: revenues=7181554.64 elec_mwh=26819.690000000002 nypa_projects=0
    [known] 130470304160 Village of Red Hook (village) 2019: revenues=5175993.27 elec_mwh=7026.57 nypa_projects=0
-   [max elec_mwh] 140207000000 City of Buffalo (city) 2018: revenues=565829493.4 elec_mwh=2786511.734 nypa_projects=2
+   [max elec_mwh] 140207000000 City of Buffalo (city) 2018: revenues=565829493.4 elec_mwh=2786511.7339999997 nypa_projects=2
    [max expenditures_total] 280100000000 County of Nassau (county) 2021: revenues=6339278000.0 elec_mwh=None nypa_projects=0
-   [max nypa_cost] 310255000000 City of Syracuse (city) 2021: revenues=418094578.0 elec_mwh=638345.812 nypa_projects=1
+   [max nypa_cost] 310255000000 City of Syracuse (city) 2021: revenues=418094578.0 elec_mwh=638345.8119999999 nypa_projects=1
    [random seed 20261211] 110750800100 Marathon Central School District (school district) 2020: revenues=18783353.0 elec_mwh=None nypa_projects=0
    [random seed 20261211] 560100000000 County of Wyoming (county) 2022: revenues=182928912.63 elec_mwh=None nypa_projects=0
    [random seed 20261211] 220400900080 Village of Alexandria Bay (village) 2025: revenues=5733492.0 elec_mwh=12787.5 nypa_projects=0

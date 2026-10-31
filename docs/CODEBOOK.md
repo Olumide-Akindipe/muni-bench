@@ -30,12 +30,12 @@
 | uer_link_method | exact, fuzzy_auto, or fuzzy_review+author_accept | link_uer.csv |
 | uer_fips (towns) | A NYSERDA town record covers the town outside its incorporated villages, including hamlets (decision V3r). For a whole-town figure, add the town row to its village rows | decision V3r |
 | uer_shared_record | True when one NYSERDA record is linked to two governments (a town and village sharing one boundary, e.g. Harrison, Woodbury). Never add their energy values together | derived |
-| elec_mwh | Community electricity use in the calendar year, MWh, summed over utilities and over complete months | UER, "Total Consumption (T)", unit MWh |
+| elec_mwh | Community electricity use in the calendar year, MWh, summed over utilities and over complete months | UER, "Total Consumption (T)", unit MWh (labelled "MWh" or "MW" in the 2021 onward file). Blank when no month is reported |
 | elec_months_reported | Months (0 to 12) where every reporting utility gave a value | derived |
 | elec_months_withheld | Months where at least one utility's value was withheld for privacy (-999) | derived |
 | elec_months_invalid | Months where a utility reported a negative value (not the -999 privacy code); excluded from elec_mwh | derived |
 | elec_accounts_avg | Average monthly number of electric accounts behind elec_mwh, over reported months, rounded | UER number_of_accounts, summed over utilities |
-| gas_therms, gas_months_reported, gas_months_withheld, gas_months_invalid, gas_accounts_avg | Same for natural gas, therms | UER, unit Therms |
+| gas_therms, gas_months_reported, gas_months_withheld, gas_months_invalid, gas_accounts_avg | Same for natural gas, therms | UER, unit therms (labelled "Therms", "Th" or "The" in the 2021 onward file). Blank when no month is reported |
 | nypa_projects | NYPA projects completed that calendar year for this entity. NYPA's register includes renewable energy projects (for example solar PV) as well as efficiency projects | NYPA, linked via link_nypa.csv |
 | nypa_cost | Sum of total_project_cost, dollars (nominal) | NYPA |
 | nypa_kwh_savings | Sum of estimated annual electric savings, kWh | NYPA electric_energy_reduction_kwh |
@@ -75,7 +75,10 @@ Uncertain matches for the maintainer: source (uer or nypa), record_id, method, l
 One row per UER community per calendar year, all years available (not limited to linked entities): fips, year, elec_mwh, elec_months_reported, elec_months_withheld, gas_therms, gas_months_reported, gas_months_withheld.
 
 ## zip_energy_annual.csv (companion)
-One row per ZIP code, energy type and calendar year: zip_code, data_class, year, total, months_reported, months_withheld. Con Edison and National Grid territory only, with year gaps (see LIMITATIONS 7).
+One row per ZIP code, energy type and calendar year: zip_code, data_class, year, total, months_reported, months_withheld. Con Edison and National Grid territory only, with year gaps (see LIMITATIONS 7). The 2016 to 2020 ZIP file has no unit column and is read as MWh and therms (decision E3).
+
+## uer_unit_labels.csv and uer_zip_unit_labels.csv
+Rows of NYSERDA Total Consumption data by data class, unit label as published, year and whether the pipeline kept them (community and ZIP files). The quality report flags any row that is not kept.
 
 ## uer_communities.csv
 One row per NYSERDA community code and class: fips, com_type_n, com_name (most common spelling), name_variants (every spelling seen), counties (as NYSERDA wrote them), first_year, last_year, n_rows.

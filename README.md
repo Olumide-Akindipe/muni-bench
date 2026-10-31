@@ -1,8 +1,8 @@
 # MUNI-BENCH
 
-**Status:** v0.1.1, released 2026-10-12, verified by the maintainer | **DOI:** [10.5281/zenodo.23314416](https://doi.org/10.5281/zenodo.23314416) | **Maintainer:** Stephen Olumide Akindipe, [ORCID 0000-0002-1846-9662](https://orcid.org/0000-0002-1846-9662) | **License:** code [MIT](LICENSE), data and documents [CC BY 4.0](LICENSE-DATA.md)
+**Status:** v0.1.2, released 2026-10-31, verified by the maintainer | **DOI:** [10.5281/zenodo.23314416](https://doi.org/10.5281/zenodo.23314416) | **Maintainer:** Stephen Olumide Akindipe, [ORCID 0000-0002-1846-9662](https://orcid.org/0000-0002-1846-9662) | **License:** code [MIT](LICENSE), data and documents [CC BY 4.0](LICENSE-DATA.md)
 
-**Background:** The State of New York publishes the finances of each local government each year. This record shows how much energy is consumed in each community, and which public buildings and assets received NYPA energy efficiency projects. This information is stored in separate databases with different names, labels and codes, so the information from these databases are rarely brought together for analysis. This disconnect between these databases limits the ability to compare energy investments and policy across local governments. MUNI-BENCH solves this challenge by joining this information into a unified table, one row per government per year from 2016 to 2025, and records exactly how each link was made. This allows planners, municipal officers, decision-makers and researchers to compare governments without rebuilding the links themselves.
+**Background:** The State of New York publishes the finances of each local government each year. This record shows how much energy is consumed in each community, and which public buildings and assets received NYPA energy efficiency projects. However, this information is stored in separate databases with different names, labels and codes, so the information from these databases are rarely brought together for analysis to support informed-decision making. This disconnect between these databases limits the ability to compare energy investments and policy across local governments. MUNI-BENCH solves this challenge by joining this information into a unified table, one row per government per year from 2016 to 2025, and records exactly how each link was made. This allows planners, municipal officers, decision-makers and researchers to compare governments without rebuilding the links themselves.
 
 New here? Read [docs/START_HERE.md](docs/START_HERE.md) first. Terms are explained in [docs/GLOSSARY.md](docs/GLOSSARY.md).
 
@@ -42,7 +42,7 @@ panel = mb.load_panel(version="0.1.2")   # downloads once from Zenodo, checks it
 
 The package is a small loader for the archived releases; see [PYPI_README.md](PYPI_README.md). Every table can also be downloaded directly from Zenodo.
 
-## Run it
+## Run
 
 Python 3.10 or newer.
 
@@ -71,12 +71,18 @@ Exact files, sizes and SHA-256 fingerprints are in `data/raw/PROVENANCE.txt` aft
 
 ## Headline numbers
 
-From `paper/stats.json`, build of 2026-10-12, verified by the maintainer.
+From `paper/stats.json`, build of 2026-10-31 (v0.1.2), verified by the maintainer.
 
 - **Governments:** 3,264 local governments that report to the State Comptroller (57 counties, 61 cities, 933 towns, 561 villages, 717 school districts, 935 fire districts), giving 32,640 government-years for 2016 to 2025.
-- **Energy:** of the 1,536 cities, towns and villages active in 2016 to 2025, 1,504 (97.9%) are linked to a NYSERDA community energy record. 1,485 of these 1,504 have at least one usable annual value (the rest have every month withheld for privacy or invalid). The 32 not linked have no NYSERDA record, mostly villages with their own electric utility or towns that share a boundary with a village.
+- **Energy:** of the 1,536 cities, towns and villages active in 2016 to 2025, 1,504 (97.9%) are linked to a NYSERDA community energy record. All 1,504 have at least one electricity or gas value, and 1,480 have at least one electricity value. A year in which every month was withheld for privacy or invalid is left blank. The 32 not linked have no NYSERDA record, mostly villages with their own electric utility or towns that share a boundary with a village.
 - **NYPA projects:** of 2,942 completed projects (1987 to 2026), 701 were for local governments that file with the Comptroller. All 701 are linked, to 391 governments; 248 of them were completed in 2016 to 2025. The rest were for New York City (1,490), state bodies (699) and other bodies such as community colleges and authorities (52).
 - **Finance:** `revenues_total` and `expenditures_total` are gross sums of the Comptroller file. `revenues_openbook` and `expenditures_openbook` match Open Book New York: in the maintainer's checks they reconcile all 24 sampled totals (12 government-years) to the dollar. Component columns (proceeds of debt, transfers, fiduciary funds, refunding escrow) let users move between the two. See `docs/VERIFICATION_REPORT.md`.
+
+## Version history
+
+- **v0.1.2 (2026-10-31):** corrects community energy for 2021 to 2024. NYSERDA labels NYSEG electricity (2021 to 2023) as "MW" and natural gas (2021 to 2024) as "Th" or "The", and earlier versions did not read those rows (decision E1). A year with no reported month is now blank rather than 0 (E2). The ZIP companion table now includes 2016 to 2020 (E3). Finance, NYPA and link values are unchanged. Adds the Python package `muni-bench-ny`.
+- **v0.1.1 (2026-10-12):** adds the data files to the Zenodo archive.
+- **v0.1.0 (2026-10-12):** first release (code archive).
 
 ## Limitations
 

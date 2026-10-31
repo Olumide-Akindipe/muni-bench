@@ -8,13 +8,13 @@
 
 3. **Privacy screening removes months.** NYSERDA withholds values that fail its privacy screen (reported as -999). A month counts only if every reporting utility gave a value; annual totals with fewer than 12 reported months are partial. Use `elec_months_reported` and `gas_months_reported` before comparing totals.
 
-4. **NYSERDA's 2021-onward file has large monthly gaps.** For example, it has no rows at all for January to June 2021 for the City of Albany, and many places have only 6 months in 2022 and 2025. These are gaps in the source, not in the pipeline. `qa_report.txt` section 6 shows the average months reported per year. Compare full years only.
+4. **NYSERDA's 2021-onward file has large monthly gaps.** In 2021 most utilities report only July to December (reasons yet to be known); NYSEG and RG&E report all 12 months. The City of Albany, for example, has 6 reported months of electricity in 2021, and many places have only 6 months in 2022, 2023 and 2025. These are gaps in the source. Separately, v0.1.0 and v0.1.1 did not read NYSEG electricity for 2021 to 2023 or natural gas for 2021 to 2024, because the source labels those units "MW", "Th" or "The"; v0.1.2 reads them (decision E1). `qa_report.txt` section 6 shows the average months reported per year. Compare full years only.
 
 5. **Negative monthly values.** A small number of utility rows report negative consumption, likely billing corrections. Those months are excluded and counted in `*_months_invalid`.
 
 6. **Account coverage and allocation vary.** Utilities assign accounts to communities, and some assignments look wrong. In 2019 the City of Troy carries about 7,778 electric accounts while the neighbouring, much smaller Town of Brunswick carries about 19,112, which suggests some Troy accounts are reported under Brunswick. MUNI-BENCH reports NYSERDA's values as published. Use `elec_accounts_avg` to judge whether a total plausibly covers a whole community.
 
-7. **The ZIP-level energy data are incomplete.** Only Con Edison and National Grid report at ZIP level, Con Edison has no ZIP data for 2020 to 2022, National Grid has none for 2021, and no utility reports ZIP data for 2021. The ZIP table is a companion, not part of the panel.
+7. **The ZIP-level energy data are incomplete.** Only Con Edison and National Grid report at ZIP level. Neither has ZIP rows for 2021, and there are no electricity rows for 2022. Con Edison has no ZIP rows for 2020 to 2022 and no gas rows for 2023; National Grid electricity ends in 2020. The 2016 to 2020 file has no unit column and is read as MWh and therms (decision E3); v0.1.0 and v0.1.1 left it out, so their ZIP table began in 2022. The ZIP table is a companion, not part of the panel.
 
 8. **Utility coverage differs by protocol.** The 2016 to 2020 community file has no PSEG Long Island rows; Long Island communities have energy values from 2021 only. Villages served by their own municipal electric utility (for example Lake Placid, Tupper Lake, Greenport, Bath) appear to have no NYSERDA record, so they carry no energy values. Community choice aggregation may affect some values.
 
